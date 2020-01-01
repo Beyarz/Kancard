@@ -7,8 +7,12 @@
     <title>Document</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
     />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
+    /> -->
     <link
       href="https://fonts.googleapis.com/css?family=Nunito:200,600"
       rel="stylesheet"
@@ -28,10 +32,11 @@
       .navbar {
         padding: 1rem;
         background-color: rgb(255, 255, 255);
-        box-shadow: 0px 0px 12px 3px rgba(65, 65, 65, 0.1);
+        box-shadow: 0px 0px 6px 1px rgba(65, 65, 65, 0.1);
       }
 
-      .title {
+      .title-logo {
+        font-family: "HouseScript";
         font-size: 3rem;
       }
     </style>
@@ -39,8 +44,49 @@
   <body>
     <nav class="navbar">
       <div class="navbar-brand">
-        <h1 class="title">Kancard</h1>
+        <h1 class="title title-logo">Kancard</h1>
       </div>
     </nav>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <div class="notification has-background-white"></div>
+            <div>
+              <div class="button is-medium">
+                <b>Register</b>
+              </div>
+              <div class="button is-medium is-link">
+                <b>Login</b>
+              </div>
+            </div>
+            <div class="notification has-background-white"></div>
+            <div>
+              <div
+                class="title has-text-grey"
+                style="font-size: 5rem; padding-top: 3rem;"
+              >
+                Kancard
+              </div>
+              <div class="subtitle has-text-grey">
+                Structure with Kanban style
+              </div>
+            </div>
+            <div></div>
+          </div>
+          <div class="column is-two-fifths">
+            <div>
+              <figure class="image is-square">
+                <img src="../../../assets/images/Group-index.svg" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script> -->
   </body>
 </html>
