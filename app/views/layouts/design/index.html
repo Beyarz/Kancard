@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Kancard</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
@@ -13,38 +13,40 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
     /> -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:200,600"
-      rel="stylesheet"
-    />
     <style>
-      * {
-        padding: 0%;
-        margin: 0%;
-      }
+      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600");
 
-      html,
       body {
+        margin: 0;
+        font-weight: 200;
         font-family: "Nunito", sans-serif;
         /* background-color: #f5f5f5; */
       }
 
       .navbar {
         padding: 1rem;
-        background-color: rgb(255, 255, 255);
+        background-color: white;
         box-shadow: 0px 0px 6px 1px rgba(65, 65, 65, 0.1);
       }
 
       .title-logo {
         font-family: "HouseScript";
         font-size: 3rem;
+        padding-left: 3vw;
+      }
+
+      .is-custom-blue {
+        color: white;
+        background-color: #71b5ff;
       }
     </style>
   </head>
   <body>
     <nav class="navbar">
       <div class="navbar-brand">
-        <h1 class="title title-logo">Kancard</h1>
+        <h1 class="title title-logo">
+          Kancard
+        </h1>
       </div>
     </nav>
     <section class="section">
@@ -56,7 +58,7 @@
               <div class="button is-medium">
                 <b>Register</b>
               </div>
-              <div class="button is-medium is-link">
+              <div class="button is-medium is-custom-blue">
                 <b>Login</b>
               </div>
             </div>
@@ -66,7 +68,7 @@
                 class="title has-text-grey"
                 style="font-size: 5rem; padding-top: 3rem;"
               >
-                Kancard
+                <h1>Kancard</h1>
               </div>
               <div class="subtitle has-text-grey">
                 Structure with Kanban style
@@ -77,7 +79,10 @@
           <div class="column is-two-fifths">
             <div>
               <figure class="image is-square">
-                <img src="../../../assets/images/Group-index.svg" />
+                <img
+                  src="../../../assets/images/Group-index.svg"
+                  alt="Sticky notes"
+                />
               </figure>
             </div>
           </div>
