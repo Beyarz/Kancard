@@ -66,12 +66,12 @@
         left: 0;
         right: 0;
         content: "";
-        height: 150vh;
-        width: 150vw;
+        height: 90vh;
+        width: 100vw;
         position: fixed;
         background: rgba(229, 229, 229, 0.4);
-        transform-origin: 1;
-        transform: skewY(-50deg);
+        transform-origin: 80rem;
+        transform: rotate(45deg);
       }
     </style>
   </head>
@@ -86,11 +86,21 @@
 
     <section class="section">
       <div class="container skew-style">
-        <img
-          src="../../../assets/images/group-register-eclipse.svg"
-          alt="A bunch of dots"
-          style="z-index: 0; position: fixed; padding-left: 12vw; top: 15vh;"
-        />
+        <figure style="position: fixed; padding-left: 8vw; top: 60vh;">
+          <img
+            src="../../../assets/images/group-register-eclipse.svg"
+            alt="A bunch of dots"
+          />
+        </figure>
+
+        <figure
+          style="position: fixed; padding: 3rem; padding-left: 18vw; left: 45vw;"
+        >
+          <img
+            src="../../../assets/images/Group-register.svg"
+            alt="Sticky notes"
+          />
+        </figure>
 
         <div class="columns">
           <div class="column is-one-fifth"></div>
@@ -98,6 +108,7 @@
             <div class="container form-style has-background-white">
               <h1 class="title">Register</h1>
               <br />
+
               <label class="label">Username</label>
               <div class="field">
                 <div class="control has-icons-left">
@@ -106,13 +117,50 @@
                     <i class="fas fa-envelope"></i>
                   </span>
                 </div>
-                <p class="help">You can login with your email too!</p>
+              </div>
+
+              <label class="label" style="padding-top: 2rem;">Email</label>
+              <div class="field">
+                <div class="control has-icons-left">
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="Jonas123@email.se"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+              </div>
+
+              <label class="label">Confirm email</label>
+              <div class="field">
+                <div class="control has-icons-left">
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="Jonas123@email.se"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
               </div>
 
               <label class="label" style="padding-top: 2rem;">Password</label>
               <div class="field">
                 <div class="control has-icons-left">
-                  <input type="password" class="input" placeholder="Password" />
+                  <input type="text" class="input" placeholder="********" />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </div>
+              </div>
+
+              <label class="label">Confirm password</label>
+              <div class="field">
+                <div class="control has-icons-left">
+                  <input type="password" class="input" placeholder="********" />
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
@@ -121,23 +169,13 @@
                 <div class="field is-grouped is-grouped-centered">
                   <div class="control" style="padding-top: 3rem;">
                     <button class="button">Back</button>
-                    <button class="button is-custom-blue">Login</button>
+                    <button class="button is-custom-blue">Register</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="column is-two-fifths" style="z-index: 2;">
-            <div>
-              <figure class="image is-square">
-                <img
-                  src="../../../assets/images/Group-register.svg"
-                  alt="Sticky notes"
-                />
-              </figure>
-            </div>
-          </div>
+          <div class="column is-two-fifths"></div>
         </div>
       </div>
     </section>
