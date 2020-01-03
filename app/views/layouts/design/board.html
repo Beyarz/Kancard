@@ -18,6 +18,20 @@
         font-family: "Nunito", sans-serif;
       }
 
+      ::-webkit-scrollbar {
+        width: 0.5vw;
+        background-color: #71b6ff3d;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10rem;
+        background-color: #71b6ff8c;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #71b5ff;
+      }
+
       .navbar {
         padding: 1rem;
         background-color: white;
@@ -34,6 +48,45 @@
         color: white;
         background-color: #71b5ff;
       }
+
+      .button {
+        box-shadow: 0px 1px 3px 1px rgba(65, 65, 65, 0.1);
+      }
+
+      .button:hover {
+        box-shadow: 0px 3px 4px 1px rgba(65, 65, 65, 0.1);
+      }
+
+      .card {
+        padding: 2rem;
+        border-radius: 1rem;
+        border-style: solid;
+        border-width: 1px 1px 1px 1px;
+        border-color: rgba(90, 122, 190, 0.14);
+        box-shadow: 0px 3px 0px 0px rgba(90, 122, 190, 0.2);
+      }
+
+      .card:hover {
+        box-shadow: 0px 10px 20px 0px rgba(90, 122, 190, 0.15);
+      }
+
+      .card > .title,
+      .subtitle {
+        color: dodgerblue;
+      }
+
+      .card > .title {
+        text-align: left;
+      }
+
+      .card > .subtitle {
+        padding-top: 1rem;
+        text-align: right;
+      }
+
+      .column {
+        margin: 1rem;
+      }
     </style>
   </head>
   <body>
@@ -43,10 +96,36 @@
           Kancard
         </h1>
       </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <div class="button is-white">New</div>
+              <div class="button is-white">Home</div>
+              <div class="button is-white">Sign out</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <section class="section">
-      <div class="container"></div>
+      <div class="columns is-multiline is-centered">
+        <div class="column card is-one-quarter">
+          <div class="title">Name</div>
+          <div class="subtitle">Description</div>
+        </div>
+
+        <div class="column card is-one-quarter">
+          <div class="title">Name</div>
+          <div class="subtitle">Description</div>
+        </div>
+
+        <div class="column card is-one-quarter">
+          <div class="title">Name</div>
+          <div class="subtitle">Description</div>
+        </div>
+      </div>
     </section>
   </body>
 </html>
