@@ -6,26 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
+      rel="stylesheet preload"
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+      as="style"
+      crossorigin="anonymous"
     />
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600");
+      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600&font-display=swap");
 
       body {
         margin: 0;
         font-weight: 200;
+        font-display: swap;
         font-family: "Nunito", sans-serif;
       }
 
       ::-webkit-scrollbar {
-        width: 0.5vw;
-        background-color: #71b6ff3d;
+        width: 0.5rem;
       }
 
       ::-webkit-scrollbar-thumb {
         border-radius: 10rem;
-        background-color: #71b6ff8c;
+        background-color: #71b6ffb2;
       }
 
       ::-webkit-scrollbar-thumb:hover {
@@ -130,7 +132,7 @@
       <div class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="button">New</div>
+            <div class="button" id="new">New</div>
             <div class="button">Home</div>
             <div class="button">Sign out</div>
           </div>
@@ -138,8 +140,7 @@
       </div>
     </nav>
 
-    <!-- is-active class is what triggers the modal -->
-    <div class="modal is-active">
+    <div class="modal">
       <div class="modal-background"></div>
       <div class="columns">
         <div class="modal-content">
@@ -177,7 +178,7 @@
 
               <div class="field is-grouped is-grouped-centered">
                 <div class="control" style="padding-top: 3rem;">
-                  <button class="button">Back</button>
+                  <button class="button" id="back">Back</button>
                   <button class="button is-custom-blue">Create</button>
                 </div>
               </div>
@@ -207,15 +208,27 @@
         </div>
       </div>
     </section>
-
     <script
-      defer
+      async
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
       crossorigin="anonymous"
     ></script>
     <script
-      async
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
+      crossorigin="anonymous"
     ></script>
+    <script>
+      const toggleModal = () => {
+        $(".modal").toggleClass("is-active");
+      };
+
+      $("#back").click(() => {
+        toggleModal();
+      });
+
+      $("#new").click(() => {
+        toggleModal();
+      });
+    </script>
   </body>
 </html>

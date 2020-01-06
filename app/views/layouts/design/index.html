@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
+      rel="stylesheet preload"
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+      as="style"
+      crossorigin="anonymous"
     />
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600");
+      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600&font-display=swap");
 
       body {
         margin: 0;
         font-weight: 200;
+        font-display: swap;
         font-family: "Nunito", sans-serif;
       }
 
@@ -79,6 +82,8 @@
                 <img
                   src="../../../assets/images/Group-index.svg"
                   alt="Sticky notes"
+                  importance="low"
+                  loading="lazy"
                 />
               </figure>
             </div>

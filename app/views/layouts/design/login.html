@@ -6,19 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
+      rel="stylesheet preload"
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+      as="style"
+      crossorigin="anonymous"
     />
     <link
-      rel="stylesheet"
+      rel="stylesheet preload"
       href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
+      as="style"
+      crossorigin="anonymous"
     />
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600");
+      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600&font-display=swap");
 
       body {
         margin: 0;
         font-weight: 200;
+        font-display: swap;
         font-family: "Nunito", sans-serif;
       }
 
@@ -90,6 +95,8 @@
           src="../../../assets/images/group-login-eclipse.svg"
           alt="A bunch of dots"
           style="position: fixed; padding-left: 12vw; top: 15vh;"
+          importance="low"
+          loading="lazy"
         />
 
         <div class="columns">
@@ -136,6 +143,8 @@
                 <img
                   src="../../../assets/images/Group-login.svg"
                   alt="Sticky notes"
+                  importance="low"
+                  loading="lazy"
                 />
               </figure>
             </div>
@@ -145,7 +154,7 @@
     </section>
 
     <script
-      defer
+      async
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
       crossorigin="anonymous"
     ></script>
