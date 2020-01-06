@@ -49,6 +49,29 @@
         background-color: #71b5ff;
       }
 
+      .input:focus {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        box-shadow: none;
+        border-bottom-width: 2px;
+        border-bottom-color: #71b5ff;
+      }
+
+      .input {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom-width: 2px;
+        box-shadow: none;
+      }
+
+      .form-style {
+        padding: 2rem;
+        border: 2px solid grey;
+        border-radius: 2rem;
+      }
+
       .button {
         border: none;
         border-radius: 0.5rem;
@@ -100,9 +123,9 @@
   <body>
     <nav class="navbar">
       <div class="navbar-brand">
-        <h1 class="title title-logo">
+        <h2 class="title title-logo">
           Kancard
-        </h1>
+        </h2>
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
@@ -115,7 +138,58 @@
       </div>
     </nav>
 
+    <!-- is-active class is what triggers the modal -->
+    <div class="modal is-active">
+      <div class="modal-background"></div>
+      <div class="columns">
+        <div class="modal-content">
+          <div class="column is-three-fifths is-offset-one-fifth">
+            <div class="form-style has-background-white">
+              <div class="field">
+                <label class="label">Board name</label>
+                <div class="control has-icons-left">
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="Class project"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-signature"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label" style="float: right; padding-top: 1rem;"
+                  >Description</label
+                >
+                <div class="control has-icons-left">
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="Create working calculator"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-file-signature"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="field is-grouped is-grouped-centered">
+                <div class="control" style="padding-top: 3rem;">
+                  <button class="button">Back</button>
+                  <button class="button is-custom-blue">Create</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
     <section class="section">
+      <h2 class="title">Some title</h2>
       <div class="columns is-multiline is-centered">
         <div class="column card is-one-quarter">
           <div class="title">Name</div>
@@ -133,5 +207,15 @@
         </div>
       </div>
     </section>
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
+    ></script>
   </body>
 </html>
