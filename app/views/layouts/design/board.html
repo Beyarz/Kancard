@@ -14,6 +14,14 @@
     <style>
       @import url("https://fonts.googleapis.com/css?family=Nunito:200,600&font-display=swap");
 
+      :root {
+        --custom-blue: #71b5ff;
+        --custom-blue-light: #71b6ffb2;
+        --shadow: rgba(65, 65, 65, 0.1);
+        --shadow-light: #f5f5f5;
+        --card-color: rgba(90, 122, 190, 0.15);
+      }
+
       body {
         margin: 0;
         font-weight: 200;
@@ -26,17 +34,17 @@
 
       ::-webkit-scrollbar-thumb {
         border-radius: 10rem;
-        background-color: #71b6ffb2;
+        background-color: var(--custom-blue-light);
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background-color: #71b5ff;
+        background-color: var(--custom-blue);
       }
 
       .navbar {
         padding: 1rem;
         background-color: white;
-        box-shadow: 0px 0px 6px 3px #f5f5f5;
+        box-shadow: 0px 0px 6px 3px var(--shadow-light);
       }
 
       .title-logo {
@@ -47,7 +55,7 @@
 
       .is-custom-blue {
         color: white;
-        background-color: #71b5ff;
+        background-color: var(--custom-blue);
       }
 
       .input:focus {
@@ -56,7 +64,7 @@
         border-right: none;
         box-shadow: none;
         border-bottom-width: 2px;
-        border-bottom-color: #71b5ff;
+        border-bottom-color: var(--custom-blue);
       }
 
       .input {
@@ -77,16 +85,16 @@
         border: none;
         border-radius: 0.5rem;
         margin-right: 1rem;
-        box-shadow: 0px 1px 3px 1px rgba(65, 65, 65, 0.1);
+        box-shadow: 0px 1px 3px 1px var(--shadow);
       }
 
       .button:hover {
-        box-shadow: 0px 3px 6px 3px rgba(65, 65, 65, 0.1);
+        box-shadow: 0px 3px 6px 3px var(--shadow);
       }
 
       .button:active {
         color: white;
-        background-color: rgba(0, 0, 0, 1);
+        background-color: black;
       }
 
       .card {
@@ -94,12 +102,12 @@
         border-radius: 1rem;
         border-style: solid;
         border-width: 1px 1px 1px 1px;
-        border-color: rgba(90, 122, 190, 0.14);
-        box-shadow: 0px 3px 0px 0px rgba(90, 122, 190, 0.2);
+        border-color: var(--card-color);
+        box-shadow: 0px 3px 0px 0px var(--card-color);
       }
 
       .card:hover {
-        box-shadow: 0px 10px 20px 0px rgba(90, 122, 190, 0.15);
+        box-shadow: 0px 10px 10px 0px var(--card-color);
       }
 
       .card > .title,
@@ -146,11 +154,12 @@
           <div class="column is-three-fifths is-offset-one-fifth">
             <div class="form-style has-background-white">
               <div class="field">
-                <label class="label">Board name</label>
+                <label class="label" for="name">Board name</label>
                 <div class="control has-icons-left">
                   <input
                     type="text"
                     class="input"
+                    id="name"
                     placeholder="Class project"
                   />
                   <span class="icon is-small is-left">
@@ -160,13 +169,17 @@
               </div>
 
               <div class="field">
-                <label class="label" style="float: right; padding-top: 1rem;"
+                <label
+                  class="label"
+                  for="description"
+                  style="float: right; padding-top: 1rem;"
                   >Description</label
                 >
                 <div class="control has-icons-left">
                   <input
                     type="text"
                     class="input"
+                    id="description"
                     placeholder="Create working calculator"
                   />
                   <span class="icon is-small is-left">
@@ -188,8 +201,7 @@
       <button class="modal-close is-large" aria-label="close"></button>
     </div>
 
-    <section class="section">
-      <h2 class="title">Some title</h2>
+    <div class="container" style="padding-top: 2rem;">
       <div class="columns is-multiline is-centered">
         <div class="column card is-one-quarter">
           <div class="title">Name</div>
@@ -206,7 +218,8 @@
           <div class="subtitle">Description</div>
         </div>
       </div>
-    </section>
+    </div>
+
     <script
       async
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"

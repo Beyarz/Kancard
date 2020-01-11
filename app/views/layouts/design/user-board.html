@@ -14,6 +14,18 @@
     <style>
       @import url("https://fonts.googleapis.com/css?family=Nunito:200,600&font-display=swap");
 
+      :root {
+        --custom-blue: #71b5ff;
+        --custom-blue-light: #71b6ffb2;
+        --shadow: rgba(65, 65, 65, 0.1);
+        --shadow-light: #f5f5f5;
+        --card-color: rgba(90, 122, 190, 0.15);
+        --skew-color: rgba(229, 229, 229, 0.4);
+        --scrollbar: #71b6ff3d;
+        --scrollbar-thumb: #71b6ff8c;
+        --button-shadow: rgba(65, 65, 65, 0.1);
+      }
+
       body {
         margin: 0;
         font-weight: 200;
@@ -26,11 +38,11 @@
 
       ::-webkit-scrollbar-thumb {
         border-radius: 10rem;
-        background-color: #71b6ffb2;
+        background-color: var(--custom-blue-light);
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background-color: #71b5ff;
+        background-color: var(--custom-blue);
       }
 
       .navbar {
@@ -46,7 +58,7 @@
 
       .is-custom-blue {
         color: white;
-        background-color: #71b5ff;
+        background-color: var(--custom-blue);
       }
 
       .has-text-custom-purple {
@@ -59,7 +71,7 @@
         border-right: none;
         box-shadow: none;
         border-bottom-width: 2px;
-        border-bottom-color: #71b5ff;
+        border-bottom-color: var(--custom-blue);
       }
 
       .input {
@@ -79,16 +91,16 @@
         border: none;
         border-radius: 0.5rem;
         margin-right: 1rem;
-        box-shadow: 0px 1px 3px 1px rgba(65, 65, 65, 0.1);
+        box-shadow: 0px 1px 3px 1px var(--button-shadow);
       }
 
       .button:hover {
-        box-shadow: 0px 3px 6px 1px rgba(65, 65, 65, 0.1);
+        box-shadow: 0px 3px 6px 1px var(--button-shadow);
       }
 
       .button:active {
         color: white;
-        background-color: rgba(0, 0, 0, 1);
+        background-color: black;
       }
 
       .column-row {
@@ -120,6 +132,7 @@
           Kancard
         </h2>
       </div>
+
       <div class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
@@ -138,11 +151,12 @@
           <div class="column is-three-fifths is-offset-one-fifth">
             <div class="form-style has-background-white">
               <div class="field">
-                <label class="label">Board name</label>
+                <label class="label" for="name">Board name</label>
                 <div class="control has-icons-left">
                   <input
                     type="text"
                     class="input"
+                    id="name"
                     placeholder="Class project"
                   />
                   <span class="icon is-small is-left">
@@ -152,13 +166,17 @@
               </div>
 
               <div class="field">
-                <label class="label" style="float: right; padding-top: 1rem;"
+                <label
+                  class="label"
+                  for="description"
+                  style="float: right; padding-top: 1rem;"
                   >Description</label
                 >
                 <div class="control has-icons-left">
                   <input
                     type="text"
                     class="input"
+                    id="description"
                     placeholder="Create working calculator"
                   />
                   <span class="icon is-small is-left">
@@ -208,13 +226,13 @@
       </div>
     </div>
 
-    <section class="section" style="padding: 1rem 1.5rem">
+    <div class="container">
       <div class="columns is-centered">
         <div class="column column-row"></div>
         <div class="column column-row"></div>
         <div class="column column-row"></div>
       </div>
-    </section>
+    </div>
 
     <script
       async
