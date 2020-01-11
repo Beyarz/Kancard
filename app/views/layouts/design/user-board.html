@@ -118,7 +118,6 @@
       }
 
       .column-row {
-        margin: 1rem;
         height: 60vh;
         overflow-y: scroll;
         word-wrap: break-word;
@@ -144,9 +143,9 @@
   <body>
     <nav class="navbar">
       <div class="navbar-brand">
-        <h1 class="title title-logo is-size-2">
+        <h2 class="title title-logo is-size-2">
           Kancard
-        </h1>
+        </h2>
       </div>
 
       <div class="navbar-menu">
@@ -174,6 +173,8 @@
                     class="input"
                     id="name"
                     placeholder="Class project"
+                    aria-required="true"
+                    required
                   />
                   <span class="icon is-small is-left">
                     <i class="fas fa-signature"></i>
@@ -194,6 +195,8 @@
                     class="input"
                     id="description"
                     placeholder="Create working calculator"
+                    aria-required="true"
+                    required
                   />
                   <span class="icon is-small is-left">
                     <i class="fas fa-file-signature"></i>
@@ -202,15 +205,36 @@
               </div>
 
               <div class="field is-grouped is-grouped-centered">
-                <div class="control" style="padding-top: 3rem;">
-                  <button class="button" id="back">Back</button>
-                  <button class="button is-custom-blue">Create</button>
+                <div class="control has-icons-left" style="padding-top: 1rem;">
+                  <div class="select is-grey is-rounded">
+                    <select>
+                      <option value="is-dark">Black color</option>
+                      <option value="is-grey" selected>Grey color</option>
+                      <option value="is-danger">Red color</option>
+                      <option value="is-warning">Yellow color</option>
+                      <option value="is-info">Blue color</option>
+                      <option value="is-success">Green color</option>
+                    </select>
+                    <div class="icon is-left">
+                      <i class="fas fa-tint"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field is-grouped is-grouped-centered">
+                <div class="control" style="padding-top: 1rem;">
+                  <button type="reset" class="button" id="back">Back</button>
+                  <button type="submit" class="button is-custom-blue">
+                    Create
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <button
         class="modal-close is-large"
         aria-label="close"
@@ -245,7 +269,7 @@
     </div>
 
     <div class="columns scrollable is-mobile">
-      <div class="column is-1"></div>
+      <div class="column is-1 is-offset-1"></div>
 
       <div class="column is-one-quarter">
         <h2
