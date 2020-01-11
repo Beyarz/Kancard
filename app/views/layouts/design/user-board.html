@@ -33,7 +33,8 @@
       }
 
       ::-webkit-scrollbar {
-        width: 0.5rem;
+        height: 7px;
+        width: 7px;
       }
 
       ::-webkit-scrollbar-thumb {
@@ -52,8 +53,7 @@
 
       .title-logo {
         font-family: "HouseScript";
-        font-size: 3rem;
-        padding-left: 3vw;
+        padding-left: 1vw;
       }
 
       .is-custom-blue {
@@ -84,7 +84,7 @@
 
       .form-style {
         padding: 2rem;
-        border-radius: 2rem;
+        border-radius: 0.5rem;
       }
 
       .button {
@@ -103,16 +103,13 @@
         background-color: black;
       }
 
-      .column-row {
-        border-width: 1px;
-        border-radius: 1rem;
-        border-style: solid;
-        border-color: #6eb4ff;
-      }
-
       .column-row > .title,
       .subtitle {
         color: dodgerblue;
+      }
+
+      .color-blue {
+        color: var(--custom-blue);
       }
 
       .column-row > .subtitle {
@@ -122,23 +119,42 @@
 
       .column-row {
         margin: 1rem;
+        height: 60vh;
+        overflow-y: scroll;
+        word-wrap: break-word;
+      }
+
+      .columns {
+        margin-right: unset;
+      }
+
+      .card {
+        border-radius: 0.5rem;
+      }
+
+      .card-header {
+        box-shadow: unset;
+      }
+
+      .scrollable {
+        overflow: scroll;
       }
     </style>
   </head>
   <body>
     <nav class="navbar">
       <div class="navbar-brand">
-        <h2 class="title title-logo">
+        <h1 class="title title-logo is-size-2">
           Kancard
-        </h2>
+        </h1>
       </div>
 
       <div class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="button" id="new">New</div>
-            <div class="button">Home</div>
-            <div class="button">Sign out</div>
+            <div class="button is-small" id="new">New</div>
+            <div class="button is-small">Home</div>
+            <div class="button is-small">Sign out</div>
           </div>
         </div>
       </div>
@@ -205,32 +221,48 @@
     <div class="level notification has-text-custom-purple">
       <div class="level-left">
         <div class="level-item">
-          <h1 class="title">Board name</h1>
+          <h1 class="title is-size-5">Board name</h1>
         </div>
       </div>
 
       <div class="level-item has-text-custom-purple">
-        <button class="button is-medium has-text-custom-purple">
+        <button class="button is-small has-text-custom-purple">
           New column
         </button>
-        <button class="button is-medium has-text-custom-purple">
+        <button class="button is-small has-text-custom-purple">
           New card
         </button>
       </div>
 
       <div class="level-right">
         <div class="level-item">
-          <p class="has-text-weight-bold">Last update: &nbsp;</p>
-          <p>2019-01-07</p>
+          <div class="container is-size-7">
+            <p class="has-text-weight-bold">Last update: &nbsp;</p>
+            <p>2019-01-07</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column column-row"></div>
-        <div class="column column-row"></div>
-        <div class="column column-row"></div>
+    <div class="columns scrollable is-mobile">
+      <div class="column is-1"></div>
+
+      <div class="column is-one-quarter">
+        <h2
+          class="title is-size-4 color-blue has-text-weight-light is-marginless"
+        >
+          Hello
+        </h2>
+        <div class="card">
+          <div class="card-content column-row">
+            <article class="message is-info is-small">
+              <!-- <button class="delete is-small is-pulled-right" aria-label="delete"></button> -->
+              <div class="message-body">
+                Hello, world siojfijsdijfoisdoifjdiodjsijdfgfgdfgdfgd
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </div>
 
