@@ -19,11 +19,11 @@
         --custom-blue-light: #71b6ffb2;
         --shadow: rgba(65, 65, 65, 0.1);
         --shadow-light: #f5f5f5;
-        --card-color: rgba(90, 122, 190, 0.15);
-        --skew-color: rgba(229, 229, 229, 0.4);
         --scrollbar: #71b6ff3d;
         --scrollbar-thumb: #71b6ff8c;
         --button-shadow: rgba(65, 65, 65, 0.1);
+        --card-color: rgba(90, 122, 190, 0.15);
+        --skew-color: rgba(229, 229, 229, 0.4);
       }
 
       body {
@@ -123,20 +123,19 @@
         word-wrap: break-word;
       }
 
+      .scrollable {
+        overflow-x: scroll;
+        overflow-y: hidden;
+      }
+
+      /* Overrides default */
       .columns {
         margin-right: unset;
       }
 
       .card {
         border-radius: 0.5rem;
-      }
-
-      .card-header {
-        box-shadow: unset;
-      }
-
-      .scrollable {
-        overflow: scroll;
+        box-shadow: 0 0 0.8em -0.125em rgba(10, 10, 10, 0.1);
       }
     </style>
   </head>
@@ -151,7 +150,6 @@
       <div class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="button is-small" id="new">New</div>
             <div class="button is-small">Home</div>
             <div class="button is-small">Sign out</div>
           </div>
@@ -165,59 +163,67 @@
         <div class="modal-content">
           <div class="column is-three-fifths is-offset-one-fifth">
             <div class="form-style has-background-white">
-              <div class="field">
-                <label class="label" for="name">Board name</label>
-                <div class="control has-icons-left">
-                  <input
-                    type="text"
-                    class="input"
-                    id="name"
-                    placeholder="Class project"
-                    aria-required="true"
-                    required
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-signature"></i>
-                  </span>
+              <!--
+                For "New card" button
+              -->
+              <div id="new-card" class="is-hidden">
+                <div class="field">
+                  <label class="label" for="new-name-card">Content</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="text"
+                      class="input"
+                      id="new-name-card"
+                      placeholder="Design the infrastructure"
+                      aria-required="true"
+                      required
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-align-left"></i>
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="field">
-                <label
-                  class="label"
-                  for="description"
-                  style="float: right; padding-top: 1rem;"
-                  >Description</label
-                >
-                <div class="control has-icons-left">
-                  <input
-                    type="text"
-                    class="input"
-                    id="description"
-                    placeholder="Create working calculator"
-                    aria-required="true"
-                    required
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-file-signature"></i>
-                  </span>
-                </div>
-              </div>
-
-              <div class="field is-grouped is-grouped-centered">
-                <div class="control has-icons-left" style="padding-top: 1rem;">
-                  <div class="select is-grey is-rounded">
-                    <select>
-                      <option value="is-dark">Black color</option>
-                      <option value="is-grey" selected>Grey color</option>
-                      <option value="is-danger">Red color</option>
-                      <option value="is-warning">Yellow color</option>
-                      <option value="is-info">Blue color</option>
-                      <option value="is-success">Green color</option>
-                    </select>
-                    <div class="icon is-left">
-                      <i class="fas fa-tint"></i>
+                <div class="field is-grouped is-grouped-centered">
+                  <div
+                    class="control has-icons-left"
+                    style="padding-top: 1rem;"
+                  >
+                    <div class="select is-grey is-rounded">
+                      <select>
+                        <option value="is-dark">Black color</option>
+                        <option value="is-grey" selected>Grey color</option>
+                        <option value="is-danger">Red color</option>
+                        <option value="is-warning">Yellow color</option>
+                        <option value="is-info">Blue color</option>
+                        <option value="is-success">Green color</option>
+                      </select>
+                      <div class="icon is-left">
+                        <i class="fas fa-tint"></i>
+                      </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--
+                For "New column" button
+              -->
+              <div id="new-column" class="is-hidden">
+                <div class="field">
+                  <label class="label" for="new-name-column">Title</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="text"
+                      class="input"
+                      id="new-name-column"
+                      placeholder="Todo"
+                      aria-required="true"
+                      required
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-heading"></i>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -245,22 +251,28 @@
     <div class="level notification has-text-custom-purple">
       <div class="level-left">
         <div class="level-item">
-          <h1 class="title is-size-5">Board name</h1>
+          <h1 class="title is-size-5 is-unselectable">Board name</h1>
         </div>
       </div>
 
       <div class="level-item has-text-custom-purple">
-        <button class="button is-small has-text-custom-purple">
+        <button
+          class="button is-small has-text-custom-purple"
+          id="new-column-button"
+        >
           New column
         </button>
-        <button class="button is-small has-text-custom-purple">
+        <button
+          class="button is-small has-text-custom-purple"
+          id="new-card-button"
+        >
           New card
         </button>
       </div>
 
       <div class="level-right">
         <div class="level-item">
-          <div class="container is-size-7">
+          <div class="container is-size-7 is-unselectable">
             <p class="has-text-weight-bold">Last update: &nbsp;</p>
             <p>2019-01-07</p>
           </div>
@@ -280,9 +292,46 @@
         <div class="card">
           <div class="card-content column-row">
             <article class="message is-info is-small">
+              <h2 class="is-sr-only">Empty heading</h2>
+              <div class="message-body">
+                Hello, world Hello, worldHello, worldHello, worldHello,
+                worldHello, world
+              </div>
+            </article>
+            <article class="message is-info is-small">
+              <h2 class="is-sr-only">Empty heading</h2>
+              <div class="message-body">
+                Hello, world Hello, worldHello, worldHello, worldHello,
+                worldHello, world
+              </div>
+            </article>
+            <article class="message is-info is-small">
+              <h2 class="is-sr-only">Empty heading</h2>
+              <div class="message-body">
+                Hello, world Hello, worldHello, worldHello, worldHello,
+                worldHello, world
+              </div>
+            </article>
+            <article class="message is-info is-small">
+              <h2 class="is-sr-only">Empty heading</h2>
+              <div class="message-body">
+                Hello, world Hello, worldHello, worldHello, worldHello,
+                worldHello, world
+              </div>
+            </article>
+            <article class="message is-info is-small">
+              <h2 class="is-sr-only">Empty heading</h2>
+              <div class="message-body">
+                Hello, world Hello, worldHello, worldHello, worldHello,
+                worldHello, world
+              </div>
+            </article>
+            <article class="message is-info is-small">
+              <h2 class="is-sr-only">Empty heading</h2>
               <!-- <button class="delete is-small is-pulled-right" aria-label="delete"></button> -->
               <div class="message-body">
-                Hello, world siojfijsdijfoisdoifjdiodjsijdfgfgdfgdfgd
+                Hello, world Hello, worldHello, worldHello, worldHello,
+                worldHello, world
               </div>
             </article>
           </div>
@@ -301,7 +350,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      const toggleModal = () => {
+      const toggleModal = req => {
         $(".modal").toggleClass("is-active");
       };
 
@@ -309,11 +358,15 @@
         toggleModal();
       });
 
-      $("#new").click(() => {
+      $("#modal-close").click(() => {
         toggleModal();
       });
 
-      $("#modal-close").click(() => {
+      $("#new-card-button").click(() => {
+        toggleModal();
+      });
+
+      $("#new-column-button").click(() => {
         toggleModal();
       });
     </script>
