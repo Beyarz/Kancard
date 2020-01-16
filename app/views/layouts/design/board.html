@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kancard</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet preload"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+      as="style"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600&font-display=swap");
+
+      :root {
+        --custom-blue: #71b5ff;
+        --custom-blue-light: #71b6ffb2;
+        --shadow: rgba(65, 65, 65, 0.1);
+        --shadow-light: #f5f5f5;
+        --card-color: rgba(90, 122, 190, 0.15);
+      }
+
+      body {
+        margin: 0;
+        font-weight: 200;
+        font-family: "Nunito", sans-serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10rem;
+        background-color: var(--custom-blue-light);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--custom-blue);
+      }
+
+      .navbar {
+        padding: 1rem;
+        background-color: white;
+        box-shadow: 0px 0px 6px 3px var(--shadow-light);
+      }
+
+      .title-logo {
+        font-family: "HouseScript";
+        font-size: 3rem;
+        padding-left: 3vw;
+      }
+
+      .is-custom-blue {
+        color: white;
+        background-color: var(--custom-blue);
+      }
+
+      .input:focus {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        box-shadow: none;
+        border-bottom-width: 2px;
+        border-bottom-color: var(--custom-blue);
+      }
+
+      .input {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom-width: 2px;
+        box-shadow: none;
+      }
+
+      .form-style {
+        padding: 2rem;
+        border: 2px solid grey;
+        border-radius: 2rem;
+      }
+
+      .button {
+        border: none;
+        border-radius: 0.5rem;
+        margin-right: 1rem;
+        box-shadow: 0px 1px 3px 1px var(--shadow);
+      }
+
+      .button:hover {
+        box-shadow: 0px 3px 6px 3px var(--shadow);
+      }
+
+      .button:active {
+        color: white;
+        background-color: black;
+      }
+
+      .card {
+        padding: 2rem;
+        border-radius: 1rem;
+        border-style: solid;
+        border-width: 1px 1px 1px 1px;
+        border-color: var(--card-color);
+        box-shadow: 0px 3px 0px 0px var(--card-color);
+      }
+
+      .card:hover {
+        box-shadow: 0px 10px 10px 0px var(--card-color);
+      }
+
+      .card > .title,
+      .subtitle {
+        color: dodgerblue;
+      }
+
+      .card > .title {
+        text-align: left;
+      }
+
+      .card > .subtitle {
+        padding-top: 1rem;
+        text-align: right;
+      }
+
+      .column {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <h2 class="title title-logo">
+          Kancard
+        </h2>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="button" id="new">New</div>
+            <div class="button">Home</div>
+            <div class="button">Sign out</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="columns">
+        <div class="modal-content">
+          <div class="column is-three-fifths is-offset-one-fifth">
+            <div class="form-style has-background-white">
+              <div class="field">
+                <label class="label" for="name">Board name</label>
+                <div class="control has-icons-left">
+                  <input
+                    type="text"
+                    class="input"
+                    id="name"
+                    placeholder="Class project"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-signature"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label
+                  class="label"
+                  for="description"
+                  style="float: right; padding-top: 1rem;"
+                  >Description</label
+                >
+                <div class="control has-icons-left">
+                  <input
+                    type="text"
+                    class="input"
+                    id="description"
+                    placeholder="Create working calculator"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-file-signature"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="field is-grouped is-grouped-centered">
+                <div class="control" style="padding-top: 3rem;">
+                  <button class="button" id="back">Back</button>
+                  <button class="button is-custom-blue">Create</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <div class="container" style="padding-top: 2rem;">
+      <div class="columns is-multiline is-centered">
+        <div class="column card is-one-quarter">
+          <div class="title">Name</div>
+          <div class="subtitle">Description</div>
+        </div>
+
+        <div class="column card is-one-quarter">
+          <div class="title">Name</div>
+          <div class="subtitle">Description</div>
+        </div>
+
+        <div class="column card is-one-quarter">
+          <div class="title">Name</div>
+          <div class="subtitle">Description</div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      async
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
+      integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const toggleModal = () => {
+        $(".modal").toggleClass("is-active");
+      };
+
+      $("#back").click(() => {
+        toggleModal();
+      });
+
+      $("#new").click(() => {
+        toggleModal();
+      });
+    </script>
+  </body>
+</html>
