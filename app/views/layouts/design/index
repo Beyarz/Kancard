@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Kancard</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet preload"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-      as="style"
-      crossorigin="anonymous"
-    />
-    <style>
-      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600&font-display=swap");
 
-      :root {
-        --custom-blue: #71b5ff;
-        --shadow: rgba(65, 65, 65, 0.1);
-      }
-
-      body {
-        margin: 0;
-        font-weight: 200;
-        font-family: "Nunito", sans-serif;
-      }
-
-      .navbar {
-        padding: 1rem;
-        background-color: white;
-        box-shadow: 0px 0px 6px 1px var(--shadow);
-      }
-
-      .title-logo {
-        font-family: "HouseScript";
-        font-size: 3rem;
-        padding-left: 3vw;
-      }
-
-      .is-custom-blue {
-        color: white;
-        background-color: var(--custom-blue);
-      }
-    </style>
-  </head>
   <body>
     <nav class="navbar">
       <div class="navbar-brand">
