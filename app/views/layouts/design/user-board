@@ -1,5 +1,15 @@
-    <style>
-      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600&font-display=swap");
+<%
+=begin
+  content_for :HANDLER_NAME do
+    <link
+      rel="stylesheet preload"
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
+      as="style"
+      crossorigin="anonymous"
+    />
+  end
+=end
+%>
 
       :root {
         --custom-blue: #71b5ff;
@@ -11,36 +21,6 @@
         --button-shadow: rgba(65, 65, 65, 0.1);
         --card-color: rgba(90, 122, 190, 0.15);
         --skew-color: rgba(229, 229, 229, 0.4);
-      }
-
-      body {
-        margin: 0;
-        font-weight: 200;
-        font-family: "Nunito", sans-serif;
-      }
-
-      ::-webkit-scrollbar {
-        height: 7px;
-        width: 7px;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        border-radius: 10rem;
-        background-color: var(--custom-blue-light);
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background-color: var(--custom-blue);
-      }
-
-      .navbar {
-        padding: 1rem;
-        background-color: white;
-      }
-
-      .title-logo {
-        font-family: "HouseScript";
-        padding-left: 1vw;
       }
 
       .is-custom-blue {

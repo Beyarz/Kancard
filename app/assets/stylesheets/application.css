@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+:root {
+  --custom-blue: #71b5ff;
+  --custom-blue-light: #71b6ffb2;
+  --shadow: rgba(65, 65, 65, 0.1);
+  --shadow-light: #f5f5f5;
+  --card-color: rgba(90, 122, 190, 0.15);
+}
+
+body {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10rem;
+  background-color: var(--custom-blue-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--custom-blue);
+}
+
+.navbar {
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0px 0px 6px 1px var(--shadow);
+}
+
+.title-logo {
+  font-family: "HouseScript";
+  font-size: 3rem;
+  padding-left: 3vw;
+}
+
+.title > h1 {
+  font-weight: 200;
+}
