@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kancard</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet preload"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+      as="style"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet preload"
       href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
@@ -11,28 +24,12 @@
         --custom-blue: #71b5ff;
         --shadow-light: #f5f5f5;
         --skew-color: rgba(229, 229, 229, 0.4);
-        --scrollbar: #71b6ff3d;
-        --scrollbar-thumb: #71b6ff8c;
       }
 
       body {
         margin: 0;
         font-weight: 200;
         font-family: "Nunito", sans-serif;
-      }
-
-      ::-webkit-scrollbar {
-        width: 0.5vw;
-        background-color: var(--scrollbar);
-      }
-
-      ::-webkit-scrollbar-thumb {
-        border-radius: 10rem;
-        background-color: var(--scrollbar-thumb);
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background-color: var(--custom-blue);
       }
 
       .navbar {
@@ -79,11 +76,11 @@
         left: 0;
         right: 0;
         content: "";
-        height: 90vh;
+        height: 100vh;
         width: 100vw;
         position: fixed;
         background: var(--skew-color);
-        transform-origin: 80rem;
+        transform-origin: 0rem;
         transform: rotate(45deg);
       }
     </style>
@@ -99,27 +96,18 @@
 
     <div class="container" style="padding-top: 3rem;">
       <div class="container skew-style">
-        <figure style="position: fixed; padding-left: 8vw; top: 60vh;">
-          <img
-            src="../../../assets/images/Group-register-eclipse.svg"
-            alt="A bunch of dots"
-          />
-        </figure>
-
-        <figure
-          style="position: fixed; padding: 3rem; padding-left: 18vw; left: 45vw;"
-        >
-          <img
-            src="../../../assets/images/Group-register.svg"
-            alt="Sticky notes"
-          />
-        </figure>
+        <img
+          src="../../../assets/images/group-login-eclipse.svg"
+          alt="A bunch of dots"
+          style="position: fixed; padding-left: 12vw; top: 15vh;"
+        />
 
         <div class="columns">
           <div class="column is-one-fifth"></div>
+
           <div class="column">
             <div class="container form-style has-background-white">
-              <h1 class="title">Register</h1>
+              <h1 class="title">Login</h1>
               <br />
 
               <label class="label" for="username">Username</label>
@@ -135,38 +123,7 @@
                     <i class="fas fa-user"></i>
                   </span>
                 </div>
-              </div>
-
-              <label class="label" for="email" style="padding-top: 2rem;"
-                >Email</label
-              >
-              <div class="field">
-                <div class="control has-icons-left">
-                  <input
-                    type="text"
-                    class="input"
-                    id="email"
-                    placeholder="Jonas123@email.se"
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                </div>
-              </div>
-
-              <label class="label" for="confirm-email">Confirm email</label>
-              <div class="field">
-                <div class="control has-icons-left">
-                  <input
-                    type="text"
-                    class="input"
-                    id="confirm-email"
-                    placeholder="Jonas123@email.se"
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                </div>
+                <p class="help">You can sign-in with your email too!</p>
               </div>
 
               <label class="label" for="password" style="padding-top: 2rem;"
@@ -175,44 +132,36 @@
               <div class="field">
                 <div class="control has-icons-left">
                   <input
-                    type="text"
-                    id="password"
-                    class="input"
-                    placeholder="********"
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-lock"></i>
-                  </span>
-                </div>
-              </div>
-
-              <label class="label" for="confirm-password"
-                >Confirm password</label
-              >
-              <div class="field">
-                <div class="control has-icons-left">
-                  <input
                     type="password"
                     class="input"
-                    id="confirm-password"
-                    placeholder="********"
+                    id="password"
+                    placeholder="Password"
                   />
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
                 </div>
 
-                <div class="field is-grouped is-grouped-centered">
+                <div class="is-grouped is-grouped-centered">
                   <div class="control" style="padding-top: 3rem;">
                     <button class="button">Back</button>
-                    <button class="button is-custom-blue">Register</button>
+                    <button class="button is-custom-blue">Login</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="column is-two-fifths"></div>
+          <div class="column is-two-fifths">
+            <div>
+              <figure class="image is-square">
+                <img
+                  src="../../../assets/images/Group-login.svg"
+                  alt="Sticky notes"
+                />
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
     </div>
