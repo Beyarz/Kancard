@@ -1,15 +1,11 @@
-<%
-=begin
-  content_for :HANDLER_NAME do
     <link
       rel="stylesheet preload"
       href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
       as="style"
       crossorigin="anonymous"
     />
-  end
-=end
-%>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Nunito:200,600&font-display=swap");
 
       :root {
         --custom-blue: #71b5ff;
@@ -17,6 +13,38 @@
         --skew-color: rgba(229, 229, 229, 0.4);
         --scrollbar: #71b6ff3d;
         --scrollbar-thumb: #71b6ff8c;
+      }
+
+      body {
+        margin: 0;
+        font-weight: 200;
+        font-family: "Nunito", sans-serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 0.5vw;
+        background-color: var(--scrollbar);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10rem;
+        background-color: var(--scrollbar-thumb);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--custom-blue);
+      }
+
+      .navbar {
+        padding: 1rem;
+        background-color: white;
+        box-shadow: 0px 0px 6px 3px var(--shadow-light);
+      }
+
+      .title-logo {
+        font-family: "HouseScript";
+        font-size: 3rem;
+        padding-left: 3vw;
       }
 
       .is-custom-blue {
@@ -61,6 +89,13 @@
     </style>
   </head>
   <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <h2 class="title title-logo">
+          Kancard
+        </h2>
+      </div>
+    </nav>
 
     <div class="container" style="padding-top: 3rem;">
       <div class="container skew-style">

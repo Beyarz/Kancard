@@ -1,39 +1,19 @@
-<div class="container" style="padding-top: 3rem;">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <div class="notification has-background-white"></div>
-        <div>
-          <div class="button is-medium">
-            <b>Register</b>
-          </div>
-          <div class="button is-medium is-custom-blue">
-            <b>Login</b>
-          </div>
-        </div>
 
-        <div class="notification has-background-white"></div>
+<%
+=begin
+  In application.html.erb add this <%= yield :HANDLER_NAME %>
 
-        <div>
-          <div
-            class="title has-text-grey"
-            style="font-size: 5rem; padding-top: 3rem;"
-          >
-            <h1>Kancard</h1>
-          </div>
-          <div class="subtitle has-text-grey">
-            Structure with Kanban style
-          </div>
-        </div>
-      </div>
+ <% content_for :HANDLER_NAME do %>
+  <link
+    rel="stylesheet preload"
+    href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
+    as="style"
+    crossorigin="anonymous"
+  />
+<% end %>
 
-      <div class="column is-two-fifths">
-        <div>
-          <figure class="image is-square">
-              <%= image_tag("Group-index.svg", :alt => "kancard style") %>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+=end
+%>
+
+<h1>Auth#index</h1>
+<p>Find me in app/views/auth/index.html.erb</p>
