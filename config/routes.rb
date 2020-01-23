@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'auth#index'
+  root 'home#index'
+  get 'home/index'
 
-  get 'auth/index'
   get 'auth/login'
   get 'auth/register'
 end
