@@ -1,17 +1,18 @@
-<%
-  content_for :fontawesome_css do
-    <link
-      rel="stylesheet preload"
-      href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
-      as="style"
-      crossorigin="anonymous"
-    />
-  end
-%>
+<% content_for :fontawesome_css do %>
+  <link
+    rel="stylesheet preload"
+    href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
+    as="style"
+    crossorigin="anonymous"
+  />
+<% end %>
 
 <div class="container" style="padding-top: 3rem;">
   <div class="container skew-style-login">
-    <%= image_tag("group-login-eclipse.svg", :alt => "dots") %>
+
+    <figure style="position: fixed; padding-left: 8vw; top: 15vh;">
+      <%= image_tag("group-login-eclipse.svg", :alt => "dots") %>
+    </figure>
 
     <div class="columns">
       <div class="column is-one-fifth"></div>
@@ -74,12 +75,10 @@
   </div>
 </div>
 
-<%
-  content_for :fontawesome_js do
-    <script
-      async
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-  end
-%>
+<% content_for :fontawesome_js do %>
+  <script
+    async
+    src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    crossorigin="anonymous"
+  ></script>
+<% end %>
