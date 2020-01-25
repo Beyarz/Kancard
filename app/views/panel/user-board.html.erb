@@ -1,0 +1,208 @@
+<% content_for :fontawesome_css do %>
+  <link
+    rel="stylesheet preload"
+    href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
+    as="style"
+    crossorigin="anonymous"
+  />
+<% end %>
+
+<% content_for :nav_menu do %>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="button" id="new">New</div>
+        <div class="button">Home</div>
+        <div class="button">Sign out</div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="columns">
+    <div class="modal-content">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="form-style has-background-white">
+          <div id="new-card">
+            <div class="field">
+              <label class="label" for="new-name-card">Content</label>
+              <div class="control has-icons-left">
+                <input
+                  type="text"
+                  class="input"
+                  id="new-name-card"
+                  placeholder="Design the infrastructure"
+                  aria-required="true"
+                  required
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-align-left"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field is-grouped is-grouped-centered">
+              <div
+                class="control has-icons-left"
+                style="padding-top: 1rem;"
+              >
+                <div class="select is-grey is-rounded">
+                  <select>
+                    <option value="is-dark">Black color</option>
+                    <option value="is-grey" selected>Grey color</option>
+                    <option value="is-danger">Red color</option>
+                    <option value="is-warning">Yellow color</option>
+                    <option value="is-info">Blue color</option>
+                    <option value="is-success">Green color</option>
+                  </select>
+                  <div class="icon is-left">
+                    <i class="fas fa-tint"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control" style="padding-top: 1rem;">
+              <button type="reset" class="button" id="back">Back</button>
+              <button type="submit" class="button is-custom-blue">
+                Create
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    id="modal-close"
+  ></button>
+</div>
+
+<div class="level notification has-text-purple">
+  <div class="level-left">
+    <div class="level-item">
+      <h1 class="title is-size-5 is-unselectable">Board name</h1>
+    </div>
+  </div>
+
+  <div class="level-item has-text-purple">
+    <button class="button is-small has-text-purple" id="new-column-button">
+      New column
+    </button>
+    <button class="button is-small has-text-purple" id="new-card-button">
+      New note
+    </button>
+  </div>
+
+  <div class="level-right">
+    <div class="level-item">
+      <div class="container is-size-7 is-unselectable">
+        <p class="has-text-weight-bold">Last update: &nbsp;</p>
+        <p>2019-01-07</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="columns scrollable is-mobile">
+  <div class="column is-1 is-offset-1"></div>
+
+  <!-- ! Treat the column as a post and the posts as comment section in rails -->
+  <div class="column is-one-quarter">
+    <h2
+      class="title is-size-4 color-blue has-text-weight-light is-marginless"
+    >
+      <!-- ! Column title -->
+      Hello
+    </h2>
+    <div class="card">
+      <div
+        class="card-content column-row"
+        ondrop="drop(event)"
+        ondragover="event.preventDefault()"
+      >
+        <article
+          class="message is-info is-small"
+          id="<%= SecureRandom.hex(4).scan(/.{4}/).join("-") %>"
+          draggable="true"
+          ondragstart="drag(event)"
+        >
+          <h2 class="is-sr-only">Empty heading</h2>
+          <div class="message-body">
+            <button
+              class="delete is-small is-pulled-right"
+              aria-label="delete"
+            ></button>
+            <!-- ! Data goes here -->
+            Hello, world Hello, worldHello, worldHello, worldHello,
+            worldHello, world
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-quarter">
+    <h2
+      class="title is-size-4 color-blue has-text-weight-light is-marginless"
+    >
+      Sample
+    </h2>
+    <div class="card">
+      <div
+        class="card-content column-row"
+        ondrop="drop(event)"
+        ondragover="event.preventDefault()"
+      ></div>
+    </div>
+  </div>
+</div>
+
+<% content_for :fontawesome_js do %>
+  <script
+    async
+    src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    const toggleModal = () => {
+      $(".modal").toggleClass("is-active");
+    };
+
+    $("#back").click(() => {
+      toggleModal();
+    });
+
+    $("#modal-close").click(() => {
+      toggleModal();
+    });
+
+    $("#new-column-button").click(() => {
+      toggleModal();
+    });
+
+    const drag = event => {
+      event.dataTransfer.setData("text/plain", event.toElement.id);
+    };
+
+    const drop = event => {
+      const dataHandler = event.dataTransfer.getData("text/plain");
+      const dataHandlerElementId = document.getElementById(dataHandler);
+      event.toElement.appendChild(dataHandlerElementId);
+    };
+  </script>
+<% end %>

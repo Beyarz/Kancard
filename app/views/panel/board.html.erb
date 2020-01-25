@@ -1,0 +1,122 @@
+<% content_for :fontawesome_css do %>
+  <link
+    rel="stylesheet preload"
+    href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"
+    as="style"
+    crossorigin="anonymous"
+  />
+<% end %>
+
+<% content_for :nav_menu do %>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="button" id="new">New</div>
+        <div class="button">Home</div>
+        <div class="button">Sign out</div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="columns">
+    <div class="modal-content">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="form-style has-background-white">
+          <div class="field">
+            <label class="label" for="name">Board name</label>
+            <div class="control has-icons-left">
+              <input
+                type="text"
+                class="input"
+                id="name"
+                placeholder="Class project"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-signature"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label
+              class="label"
+              for="description"
+              style="float: right; padding-top: 1rem;"
+              >Description</label
+            >
+            <div class="control has-icons-left">
+              <input
+                type="text"
+                class="input"
+                id="description"
+                placeholder="Create working calculator"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-file-signature"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control" style="padding-top: 3rem;">
+              <button class="button" id="back">Back</button>
+              <button class="button is-custom-blue">Create</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<div class="container" style="padding-top: 2rem;">
+  <div class="columns is-multiline is-centered">
+    <div class="column card is-one-quarter">
+      <div class="title">Name</div>
+      <div class="subtitle">Description</div>
+    </div>
+
+    <div class="column card is-one-quarter">
+      <div class="title">Name</div>
+      <div class="subtitle">Description</div>
+    </div>
+
+    <div class="column card is-one-quarter">
+      <div class="title">Name</div>
+      <div class="subtitle">Description</div>
+    </div>
+  </div>
+</div>
+
+<% content_for :fontawesome_js do %>
+  <script
+    async
+    src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+  const toggleModal = () => {
+    $(".modal").toggleClass("is-active");
+  };
+
+  $("#back").click(() => {
+    toggleModal();
+  });
+
+  $("#new").click(() => {
+    toggleModal();
+  });
+  </script>
+<% end %>

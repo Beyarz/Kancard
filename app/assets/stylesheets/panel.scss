@@ -1,3 +1,124 @@
 // Place all the styles related to the panel controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+:root {
+  --scrollbar: #71b6ff3d;
+  --scrollbar-thumb: #71b6ff8c;
+  --button-shadow: rgba(65, 65, 65, 0.1);
+  --skew-color: rgba(229, 229, 229, 0.4);
+}
+
+.input:focus {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+  border-bottom-width: 2px;
+  border-bottom-color: var(--custom-blue);
+}
+
+.input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-width: 2px;
+  box-shadow: none;
+}
+
+.form-style {
+  padding: 2rem;
+  border: 2px solid grey;
+  border-radius: 2rem;
+}
+
+.button {
+  border: none;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  box-shadow: 0px 1px 3px 1px var(--shadow);
+}
+
+.button:hover {
+  box-shadow: 0px 3px 6px 3px var(--shadow);
+}
+
+.button:active {
+  color: white;
+  background-color: black;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--card-color);
+  box-shadow: 0px 3px 0px 0px var(--card-color);
+}
+
+.card:hover {
+  box-shadow: 0px 10px 10px 0px var(--card-color);
+}
+
+.card > .title,
+.subtitle {
+  color: dodgerblue;
+}
+
+.card > .title {
+  text-align: left;
+}
+
+.card > .subtitle {
+  padding-top: 1rem;
+  text-align: right;
+}
+
+.column {
+  margin: 1rem;
+}
+
+// Applies only to user-board
+.has-text-purple {
+  color: #3145c3;
+}
+
+.form-style {
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.column-row > .title,
+.subtitle {
+  color: dodgerblue;
+}
+
+.color-blue {
+  color: var(--custom-blue);
+}
+
+.column-row > .subtitle {
+  padding-top: 1rem;
+  text-align: right;
+}
+
+.column-row {
+  height: 60vh;
+  overflow-y: scroll;
+  word-wrap: break-word;
+}
+
+.scrollable {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+/* Overrides default */
+.columns {
+  margin-right: unset;
+}
+
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.8em -0.125em rgba(10, 10, 10, 0.1);
+}
