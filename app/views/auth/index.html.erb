@@ -5,13 +5,13 @@
         <div class="notification has-background-white"></div>
 
         <div>
-          <div class="button is-medium">
-            <b>Register</b>
-          </div>
-          <div class="button is-medium is-custom-blue">
-            <b>Login</b>
-            <%= link_to "Login", auth_controller %>
-          </div>
+          <b>
+            <%= link_to "Register", 'auth/register', {:class => "button is-medium"} %>
+          </b>
+
+          <b>
+            <%= link_to "Login", 'auth/login', {:class => "button is-medium is-custom-blue"} %>
+          </b>
         </div>
 
         <div>
