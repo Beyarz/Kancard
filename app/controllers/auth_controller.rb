@@ -4,10 +4,12 @@ class AuthController < ApplicationController
   end
 
   def login
-    render "login"
+    @project_title = "Kancard".freeze
+    # render "login"
   end
 
   def register
-    render "register"
+    @project_title = "Kancard".freeze
+    # render "register"
   end
 end
