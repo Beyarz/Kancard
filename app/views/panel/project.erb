@@ -149,20 +149,22 @@
     </div>
   </div>
 
-  <div class="column is-one-quarter">
-    <h2
-      class="title is-size-4 color-blue has-text-weight-light is-marginless"
-    >
-      Sample
-    </h2>
-    <div class="card">
-      <div
-        class="card-content column-row"
-        ondrop="drop(event)"
-        ondragover="event.preventDefault()"
-      ></div>
+  <% 6.times do %>
+    <div class="column is-one-quarter">
+      <h2
+        class="title is-size-4 color-blue has-text-weight-light is-marginless"
+      >
+        Sample
+      </h2>
+      <div class="card">
+        <div
+          class="card-content column-row"
+          ondrop="drop(event)"
+          ondragover="event.preventDefault()"
+        ></div>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
 <% content_for :fontawesome_js do %>
