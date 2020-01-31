@@ -6,71 +6,67 @@
   --scrollbar-thumb: #71b6ff8c;
   --button-shadow: rgba(65, 65, 65, 0.1);
   --skew-color: rgba(229, 229, 229, 0.4);
-}
-
-.input:focus {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  box-shadow: none;
-  border-bottom-width: 2px;
-  border-bottom-color: var(--custom-blue);
+  --card-color: rgba(10, 10, 10, 0.1);
 }
 
 .input {
+  box-shadow: none;
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom-width: 2px;
-  box-shadow: none;
+
+  &:focus {
+    border-bottom-color: var(--custom-blue);
+  }
 }
 
 .form-style {
   padding: 2rem;
-  border: 2px solid grey;
   border-radius: 2rem;
+  border: 2px solid grey;
 }
 
 .button {
   border: none;
-  border-radius: 0.5rem;
   margin-right: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0px 1px 3px 1px var(--shadow);
-}
 
-.button:hover {
-  box-shadow: 0px 3px 6px 3px var(--shadow);
-}
+  &:hover {
+    box-shadow: 0px 2px 6px 2px var(--shadow);
+  }
 
-.button:active {
-  color: white;
-  background-color: black;
+  &:active {
+    color: white;
+    background-color: black;
+  }
 }
 
 .card {
-  border-radius: 1rem;
   border-style: solid;
+  border-radius: 0.5rem;
   border-width: 1px 1px 1px 1px;
   border-color: var(--card-color);
-  box-shadow: 0px 3px 0px 0px var(--card-color);
-}
+  box-shadow: 0 3px 5px 0px var(--card-color);
 
-.card:hover {
-  box-shadow: 0px 10px 10px 0px var(--card-color);
-}
+  &:hover {
+    box-shadow: 0px 10px 10px 0px var(--card-color);
+  }
 
-.card > .title,
-.subtitle {
-  color: dodgerblue;
-}
+  & > .title,
+  .subtitle {
+    color: dodgerblue;
+  }
 
-.card > .title {
-  text-align: left;
-}
+  & > .title {
+    text-align: left;
+  }
 
-.card > .subtitle {
-  padding-top: 1rem;
-  text-align: right;
+  & > .subtitle {
+    padding-top: 1rem;
+    text-align: right;
+  }
 }
 
 .column {
@@ -87,24 +83,24 @@
   border-radius: 0.5rem;
 }
 
-.column-row > .title,
-.subtitle {
-  color: dodgerblue;
-}
-
 .color-blue {
   color: var(--custom-blue);
-}
-
-.column-row > .subtitle {
-  padding-top: 1rem;
-  text-align: right;
 }
 
 .column-row {
   height: 60vh;
   overflow-y: scroll;
   word-wrap: break-word;
+
+  & > .title,
+  .subtitle {
+    color: dodgerblue;
+  }
+
+  & > .subtitle {
+    padding-top: 1rem;
+    text-align: right;
+  }
 }
 
 .scrollable {
@@ -115,9 +111,4 @@
 /* Overrides default */
 .columns {
   margin-right: unset;
-}
-
-.card {
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.8em -0.125em rgba(10, 10, 10, 0.1);
 }

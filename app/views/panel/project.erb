@@ -94,10 +94,10 @@
 
   <div class="level-item has-text-purple">
     <button class="button is-small has-text-purple" id="new-column-button">
-      New column
+      <b>New column</b>
     </button>
     <button class="button is-small has-text-purple" id="new-card-button">
-      New note
+      <b>New note</b>
     </button>
   </div>
 
@@ -199,12 +199,16 @@
 
     const drag = event => {
       event.dataTransfer.setData("text/plain", event.toElement.id);
+      console.log(`Drag`)
+      console.log(event);
     };
 
     const drop = event => {
       const dataHandler = event.dataTransfer.getData("text/plain");
       const dataHandlerElementId = document.getElementById(dataHandler);
       event.toElement.appendChild(dataHandlerElementId);
+      console.log(`Drop`)
+      console.log(event)
     };
   </script>
 <% end %>

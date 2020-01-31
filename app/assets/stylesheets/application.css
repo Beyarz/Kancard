@@ -26,13 +26,13 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10rem;
-  /* background-color: var(--custom-blue-light); */
-  background-color: transparent;
+  border-radius: 10px;
+  background-color: var(--custom-blue-light);
+  /* background-color: transparent; */
 }
 
 ::-webkit-scrollbar-thumb:hover {
