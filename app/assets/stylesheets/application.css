@@ -25,6 +25,14 @@
 
 body {
   margin: 0;
+  background-color: aliceblue;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    margin: 0;
+    background-color: #667;
+  }
 }
 
 ::-webkit-scrollbar {
