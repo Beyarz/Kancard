@@ -15,7 +15,6 @@
  */
 @media (prefers-color-scheme: light) {
   body {
-    margin: 0;
     background-color: aliceblue;
   }
 }
