@@ -23,18 +23,6 @@
   --card-color: rgba(90, 122, 190, 0.15);
 }
 
-body {
-  margin: 0;
-  background-color: aliceblue;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    margin: 0;
-    background-color: #667;
-  }
-}
-
 ::-webkit-scrollbar {
   width: 10px;
 }
