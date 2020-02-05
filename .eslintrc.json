@@ -13,7 +13,8 @@
     "sourceType": "module"
   },
   "rules": {
-    "quotes": "warn",
-    "quote-props": "warn"
+    "quotes": [2, "double"],
+    "quote-props": "warn",
+    "semi": [2, "always"]
   }
 }
