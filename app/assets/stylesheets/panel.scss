@@ -21,12 +21,6 @@
   }
 }
 
-.form-style {
-  padding: 2rem;
-  border-radius: 2rem;
-  border: 2px solid grey;
-}
-
 .button {
   border: none;
   margin-right: 1rem;
@@ -74,14 +68,22 @@
   margin: 1rem;
 }
 
-// Applies only to project
-.has-text-purple {
-  color: #3145c3;
+.form-style {
+  &-auth {
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 2px solid grey;
+  }
+
+  &-panel {
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
 }
 
-.form-style {
-  padding: 2rem;
-  border-radius: 0.5rem;
+// Applies only to panel
+.has-text-purple {
+  color: #3145c3;
 }
 
 .color-blue {
@@ -105,8 +107,7 @@
 }
 
 .scrollable {
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: scroll;
 }
 
 /* Overrides default */

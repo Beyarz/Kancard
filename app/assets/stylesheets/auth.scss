@@ -30,26 +30,28 @@
   border-radius: 2rem;
 }
 
-.skew-style-register:before {
-  left: 0;
-  right: 0;
-  content: "";
-  height: 90vh;
-  width: 100vw;
-  position: fixed;
-  background: var(--skew-color);
-  transform-origin: 80rem;
-  transform: rotate(45deg);
-}
+.skew-style {
+  &-register:before {
+    left: 0;
+    right: 0;
+    content: "";
+    height: 90vh;
+    width: 100vw;
+    position: fixed;
+    background: var(--skew-color);
+    transform-origin: 80rem;
+    transform: rotate(45deg);
+  }
 
-.skew-style-login:before {
-  left: 0;
-  right: 0;
-  content: "";
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background: var(--skew-color);
-  transform-origin: 0rem;
-  transform: rotate(45deg);
+  &-login:before {
+    left: 0;
+    right: 0;
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: var(--skew-color);
+    transform-origin: 0rem;
+    transform: rotate(45deg);
+  }
 }

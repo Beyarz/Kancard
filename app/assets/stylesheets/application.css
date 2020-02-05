@@ -30,20 +30,6 @@ body {
   transition: background-color, color 2s;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  /* background-color: var(--custom-blue-light); */
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--custom-blue);
-}
-
 .navbar {
   padding: 1rem;
   background-color: white;
