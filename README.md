@@ -23,6 +23,6 @@
 
 ## Getting started
 
-`bundle install`\
-`npm i`\
-`yarn`
+- `bundle install`
+- `npm i`
+- `yarn`
