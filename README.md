@@ -1,9 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+# Kancard
 
 - Ruby version
   2.7.0
@@ -28,6 +23,6 @@ Things you may want to cover:
 
 ## Getting started
 
-`bundle install`
-`npm i`
+`bundle install` \
+`npm i` \
 `yarn`
