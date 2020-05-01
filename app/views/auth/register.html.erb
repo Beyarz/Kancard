@@ -101,7 +101,10 @@
 
             <div class="field is-grouped is-grouped-centered">
               <div class="control" style="padding-top: 3rem;">
-                <button class="button">Back</button>
+                <b>
+                  <%= link_to  "Back", auth_index_path, {:class => "button"} %>
+                </b>
+                <%# <%= link_to  "Back", "auth/login", {:class => "button"} %>
                 <button class="button is-custom-blue">Register</button>
               </div>
             </div>
