@@ -50,23 +50,17 @@
                 <b>
                   <%= link_to  "Back", auth_index_path, {:class => "button"} %>
                 </b>
-                <%# <button class="button">Back</button> %>
-                <button class="button is-custom-blue">
-                  <b>Login</b>
-                </button>
+
+                <b>
+                  <%= link_to  "Login", panel_dashboard_path, {:class => "button is-custom-blue"} %>
+                </b>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="column is-two-fifths">
-        <div>
-          <figure class="image is-square">
-            <%= image_tag"group-login.svg", :alt => "sticky notes" %>
-          </figure>
-        </div>
-      </div>
+      <div class="column is-two-fifths"></div>
     </div>
   </div>
 </div>

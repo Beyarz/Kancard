@@ -5,12 +5,6 @@
       <%= image_tag "group-register-eclipse.svg", :alt => "dots"  %>
     </figure>
 
-    <figure
-      style="position: fixed; padding: 3rem; padding-left: 18vw; left: 45vw;"
-    >
-      <%= image_tag "group-register.svg", :alt => "sticky notes"  %>
-    </figure>
-
     <div class="columns">
       <div class="column"></div>
 
@@ -104,8 +98,9 @@
                 <b>
                   <%= link_to  "Back", auth_index_path, {:class => "button"} %>
                 </b>
-                <%# <%= link_to  "Back", "auth/login", {:class => "button"} %>
-                <button class="button is-custom-blue">Register</button>
+                <b>
+                  <%= link_to  "Register", panel_dashboard_path, {:class => "button is-custom-blue"} %>
+                </b>
               </div>
             </div>
           </div>
