@@ -4,6 +4,10 @@
  *= require_tree .
  *= require_self
  */
+
+@import "extended-application.scss";
+@import "form.scss";
+
 :root {
   --custom-blue: #71b5ff;
   --custom-blue-light: #71b6ffb2;

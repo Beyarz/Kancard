@@ -6,34 +6,6 @@
   --card-color: rgba(10, 10, 10, 0.1);
 }
 
-.input {
-  box-shadow: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom-width: 2px;
-
-  &:focus {
-    border-bottom-color: var(--custom-blue);
-  }
-}
-
-.button {
-  border: none;
-  margin-right: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0px 1px 3px 1px var(--shadow);
-
-  &:hover {
-    box-shadow: 0px 2px 6px 2px var(--shadow);
-  }
-
-  &:active {
-    color: white;
-    background-color: black;
-  }
-}
-
 .card {
   height: auto;
   border-style: solid;
@@ -65,20 +37,6 @@
   margin: 1rem;
 }
 
-.form-style {
-  &-auth {
-    padding: 2rem;
-    border-radius: 2rem;
-    border: 2px solid grey;
-  }
-
-  &-panel {
-    padding: 2rem;
-    border-radius: 0.5rem;
-  }
-}
-
-// Applies only to panel
 .has-text-purple {
   color: #3145c3;
 }
@@ -107,7 +65,7 @@
   overflow: scroll;
 }
 
-/* Overrides default */
+// Overrides default
 .columns {
   margin-right: unset;
 }

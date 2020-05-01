@@ -1,0 +1,29 @@
+.input {
+  box-shadow: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-width: 2px;
+
+  &:focus {
+    box-shadow: none;
+    border-bottom-color: var(--custom-blue);
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.form-style {
+  &-auth {
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 2px solid grey;
+  }
+
+  &-panel {
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+}
