@@ -2,7 +2,7 @@
   <div class="container skew-style-login">
 
     <figure style="position: fixed; padding-left: 8vw; top: 15vh;">
-      <%= image_tag("group-login-eclipse.svg", :alt => "dots") %>
+      <%= image_tag "group-login-eclipse.svg", :alt => "dots" %>
     </figure>
 
     <div class="columns">
@@ -47,8 +47,11 @@
 
             <div class="field is-grouped is-grouped-centered">
               <div class="control" style="padding-top: 3rem;">
-                <button class="button">Back</button>
-                <button class="button is-custom-blue">Login</button>
+                <b><%= link_to  "Back", "index", {:class => "button"} %></b>
+                <%# <button class="button">Back</button> %>
+                <button class="button is-custom-blue">
+                  <b>Login</b>
+                </button>
               </div>
             </div>
           </div>
@@ -58,7 +61,7 @@
       <div class="column is-two-fifths">
         <div>
           <figure class="image is-square">
-            <%= image_tag("group-login.svg", :alt => "sticky notes") %>
+            <%= image_tag"group-login.svg", :alt => "sticky notes" %>
           </figure>
         </div>
       </div>

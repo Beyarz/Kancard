@@ -86,16 +86,16 @@
 
 <% content_for :script do %>
   <script>
-  const toggleModal = () => {
-    $(".modal").toggleClass("is-active");
-  };
+    const toggleModal = () => {
+      $(".modal").toggleClass("is-active");
+    };
 
-  $("#back").click(() => {
-    toggleModal();
-  });
+    $("#back").click(() => {
+      toggleModal();
+    });
 
-  $("#new").click(() => {
-    toggleModal();
-  });
+    $("#new").click(() => {
+      toggleModal();
+    });
   </script>
 <% end %>

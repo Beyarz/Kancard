@@ -1,23 +1,23 @@
 <div class="container" style="padding-top: 3rem;">
   <div class="container">
     <div class="columns">
-      <div class="column">
+      <div class="column has-text-centered">
         <div class="notification has-background-white"></div>
 
         <div>
           <b>
-            <%= link_to "Register", 'auth/register', {:class => "button is-medium"} %>
+            <%= link_to "Register", 'register', {:class => "button is-medium"} %>
           </b>
 
           <b>
-            <%= link_to "Login", 'auth/login', {:class => "button is-medium is-custom-blue"} %>
+            <%= link_to "Login", 'login', {:class => "button is-medium is-custom-blue"} %>
           </b>
         </div>
 
         <div>
           <div
             class="title has-text-grey"
-            style="font-size: 5rem; padding-top: 9rem;"
+            style="font-size: 5rem; padding-top: 8rem;"
           >
             <h1>Kancard</h1>
           </div>
@@ -31,7 +31,7 @@
       <div class="column is-two-fifths">
         <div>
           <figure class="image is-square">
-              <%= image_tag("group-index.svg", :alt => "kancard style") %>
+              <%= image_tag "group-index.svg", :alt => "kancard style" %>
           </figure>
         </div>
       </div>
