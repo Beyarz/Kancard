@@ -12,7 +12,7 @@
           <h1 class="title">Register</h1>
           <br />
 
-            <div class="columns">
+            <div class="columns is-1">
               <div class="column">
                 <div class="field">
                   <label class="label" for="username">Username</label>
@@ -30,86 +30,101 @@
                   </div>
                 </div>
               </div>
-              <div class="column"></div>
+
+              <div class="column">
+                <label class="label" for="progress">Progress</label>
+                <progress id="form-progress-status" class="progress is-marginless" value="15" max="100"></progress>
+                <p id="form-progress-message">You have to fill out the form!</p>
+              </div>
             </div>
 
-              <div class="field">
-                <label class="label" for="email" style="padding-top: 2rem;">Email</label>
-                <div class="control has-icons-left">
-                  <input
-                    type="text"
-                    class="input"
-                    id="email"
-                    placeholder="Jonas123@email.se"
-                    required
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
+            <div class="columns is-1">
+              <div class="column">
+                <div class="field">
+                  <label class="label" for="email">Email</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="text"
+                      class="input"
+                      id="email"
+                      placeholder="Jonas123@email.se"
+                      required
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
                 </div>
               </div>
+              <div class="column">
+                <div class="field">
+                  <label class="label" for="confirm-email">Confirm email</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="text"
+                      class="input"
+                      id="confirm-email"
+                      placeholder="Jonas123@email.se"
+                      required
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </diV>
 
-              <div class="field">
-                <label class="label" for="confirm-email">Confirm email</label>
-                <div class="control has-icons-left">
-                  <input
-                    type="text"
-                    class="input"
-                    id="confirm-email"
-                    placeholder="Jonas123@email.se"
-                    required
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
+            <div class="columns is-1">
+              <div class="column">
+                <div class="field">
+                  <label class="label" for="password">Password</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="password"
+                      id="password"
+                      class="input"
+                      placeholder="********"
+                      required
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </div>
                 </div>
               </div>
+              <div class="column">
+                <div class="field">
+                  <label class="label" for="confirm-password">Confirm password</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="password"
+                      class="input"
+                      id="confirm-password"
+                      placeholder="********"
+                      required
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </diV>
 
-              <div class="field">
-                <label class="label" for="password" style="padding-top: 2rem;">Password</label>
-                <div class="control has-icons-left">
-                  <input
-                    type="password"
-                    id="password"
-                    class="input"
-                    placeholder="********"
-                    required
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-lock"></i>
-                  </span>
-                </div>
+            <div class="field is-grouped-centered is-grouped">
+              <div class="control" style="padding-top: 3rem;">
+                <b>
+                  <%= link_to  "Back", auth_index_path, {:class => "button"} %>
+                </b>
+                <b>
+                  <%= link_to  "Register", panel_dashboard_path, {:class => "button is-custom-blue"} %>
+                </b>
               </div>
-
-              <div class="field">
-                <label class="label" for="confirm-password">Confirm password</label>
-                <div class="control has-icons-left">
-                  <input
-                    type="password"
-                    class="input"
-                    id="confirm-password"
-                    placeholder="********"
-                    required
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-lock"></i>
-                  </span>
-                </div>
-              </div>
-
-              <div class="field is-grouped-centered">
-                <div class="control" style="padding-top: 3rem;">
-                  <b>
-                    <%= link_to  "Back", auth_index_path, {:class => "button"} %>
-                  </b>
-                  <b>
-                    <%= link_to  "Register", panel_dashboard_path, {:class => "button is-custom-blue"} %>
-                  </b>
-                </div>
-              </div>
+            </div>
 
           </div>
-        </div>
+        </diV>
       </div>
     </div>
   </div>
