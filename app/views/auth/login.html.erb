@@ -13,8 +13,8 @@
           <h1 class="title">Login</h1>
           <br />
 
-          <label class="label" for="username">Username</label>
           <div class="field">
+            <label class="label" for="username">Username</label>
             <div class="control has-icons-left">
               <input
                 type="text"
@@ -29,32 +29,30 @@
             <p class="help">You can sign-in with your email too!</p>
           </div>
 
-          <label class="label" for="password" style="padding-top: 2rem;"
-            >Password</label
-          >
           <div class="field">
+            <label class="label" for="password" style="padding-top: 2rem;">Password</label>
             <div class="control has-icons-left">
               <input
                 type="password"
                 class="input"
                 id="password"
-                placeholder="Password"
+                placeholder="********"
               />
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
             </div>
+          </div>
 
-            <div class="field is-grouped is-grouped-centered">
-              <div class="control" style="padding-top: 3rem;">
-                <b>
-                  <%= link_to  "Back", auth_index_path, {:class => "button"} %>
-                </b>
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control" style="padding-top: 3rem;">
+              <b>
+                <%= link_to  "Back", auth_index_path, {:class => "button"} %>
+              </b>
 
-                <b>
-                  <%= link_to  "Login", panel_dashboard_path, {:class => "button is-custom-blue"} %>
-                </b>
-              </div>
+              <b>
+                <%= link_to  "Login", panel_dashboard_path, {:class => "button is-custom-blue"} %>
+              </b>
             </div>
           </div>
         </div>
