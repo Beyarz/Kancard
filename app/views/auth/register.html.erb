@@ -11,6 +11,7 @@
         <div class="container form-style-auth has-background-white">
           <h1 class="title">Register</h1>
           <br />
+          <%= form_with model: @user do |user| %>
 
             <div class="columns is-1">
               <div class="column">
@@ -44,7 +45,7 @@
                   <label class="label" for="email">Email</label>
                   <div class="control has-icons-left">
                     <input
-                      type="text"
+                      type="email"
                       class="input"
                       id="email"
                       placeholder="Jonas123@email.se"
@@ -61,7 +62,7 @@
                   <label class="label" for="confirm-email">Confirm email</label>
                   <div class="control has-icons-left">
                     <input
-                      type="text"
+                      type="email"
                       class="input"
                       id="confirm-email"
                       placeholder="Jonas123@email.se"
@@ -115,14 +116,15 @@
             <div class="field is-grouped-centered is-grouped">
               <div class="control" style="padding-top: 3rem;">
                 <b>
-                  <%= link_to  "Back", auth_index_path, {:class => "button"} %>
+                  <%= link_to "Back", auth_index_path, {:class => "button"} %>
                 </b>
                 <b>
-                  <%= link_to  "Register", panel_dashboard_path, {:class => "button is-custom-blue"} %>
+                  <%= link_to "Register", panel_dashboard_path, {:class => "button is-custom-blue"} %>
                 </b>
               </div>
             </div>
 
+            <% end %>
           </div>
         </diV>
       </div>
