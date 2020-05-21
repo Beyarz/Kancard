@@ -12,10 +12,10 @@
         <div class="container form-style-auth has-background-white">
           <h1 class="title">Login</h1>
           <br />
-          <%= form_with model: @user do |user| %>
+          <%= form_with(model: @user) do |user| %>
 
           <div class="field">
-            <label class="label" for="username">Username</label>
+            <%= label_tag(:username, "Username", :class => "label") %>
             <div class="control has-icons-left">
               <input
                 type="text"
@@ -32,7 +32,7 @@
           </div>
 
           <div class="field">
-            <label class="label" for="password" style="padding-top: 2rem;">Password</label>
+            <%= label_tag(:password, "Password", :class => "label", :style => "padding-top: 2rem") %>
             <div class="control has-icons-left">
               <input
                 type="password"
@@ -56,11 +56,9 @@
               <%= submit_tag "Login", {:class => "button is-custom-blue"} %>
             </div>
           </div>
-
           <% end %>
         </div>
       </div>
-
       <div class="column"></div>
     </div>
 

@@ -11,12 +11,12 @@
         <div class="container form-style-auth has-background-white">
           <h1 class="title">Register</h1>
           <br />
-          <%= form_with model: @user do |user| %>
+          <%= form_with(model: @user) do |user| %>
 
             <div class="columns is-1">
               <div class="column">
                 <div class="field">
-                  <label class="label" for="username">Username</label>
+                  <%= label_tag(:username, "Username", :class => "label") %>
                   <div class="control has-icons-left">
                     <input
                       type="text"
@@ -31,9 +31,8 @@
                   </div>
                 </div>
               </div>
-
               <div class="column">
-                <label class="label" for="progress">Progress</label>
+                <%= label_tag(:progress, "Progress", :class => "label") %>
                 <progress id="form-progress-status" class="progress is-marginless" value="15" max="100"></progress>
                 <p id="form-progress-message">You have to fill out the form!</p>
               </div>
@@ -42,7 +41,7 @@
             <div class="columns is-1">
               <div class="column">
                 <div class="field">
-                  <label class="label" for="email">Email</label>
+                  <%= label_tag(:email, "Email", :class => "label") %>
                   <div class="control has-icons-left">
                     <input
                       type="email"
@@ -59,7 +58,7 @@
               </div>
               <div class="column">
                 <div class="field">
-                  <label class="label" for="confirm-email">Confirm email</label>
+                  <%= label_tag(:confirm_email, "Confirm email", :class => "label") %>
                   <div class="control has-icons-left">
                     <input
                       type="email"
@@ -79,7 +78,7 @@
             <div class="columns is-1">
               <div class="column">
                 <div class="field">
-                  <label class="label" for="password">Password</label>
+                  <%= label_tag(:password, "Password", :class => "label") %>
                   <div class="control has-icons-left">
                     <input
                       type="password"
@@ -96,7 +95,7 @@
               </div>
               <div class="column">
                 <div class="field">
-                  <label class="label" for="confirm-password">Confirm password</label>
+                  <%= label_tag(:confirm_password, "Confirm password", :class => "label") %>
                   <div class="control has-icons-left">
                     <input
                       type="password"
@@ -128,5 +127,6 @@
         </diV>
       </div>
     </div>
+
   </div>
 </div>
