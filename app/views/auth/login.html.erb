@@ -12,6 +12,7 @@
         <div class="container form-style-auth has-background-white">
           <h1 class="title">Login</h1>
           <br />
+          <%= form_with model: @user do |user| %>
 
           <div class="field">
             <label class="label" for="username">Username</label>
@@ -21,6 +22,7 @@
                 class="input"
                 id="username"
                 placeholder="Jonas123"
+                required
               />
               <span class="icon is-small is-left">
                 <i class="fas fa-user"></i>
@@ -37,6 +39,7 @@
                 class="input"
                 id="password"
                 placeholder="********"
+                required
               />
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
@@ -50,11 +53,11 @@
                 <%= link_to  "Back", auth_index_path, {:class => "button"} %>
               </b>
 
-              <b>
-                <%= link_to  "Login", panel_dashboard_path, {:class => "button is-custom-blue"} %>
-              </b>
+              <%= submit_tag "Login", {:class => "button is-custom-blue"} %>
             </div>
           </div>
+
+          <% end %>
         </div>
       </div>
 
