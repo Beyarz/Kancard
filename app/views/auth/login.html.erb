@@ -2,7 +2,7 @@
   <div class="container skew-style-login">
 
     <figure style="position: fixed; padding-left: 22vw; top: 15vh;">
-      <%= image_tag "group-login-eclipse.svg", :alt => "dots" %>
+      <%= image_tag("group-login-eclipse.svg", :alt => "dots") %>
     </figure>
 
     <div class="columns">
@@ -17,13 +17,7 @@
           <div class="field">
             <%= label_tag(:username, "Username", :class => "label") %>
             <div class="control has-icons-left">
-              <input
-                type="text"
-                class="input"
-                id="username"
-                placeholder="Jonas123"
-                required
-              />
+              <%= text_field(:user, :name, :class => "input", :placeholder => "jonas123", :required => true) %>
               <span class="icon is-small is-left">
                 <i class="fas fa-user"></i>
               </span>
@@ -34,13 +28,7 @@
           <div class="field">
             <%= label_tag(:password, "Password", :class => "label", :style => "padding-top: 2rem") %>
             <div class="control has-icons-left">
-              <input
-                type="password"
-                class="input"
-                id="password"
-                placeholder="********"
-                required
-              />
+              <%= password_field_tag(:user, :password, :type => "password", :class => "input", :placeholder => "********", :value => nil, required: true) %>
               <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
               </span>
@@ -50,10 +38,9 @@
           <div class="field is-grouped is-grouped-centered">
             <div class="control" style="padding-top: 3rem;">
               <b>
-                <%= link_to  "Back", auth_index_path, {:class => "button"} %>
+                <%= link_to("Back", auth_index_path, {:class => "button"}) %>
               </b>
-
-              <%= submit_tag "Login", {:class => "button is-custom-blue"} %>
+              <%= submit_tag("Login", {:class => "button is-custom-blue"}) %>
             </div>
           </div>
           <% end %>

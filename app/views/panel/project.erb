@@ -3,7 +3,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="button" id="new">New</div>
-        <%= link_to "Home", panel_dashboard_path, {:class => "button"} %>
+        <%= link_to("Home", panel_dashboard_path, {:class => "button"}) %>
         <div class="button">Sign out</div>
       </div>
     </div>
@@ -16,54 +16,40 @@
     <div class="modal-content">
       <div class="column is-three-fifths is-offset-one-fifth">
         <div class="form-style-panel has-background-white">
-          <div id="new-card">
-            <div class="field">
-              <label class="label" for="new-name-card">Content</label>
-              <div class="control has-icons-left">
-                <input
-                  type="text"
-                  class="input"
-                  id="new-name-card"
-                  placeholder="Design the infrastructure"
-                  aria-required="true"
-                  required
-                />
-                <span class="icon is-small is-left">
-                  <i class="fas fa-align-left"></i>
-                </span>
-              </div>
-            </div>
+          <%= form_with(model: @card) do |card| %>
 
-            <div class="field is-grouped is-grouped-centered">
-              <div
-                class="control has-icons-left"
-                style="padding-top: 1rem;"
-              >
-                <div class="select is-grey is-rounded">
-                  <select>
-                    <option value="is-dark">Black color</option>
-                    <option value="is-grey" selected>Grey color</option>
-                    <option value="is-danger">Red color</option>
-                    <option value="is-warning">Yellow color</option>
-                    <option value="is-info">Blue color</option>
-                    <option value="is-success">Green color</option>
-                  </select>
-                  <div class="icon is-left">
-                    <i class="fas fa-tint"></i>
+            <div id="new-card">
+              <div class="field">
+                <%= label_tag(:new_name_card, "Title", :class => "label") %>
+                <div class="control has-icons-left">
+                  <%= text_field(:user, :new_name_card, :class => "input", :placeholder => "Design the infrastructure", :aria_required => true, required: true) %>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-align-left"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control has-icons-left">
+                  <%= label_tag(:color, "Pick a color", :class => "label") %>
+                  <div class="select">
+                    <%= color_field(:color, :picked_color, :class => "notification", :style => "background-color: transparent; border-color: transparent;") %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-align-left fa-tint"></i>
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="field is-grouped is-grouped-centered">
-            <div class="control" style="padding-top: 1rem;">
-              <button type="reset" class="button" id="back">Back</button>
-              <button type="submit" class="button is-custom-blue">
-                Create
-              </button>
+            <div class="field is-grouped is-grouped-centered">
+              <div class="control" style="padding-top: 1rem;">
+                <button type="reset" class="button bold" id="back">Back</button>
+                <%= submit_tag("Create", {:class => "button is-custom-blue"}) %>
+              </div>
             </div>
-          </div>
+
+          <% end %>
         </div>
       </div>
     </div>

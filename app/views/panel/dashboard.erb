@@ -3,7 +3,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="button" id="new">New</div>
-        <div class="button">Home</div>
+        <%= link_to "Home", panel_dashboard_path, :class => "button" %>
         <div class="button">Sign out</div>
       </div>
     </div>
@@ -16,47 +16,36 @@
     <div class="modal-content">
       <div class="column is-three-fifths is-offset-one-fifth">
         <div class="form-style-panel has-background-white">
-          <div class="field">
-            <label class="label" for="name">Board name</label>
-            <div class="control has-icons-left">
-              <input
-                type="text"
-                class="input"
-                id="name"
-                placeholder="Class project"
-              />
-              <span class="icon is-small is-left">
-                <i class="fas fa-signature"></i>
-              </span>
-            </div>
-          </div>
+          <%= form_with(model: @card) do |card| %>
 
-          <div class="field">
-            <label
-              class="label"
-              for="description"
-              style="float: right; padding-top: 1rem;"
-              >Description</label
-            >
-            <div class="control has-icons-left">
-              <input
-                type="text"
-                class="input"
-                id="description"
-                placeholder="Create working calculator"
-              />
-              <span class="icon is-small is-left">
-                <i class="fas fa-file-signature"></i>
-              </span>
+            <div class="field">
+              <%= label_tag(:title, "Board name", :class => "label") %>
+              <div class="control has-icons-left">
+                <%= text_field(:project, :title, :class => "input", :placeholder => "Class project", required: true) %>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-signature"></i>
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div class="field is-grouped is-grouped-centered">
-            <div class="control" style="padding-top: 3rem;">
-              <button class="button" id="back">Back</button>
-              <button class="button is-custom-blue">Create</button>
+            <div class="field">
+              <%= label_tag(:description, "Description", :class => "label", :style => "float: right; padding-top: 1rem;") %>
+              <div class="control has-icons-left">
+                <%= text_field(:project, :description, :class => "input", :placeholder => "Create working calculator", :aria_required => true, required: true) %>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-file-signature"></i>
+                </span>
+              </div>
             </div>
-          </div>
+
+            <div class="field is-grouped is-grouped-centered">
+              <div class="control" style="padding-top: 3rem;">
+                <button class="button" id="back">Back</button>
+                <%= submit_tag("Create", :class => "button is-custom-blue") %>
+              </div>
+            </div>
+
+          <% end %>
         </div>
       </div>
     </div>

@@ -1,3 +1,7 @@
+:root {
+  --bold: 700;
+}
+
 .button {
   border: none;
   margin-right: 1rem;
@@ -12,4 +16,12 @@
     color: white;
     background-color: black;
   }
+}
+
+.is-custom-blue:hover {
+  color: white;
+}
+
+.bold {
+  font-weight: var(--bold);
 }
