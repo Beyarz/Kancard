@@ -7,4 +7,8 @@ class AuthController < ApplicationController
 
   def register
   end
+
+  private
+  def register_user
+  end
 end
