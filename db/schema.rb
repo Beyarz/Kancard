@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_192133) do
+ActiveRecord::Schema.define(version: 2020_05_23_202435) do
 
   create_table "boards", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(version: 2020_05_23_192133) do
     t.boolean "email_confirmed", default: false
     t.string "password"
     t.string "email"
+    t.string "login"
+    t.string "password_salt"
+    t.integer "login_count", default: 0, null: false
+    t.datetime "last_request_at"
+    t.integer "failed_login_count", default: 0, null: false
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string "current_login_ip"
+    t.string "last_login_ip"
+    t.boolean "approved", default: false
+    t.boolean "confirmed", default: false
+    t.boolean "active", default: false
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
