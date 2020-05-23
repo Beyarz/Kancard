@@ -18,7 +18,7 @@
                 <div class="field">
                   <%= label_tag(:username, "Username", :class => "label") %>
                   <div class="control has-icons-left">
-                    <%= text_field(:user, :name, :class => "input", :placeholder => "jonas123", :required => true) %>
+                    <%= text_field(:user, :name, :class => "input", :placeholder => "jonas123", :required => true, :min => 5, :max => 25) %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-user"></i>
                     </span>
@@ -62,7 +62,7 @@
                 <div class="field">
                   <%= label_tag(:password, "Password", :class => "label") %>
                   <div class="control has-icons-left">
-                    <%= password_field_tag(:user, :password, :type => "password", :class => "input", :placeholder => "********", :value => nil, required: true) %>
+                    <%= password_field_tag(:user, :password, :type => "password", :class => "input", :placeholder => "********", :value => nil, required: true, :min => 5) %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
                     </span>
