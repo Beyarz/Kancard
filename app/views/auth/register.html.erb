@@ -83,16 +83,19 @@
             </diV>
 
             <div class="field is-grouped-centered is-grouped">
-              <div class="control" style="padding-top: 3rem;">
-                <b>
-                  <%= link_to("Back", auth_index_path, {:class => "button"}) %>
-                </b>
-
+              <div class="control">
+                <%= link_to("Back", auth_index_path, {:class => "button bold"}) %>
                 <%= submit_tag("Register", {:class => "button is-custom-blue"}) %>
               </div>
             </div>
 
             <% end %>
+
+            <div class="field is-grouped is-grouped-centered">
+              <div class="control" style="padding-top: 1rem;">
+                <%= link_to("Sign in with UNKOWN", nil, {:class => "button is-dark bold"}) %>
+              </div>
+            </div>
           </div>
         </diV>
       </div>

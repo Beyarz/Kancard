@@ -1,4 +1,4 @@
-<% content_for :nav_menu do %>
+<% content_for(:nav_menu) do %>
   <div class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
@@ -56,24 +56,16 @@
 
 <div class="container" style="padding-top: 2rem;">
   <div class="columns is-multiline is-centered">
-    <div class="column card is-one-quarter">
-      <div class="title">Name</div>
-      <div class="subtitle">Description</div>
-    </div>
 
     <div class="column card is-one-quarter">
       <div class="title">Name</div>
       <div class="subtitle">Description</div>
     </div>
 
-    <div class="column card is-one-quarter">
-      <div class="title">Name</div>
-      <div class="subtitle">Description</div>
-    </div>
   </div>
 </div>
 
-<% content_for :script do %>
+<% content_for(:script) do %>
   <script>
     const toggleModal = () => {
       $(".modal").toggleClass("is-active");
