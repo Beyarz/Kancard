@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
+  resources 'sessions'
+
   root 'auth#index'
-  get 'auth/index'
-  get 'auth/login'
-  get 'auth/register'
+  resources 'auth'
 
   get 'panel/dashboard'
   get 'panel/project'

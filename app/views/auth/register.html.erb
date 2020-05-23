@@ -46,9 +46,9 @@
               </div>
               <div class="column">
                 <div class="field">
-                  <%= label_tag(:confirm_email, "Confirm email", :class => "label") %>
+                  <%= label_tag(:email_confirmation, "Confirm email", :class => "label") %>
                   <div class="control has-icons-left">
-                    <%= email_field(:user, :confirm_email, :type => "email", :class => "input", :placeholder => "jonas123@email.se", :required => true) %>
+                    <%= email_field(:user, :email_confirmation, :type => "email", :class => "input", :placeholder => "jonas123@email.se", :required => true) %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-envelope"></i>
                     </span>
@@ -71,9 +71,9 @@
               </div>
               <div class="column">
                 <div class="field">
-                  <%= label_tag(:confirm_password, "Confirm password", :class => "label") %>
+                  <%= label_tag(:password_confirmation, "Confirm password", :class => "label") %>
                   <div class="control has-icons-left">
-                    <%= password_field_tag(:confirm_pa, :confirm_password, :type => "password", :class => "input", :placeholder => "********", :value => nil, required: true) %>
+                    <%= password_field_tag(:confirm_pa, :password_confirmation, :type => "password", :class => "input", :placeholder => "********", :value => nil, required: true) %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
                     </span>
