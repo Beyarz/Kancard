@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  resources 'sessions'
-
-  root 'auth#index'
-  resources 'auth'
+  resources :user_session
+  resources :users
 
   get 'panel/dashboard'
   get 'panel/project'

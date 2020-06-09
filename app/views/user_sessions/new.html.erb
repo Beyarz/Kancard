@@ -11,14 +11,21 @@
         <div class="container form-style-auth has-background-white">
           <h1 class="title">Register</h1>
           <br />
-          <%= form_with(model: @user) do |user| %>
+          <%= form_with @user_session, url: user_session_url do |user| %>
+
+            <% if @user_session.errors.any? %>
+              <%= pluralize(@user_session.errors.count, "error") %>
+              <% @user_session.errors.full_messages.each do |msg| %>
+                <%= msg %>
+              <% end %>
+            <% end %>
 
             <div class="columns is-1">
               <div class="column">
                 <div class="field">
-                  <%= label_tag(:username, "Username", :class => "label") %>
+                  <%= user.label_tag(:username, "Username", :class => "label") %>
                   <div class="control has-icons-left">
-                    <%= text_field(:user, :name, :class => "input", :placeholder => "jonas123", :required => true, :min => 5, :max => 25) %>
+                    <%= user.text_field(:user, :name, :class => "input", :placeholder => "jonas123", :required => true, :min => 5, :max => 25) %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-user"></i>
                     </span>
@@ -35,9 +42,9 @@
             <div class="columns is-1">
               <div class="column">
                 <div class="field">
-                  <%= label_tag(:email, "Email", :class => "label") %>
+                  <%= user.label_tag(:email, "Email", :class => "label") %>
                   <div class="control has-icons-left">
-                  <%= email_field(:user, :email, :type => "email", :class => "input", :placeholder => "jonas123@email.se", :required => true) %>
+                  <%= user.email_field(:user, :email, :type => "email", :class => "input", :placeholder => "jonas123@email.se", :required => true) %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-envelope"></i>
                     </span>
@@ -46,9 +53,9 @@
               </div>
               <div class="column">
                 <div class="field">
-                  <%= label_tag(:email_confirmation, "Confirm email", :class => "label") %>
+                  <%= user.label_tag(:email_confirmation, "Confirm email", :class => "label") %>
                   <div class="control has-icons-left">
-                    <%= email_field(:user, :email_confirmation, :type => "email", :class => "input", :placeholder => "jonas123@email.se", :required => true) %>
+                    <%= user.email_field(:user, :email_confirmation, :type => "email", :class => "input", :placeholder => "jonas123@email.se", :required => true) %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-envelope"></i>
                     </span>
@@ -60,9 +67,9 @@
             <div class="columns is-1">
               <div class="column">
                 <div class="field">
-                  <%= label_tag(:password, "Password", :class => "label") %>
+                  <%= user.label_tag(:password, "Password", :class => "label") %>
                   <div class="control has-icons-left">
-                    <%= password_field_tag(:user, :password, :type => "password", :class => "input", :placeholder => "********", :value => nil, required: true, :min => 5) %>
+                    <%= user.password_field_tag(:user, :password, :type => "password", :class => "input", :placeholder => "********", :value => nil, required: true, :min => 5) %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
                     </span>
@@ -71,9 +78,9 @@
               </div>
               <div class="column">
                 <div class="field">
-                  <%= label_tag(:password_confirmation, "Confirm password", :class => "label") %>
+                  <%= user.label_tag(:password_confirmation, "Confirm password", :class => "label") %>
                   <div class="control has-icons-left">
-                    <%= password_field_tag(:confirm_pa, :password_confirmation, :type => "password", :class => "input", :placeholder => "********", :value => nil, required: true) %>
+                    <%= user.password_field_tag(:confirm_pa, :password_confirmation, :type => "password", :class => "input", :placeholder => "********", :value => nil, required: true) %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
                     </span>
@@ -84,8 +91,12 @@
 
             <div class="field is-grouped-centered is-grouped">
               <div class="control">
+                <div class="container">
+                  <%= user.label(:remember_me, :class => "checkbox") %>
+                  <%= user.check_box(:remember_me, :type => "checkbox") %>
+                </div>
                 <%= link_to("Back", auth_index_path, {:class => "button bold"}) %>
-                <%= submit_tag("Register", {:class => "button is-custom-blue"}) %>
+                <%= user.submit_tag("Register", {:class => "button is-custom-blue"}) %>
               </div>
             </div>
 
