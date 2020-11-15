@@ -24,7 +24,7 @@
   <body>
     <nav class="navbar">
       <div class="navbar-brand">
-        <h2 class="title title-logo">Kancard</h2>
+        <h2 class="title title-logo"><%= AuthController.title %></h2>
       </div>
       <%= yield :nav_menu if block_given? %>
     </nav>
