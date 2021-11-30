@@ -3,7 +3,6 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="button" id="new">New</div>
-        <%= link_to "Home", panel_dashboard_path, :class => "button" %>
         <%= link_to "Sign out", destroy_user_session_path, {method: :delete, :class => "button"} %>
       </div>
     </div>
@@ -40,8 +39,8 @@
 
             <div class="field is-grouped is-grouped-centered">
               <div class="control" style="padding-top: 3rem;">
-                <button class="button" id="back">Back</button>
-                <%= submit_tag("Create", :class => "button is-custom-blue") %>
+                <%= submit_tag "Cancel", {:class => "button", :id => "back"} %>
+                <%= submit_tag "Create", :class => "button is-custom-blue" %>
               </div>
             </div>
 
