@@ -1,31 +1,80 @@
-<h2>Sign up</h2>
+<div class="container" style="padding-top: 3rem;">
+  <div class="container skew-style-register">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <figure style="position: fixed; padding-left: 8vw; top: 60vh;">
+      <%= image_tag("group-register-eclipse.svg", :alt => "dots")  %>
+    </figure>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="columns">
+      <div class="column is-three-fifths is-offset-one-fifth">
+
+        <div class="container form-style-auth has-background-white">
+          <h1 class="title">Register</h1>
+          <br />
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="columns is-1">
+              <div class="column">
+                <div class="field">
+                  <%= f.label :email, :class => "label" %>
+                  <br />
+                  <div class="control has-icons-left">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "jonas123", :class => "input" %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <%= label_tag(:progress, "Progress", :class => "label") %>
+                <br />
+                <progress id="form-progress-status" class="progress is-marginless" value="15" max="100"></progress>
+                <p id="form-progress-message">You have to fill out the form!</p>
+              </div>
+            </div>
+
+            <div class="columns is-1">
+              <div class="column">
+                <div class="field">
+                  <%= f.label :password, :class => "label" %>
+                  <div class="control has-icons-left">
+                    <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> characters minimum)</em>
+                    <% end %>
+                    <br />
+                    <%= f.password_field :password, autocomplete: "new-password", :class => "input" %>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <%= f.label :password_confirmation, :class => "label" %>
+                  <br />
+                  <div class="control has-icons-left">
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "input" %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </diV>
+
+            <div class="field is-grouped-centered is-grouped">
+              <div class="control">
+                <div class="container"></div>
+                <div class="actions">
+                  <%= link_to "Cancel", auth_index_path, :class => "button bold" %>
+                  <%= f.submit "Sign up", :class => "button is-custom-blue" %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </diV>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up", :class => 'button' %>
-  </div>
-<% end %>
-<br />
-
-<%= link_to "Back" , auth_index_path, :class => 'button' %>
-<%= render "devise/shared/links" %>
+</div>
