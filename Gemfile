@@ -59,3 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'font_awesome5_rails'
 
 gem "authlogic", "~> 6.1"
+
+gem "bulma-rails", "~> 0.9.2"

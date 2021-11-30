@@ -6,7 +6,6 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import "bulma/css/bulma.css";
 import $ from "jquery";
 global.$ = $;
 
