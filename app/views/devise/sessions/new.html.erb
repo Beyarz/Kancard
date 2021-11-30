@@ -1,28 +1,64 @@
-<h2>Log in</h2>
+<div class="container" style="padding-top: 3rem;">
+  <div class="container skew-style-login">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <figure style="position: fixed; padding-left: 22vw; top: 15vh;">
+      <%= image_tag("group-login-eclipse.svg", :alt => "dots") %>
+    </figure>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <div class="columns">
+      <div class="column"></div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <div class="column is-one-third">
+        <div class="container form-style-auth has-background-white">
+          <h1 class="title">Login</h1>
+          <br />
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+          <div class="field">
+            <%= f.label :email, :class => "label" %>
+            <br />
+            <div class="control has-icons-left">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "input" %>
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <p class="help">Sign in with your email</p>
+          </div>
+
+          <div class="field">
+            <%= f.label :password, :class => "label", :style => "padding-top: 2rem" %>
+            <br />
+            <div class="control has-icons-left">
+              <%= f.password_field :password, autocomplete: "current-password", :class => "input" %>
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </div>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control" style="padding-top: 1rem;">
+              <div class="actions">
+                <%= link_to "Back", auth_index_path, :class => "button bold" %>
+                <%= f.submit "Log in", :class => 'button is-custom-blue' %>
+              </div>
+              <br />
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+          <% end %>
+
+        </div>
+      </div>
+      <div class="column"></div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in", :class => 'button' %>
   </div>
-<% end %>
-
-<br />
-<%= link_to "Back" , auth_index_path, :class => 'button' %>
-<%= render "devise/shared/links" %>
+</div>
