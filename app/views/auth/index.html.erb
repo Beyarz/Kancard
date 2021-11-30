@@ -5,17 +5,11 @@
         <div class="notification has-background-white"></div>
 
         <div>
-            <%
-=begin%>
- <%= link_to("Register", new_auth_path, {:class => "button is-medium bold"}) %>
-<%
-=end%>
+          <%= begin %>
+            <%= link_to("Register", new_auth_path, {:class => "button is-medium bold"}) %>
+          <%= end %>
 
-<%
-=begin%>
- <%= link_to("Login", index_auth_path, {:class => "button is-medium is-custom-blue bold"}) %>
-<%
-=end%>
+          <%= link_to("Login", new_user_session_path, {:class => "button is-medium is-custom-blue bold"}) %>
         </div>
 
         <div class="container">
