@@ -1,19 +1,20 @@
 # Kancard
 
 - Ruby version
-  - 2.7.0
+  - 3.0.0.
 
 - System dependencies
   - Bundle
-  - Gem
   - Npm
-  - Yarn
 
 ## Getting started
 
 - `bundle install`
-- `npm i`
 - `yarn`
+
+### Development server
+
+`RAILS_ENV=development rails server`
 
 ## Screenshot
 
