@@ -8,15 +8,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-<%
-=begin
-%>
-    <%= javascript_link_tag 'application',  %>
-<%
-=end
-%>
-
     <%= stylesheet_link_tag 'application-light', media: '(prefers-color-scheme: no-preference), (prefers-color-scheme: light)', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application-dark', media: '(prefers-color-scheme: dark)', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -28,6 +19,12 @@
       </div>
       <%= yield :nav_menu if block_given? %>
     </nav>
+    <p class="notice">
+      <%= notice %>
+    </p>
+    <p class="alert">
+      <%= alert %>
+    </p>
 
     <%= yield %>
 
