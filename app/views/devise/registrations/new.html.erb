@@ -22,9 +22,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", :class => 'button' %>
   </div>
 <% end %>
+<br />
 
-<%= link_to "Back" , auth_index_path %>
+<%= link_to "Back" , auth_index_path, :class => 'button' %>
 <%= render "devise/shared/links" %>

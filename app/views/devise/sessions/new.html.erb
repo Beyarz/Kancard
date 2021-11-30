@@ -19,9 +19,10 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", :class => 'button' %>
   </div>
 <% end %>
 
-<%= link_to "Back" , auth_index_path %>
+<br />
+<%= link_to "Back" , auth_index_path, :class => 'button' %>
 <%= render "devise/shared/links" %>
