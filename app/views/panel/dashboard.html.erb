@@ -50,7 +50,7 @@
     </div>
   </div>
 
-  <button class="modal-close is-large" aria-label="close"></button>
+  <button class="modal-close is-large" onClick="toggleModal()" aria-label="close"></button>
 </div>
 
 <div class="container" style="padding-top: 2rem;">
@@ -68,14 +68,10 @@
   <script>
     const toggleModal = () => {
       $(".modal").toggleClass("is-active");
-    };
-
-    $("#back").click(() => {
-      toggleModal();
-    });
+    }
 
     $("#new").click(() => {
       toggleModal();
-    });
+    })
   </script>
 <% end %>
