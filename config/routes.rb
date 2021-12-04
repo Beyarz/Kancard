@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root 'auth#index'
   get 'auth/index', to: 'auth#index'
 
-  resources :boards
+  resources :boards do
+    resources :cards
+  end
 end
