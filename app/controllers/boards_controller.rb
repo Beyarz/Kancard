@@ -14,7 +14,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = Board.new permitted_board_params
+    @board = Board.create permitted_board_params
     if @board.save
       redirect_to @board
     else

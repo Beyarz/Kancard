@@ -1,3 +1,9 @@
+<% if board.errors.any? %>
+  <% board.errors.each do |err| %>
+    <%= errors.full_message %>
+  <% end %>
+<% end %>
+
 <%= form_with model: board do |f| %>
   <div class="field">
     <%= f.label :name, :class => "label" %>

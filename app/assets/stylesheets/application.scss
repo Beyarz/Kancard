@@ -6,7 +6,8 @@
  */
 
 @import "bulma";
-@import "extended-application.scss";
+@import "auth.scss";
+@import "boards.scss";
 @import "form.scss";
 
 :root {
@@ -15,6 +16,7 @@
   --shadow: rgba(65, 65, 65, 0.1);
   --shadow-light: #f5f5f5;
   --card-color: rgba(90, 122, 190, 0.15);
+  --bold: 700;
 }
 
 body {
@@ -38,4 +40,28 @@ body {
 
 .title > h1 {
   font-weight: 200;
+}
+
+.button {
+  border: none;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 3px 1px var(--shadow);
+
+  &:hover {
+    box-shadow: 0px 2px 6px 2px var(--shadow);
+  }
+
+  &:active {
+    color: white;
+    background-color: black;
+  }
+}
+
+.is-custom-blue:hover {
+  color: white;
+}
+
+.bold {
+  font-weight: var(--bold);
 }
