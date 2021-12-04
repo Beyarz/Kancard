@@ -15,7 +15,7 @@
     <div class="modal-content">
       <div class="column is-three-fifths is-offset-one-fifth">
         <div class="form-style-panel has-background-white">
-          <%= form_with(model: @card) do |card| %>
+          <%= form_with model: @card do |card| %>
 
             <div class="field">
               <%= label_tag(:title, "Board name", :class => "label") %>
