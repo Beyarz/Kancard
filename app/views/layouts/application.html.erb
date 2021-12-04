@@ -19,12 +19,18 @@
       </div>
       <%= yield :nav_menu if block_given? %>
     </nav>
-    <p class="notice">
-      <%= notice %>
-    </p>
-    <p class="alert">
-      <%= alert %>
-    </p>
+
+    <% if not notice.nil? %>
+      <div class="notification">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if not alert.nil? %>
+      <div class="notification">
+        <%= alert %>
+      </div>
+    <% end %>
 
     <%= yield %>
 
