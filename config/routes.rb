@@ -4,6 +4,5 @@ Rails.application.routes.draw do
   root 'auth#index'
   get 'auth/index', to: 'auth#index'
 
-  get 'panel/dashboard', to: 'panel#dashboard'
-  get 'panel/project', to: 'panel#project'
+  resources :boards
 end
