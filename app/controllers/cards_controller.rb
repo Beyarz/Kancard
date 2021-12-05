@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @board = Board.find(params[:board_id])
     @card = @board.cards.create(permit_card_params)
