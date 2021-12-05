@@ -1,15 +1,21 @@
 <div class="column is-one-quarter">
-  <h2 class="title is-size-4 color-blue has-text-weight-light is-marginless">
-    <%= card.title %>
-  </h2>
+  <div class="level">
+    <div class="level-item">
+      <h2 class="title is-size-4 color-blue has-text-weight-light is-marginless">
+        <%= card.title %>
+      </h2>
+    </div>
+    <div class="level-item">
+      <span class="icon-text">
+        <%= link_to "Delete", [card.board, card], method: :delete, :class => "is-size-6 has-text-weight-light" %>
+        <span class="icon">
+          <i class="fas fa-trash-alt"></i>
+        </span>
+      </span>
+    </div>
+  </div>
   <div class="card">
     <div class="card-content column-row" ondrop="drop(event)" ondragover="event.preventDefault()">
-      <article class="message is-info is-small" id="<%= SecureRandom.hex(4).scan(/.{4}/).join("-") %>" draggable="true" ondragstart="drag(event)">
-        <div class="message-body">
-          <%= link_to "Remove", [card.board, card], method: :delete, :class => "is-small is-pulled-right" %>
-          <%= card.content %>
-        </div>
-      </article>
     </div>
   </div>
 </div>
