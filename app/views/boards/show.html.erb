@@ -21,7 +21,7 @@
     <button class="button is-small has-text-purple" id="new-column-button">
       <b>New column</b>
     </button>
-    <button class="button is-small has-text-purple" id="new-card-button">
+    <button class="button is-small has-text-purple" id="new-note-button">
       <b>New note</b>
     </button>
   </div>
@@ -47,7 +47,7 @@
   <% end %>
 </div>
 
-<div class="modal">
+<div id="column-modal" class="modal column-modal">
   <div class="modal-background"></div>
   <div class="columns">
     <div class="modal-content">
@@ -58,26 +58,50 @@
       </div>
     </div>
   </div>
+  <button class="modal-close is-large" aria-label="close" id="modal-column-close-button"></button>
+</div>
 
-  <button class="modal-close is-large" aria-label="close" id="modal-close-button"></button>
+<div id="note-modal" class="modal note-modal">
+  <div class="modal-background"></div>
+  <div class="columns">
+    <div class="modal-content">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="form-style-panel has-background-white">
+          <%= render "notes/form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close" id="modal-note-close-button"></button>
 </div>
 
 <% content_for :script do %>
   <script>
-    var toggleModal = () => {
-      $(".modal").toggleClass("is-active")
+    var toggleColumnModal = () => {
+      $(".modal.column-modal").toggleClass("is-active")
     }
-
-    $("#back").click(() => {
-      toggleModal()
+    $("#modal-column-close-button").click(() => {
+      toggleColumnModal()
     })
-
-    $("#modal-close-button").click(() => {
-      toggleModal()
-    })
-
     $("#new-column-button").click(() => {
-      toggleModal()
+      toggleColumnModal()
+    })
+    $("#column-back-button").click(() => {
+      toggleColumnModal()
+    })
+
+
+    var toggleNoteModal = () => {
+      $(".modal.note-modal").toggleClass("is-active")
+    }
+    $("#new-note-button").click(() => {
+      toggleNoteModal()
+    })
+    $("#note-back-button").click(() => {
+      toggleNoteModal()
+    })
+    $("#modal-note-close-button").click(() => {
+      toggleNoteModal()
     })
 
     var drag = event => {
