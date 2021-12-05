@@ -19,7 +19,7 @@
 
   <div class="level-item has-text-purple">
     <button class="button is-small has-text-purple" id="new-column-button">
-      <b>New card</b>
+      <b>New column</b>
     </button>
     <button class="button is-small has-text-purple" id="new-card-button">
       <b>New note</b>
@@ -30,9 +30,7 @@
     <div class="level-item">
       <div class="container is-size-7 is-unselectable">
         <p class="has-text-weight-bold">Last update: &nbsp;</p>
-        <p>
-          <%= @board.updated_at %>
-        </p>
+        <p><%= @board.updated_at %></p>
       </div>
     </div>
   </div>
@@ -40,13 +38,11 @@
 
 <div class="columns scrollable is-mobile">
   <div class="column is-1 is-offset-1"></div>
-    <% if @board.cards.empty? %>
-      <h2 class="is-size-6">
-        <%= "Nothing here, try creating a column..." %>
-      </h2>
-    <% else %>
-  <% end %>
-  <% @board.cards.each do |card| %>
+  <% if @board.cards.empty? %>
+    <h2 class="is-size-6">
+      <%= "Nothing here, try creating a column..." %>
+    </h2>
+  <% else %>
     <%= render @board.cards %>
   <% end %>
 </div>
@@ -63,11 +59,7 @@
     </div>
   </div>
 
-  <button
-    class="modal-close is-large"
-    aria-label="close"
-    id="modal-close"
-  ></button>
+  <button class="modal-close is-large" aria-label="close" id="modal-close-button"></button>
 </div>
 
 <% content_for :script do %>
@@ -80,7 +72,7 @@
       toggleModal()
     })
 
-    $("#modal-close").click(() => {
+    $("#modal-close-button").click(() => {
       toggleModal()
     })
 
