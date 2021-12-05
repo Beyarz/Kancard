@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   resources :boards do
     resources :cards
+    resources :notes
   end
 end

@@ -1,9 +1,9 @@
-<%= form_with model: [ @board, @board.cards.build ] do |f| %>
-  <div id="new-card">
+<%= form_with model: [ @board, @board.notes.build ] do |f| %>
+  <div id="new-note">
     <div class="field">
-      <%= f.label :title, :class => "label" %>
+      <%= f.label :content, :class => "label" %>
       <div class="control has-icons-left">
-        <%= f.text_field :title, :class => "input", :placeholder => "Todo", :aria_required => true, required: true %>
+        <%= f.text_field :content, :class => "input", :placeholder => "Content", :aria_required => true, required: true %>
         <span class="icon is-small is-left">
           <i class="fas fa-align-left"></i>
         </span>
@@ -13,7 +13,7 @@
 
   <div class="field is-grouped is-grouped-centered">
     <div class="control" style="padding-top: 1rem;">
-      <button type="reset" class="button bold" id="column-back-button">Back</button>
+      <button type="reset" class="button bold" id="note-back-button">Back</button>
       <%= f.submit "Create", :class => "button is-custom-blue" %>
     </div>
   </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_05_181051) do
+ActiveRecord::Schema.define(version: 2021_12_05_191611) do
 
   create_table "boards", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 2021_12_05_181051) do
     t.integer "board_id"
     t.index ["board_id"], name: "index_cards_on_board_id"
     t.index ["title"], name: "index_cards_on_title"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "board"
+    t.integer "board_id"
+    t.index ["board_id"], name: "index_notes_on_board_id"
+    t.index ["content"], name: "index_notes_on_content"
   end
 
   create_table "users", force: :cascade do |t|
