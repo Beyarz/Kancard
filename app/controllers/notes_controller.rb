@@ -9,8 +9,8 @@ class NotesController < ApplicationController
 
   def destroy
     @board = Board.find(params[:board_id])
-    @card = @board.notes.find(params[:id])
-    @card.destroy
+    @note = @board.notes.find(params[:id])
+    @note.destroy
     redirect_to board_path(@board)
   end
 
