@@ -1,0 +1,12 @@
+<article class="message is-info is-small" id="<%= SecureRandom.hex(4).scan(/.{4}/).join("-") %>" draggable="true" ondragstart="drag(event)">
+  <div class="message-body">
+    <div class="level">
+      <div class="level-left">
+        <%= note.content %>
+      </div>
+      <div class="level-right">
+        <%= link_to "", [note.board, note], method: :delete, :class => "fas fa-trash-alt has-text-weight-light" %>
+      </div>
+    </div>
+  </div>
+</article>

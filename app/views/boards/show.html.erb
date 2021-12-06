@@ -42,6 +42,9 @@
     </h2>
   <% else %>
     <%= render @board.cards %>
+    <div class="is-hidden" id="all-notes">
+      <%= render @board.notes %>
+    </div>
   <% end %>
 </div>
 
@@ -88,7 +91,6 @@
       toggleColumnModal()
     })
 
-
     var toggleNoteModal = () => {
       $(".modal.note-modal").toggleClass("is-active")
     }
@@ -104,16 +106,23 @@
 
     var drag = event => {
       event.dataTransfer.setData("text/plain", event.toElement.id)
-      console.log(`Drag`)
-      console.log(event)
+      console.log(`Drag`, event)
     }
 
     var drop = event => {
       const dataHandler = event.dataTransfer.getData("text/plain")
       const dataHandlerElementId = document.getElementById(dataHandler)
       event.toElement.appendChild(dataHandlerElementId)
-      console.log(`Drop`)
-      console.log(event)
+      console.log(`Drop`, event)
+      console.log("To parent class: ", event.toElement.className.split(" ")[2])
+    }
+
+    if (document.getElementById('all-notes').children.length !== 0) {
+      while (document.getElementById('all-notes').children.length !== 0) {
+        Array.from(document.getElementById('all-notes').children, element => {
+          document.getElementById('notes-starting-point').appendChild(element)
+        })
+      }
     }
   </script>
 <% end %>
