@@ -17,7 +17,7 @@
       </h1>
     <% end %>
     <% @boards.each do |board| %>
-      <div class="column is-one-quarter">
+      <div class="column is-one-third">
         <div class="box">
           <div class="title">
             <%= board.name %>
@@ -25,12 +25,18 @@
           <div class="subtitle">
             <%= board.description %>
           </div>
+          <div class="level">
+            <div class="level-item">
+              <%= link_to "Open", board_path(board), :class => "button is-fullwidth" %>
+            </div>
+            <div class="level-item">
+              <%= link_to "Edit", edit_board_path(board), :class => "button is-fullwidth" %>
+            </div>
+            <div class="level-item">
+              <%= link_to "Delete", board_path(board), method: :delete, :class => "button is-fullwidth" %>
+            </div>
+          </div>
         </div>
-        <aside class="columns">
-          <%= link_to "Open", board_path(board), :class => "box column button is-fullwidth" %>
-          <%= link_to "Edit", edit_board_path(board), :class => "box column button is-fullwidth" %>
-          <%= link_to "Delete", board_path(board), method: :delete, :class => "box column button is-fullwidth" %>
-        </aside>
       </div>
     <% end %>
   </div>

@@ -27,8 +27,10 @@
   <div class="level-right">
     <div class="level-item">
       <div class="container is-size-7 is-unselectable">
-        <p class="has-text-weight-bold">Last update: &nbsp;</p>
-        <p><%= @board.updated_at %></p>
+        <p>
+          <span class="has-text-weight-bold">Last update:</span>
+          <%= time_ago_in_words(@board.updated_at) %> ago
+        </p>
       </div>
     </div>
   </div>
