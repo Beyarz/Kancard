@@ -1,10 +1,11 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!
 
-  def set_parent_id
+  def move
     @board = Board.find(params[:board_id])
-    # @note = @board.notes.update_attributes
-    # @note = @board.notes.parent_column_id
+    @note = @board.notes.find(params[:note_id])
+    @note.insert_at(params[:position].to_i)
+    head :ok
   end
 
   def create

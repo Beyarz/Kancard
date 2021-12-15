@@ -8,6 +8,7 @@
     "@rails/webpacker": "5.4.3",
     "jquery": "^3.6.0",
     "sortablejs": "^1.14.0",
+    "stimulus": "^3.0.1",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
