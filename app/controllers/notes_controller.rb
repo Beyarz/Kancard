@@ -5,9 +5,13 @@ class NotesController < ApplicationController
     @board = Board.find(params[:board_id])
     @note = @board.notes.find(params[:note_id])
 
-    # @note.update(position: params[:position].to_i)
-    # @note.save
+    # Updates position
     @note.insert_at(params[:position].to_i)
+
+    # Updates the new parent column id as owner of the note
+    @note.update(parent_column_id: params[:parent_column_id])
+    @note.save
+
     head :ok
   end
 

@@ -14,14 +14,20 @@ export default class extends Controller {
   end(event) {
     const id = event.item.dataset.id
     const board_id = event.item.dataset.boardId
+    const newParentId = event.to.dataset.id
 
     // acts_as_list starts at 0 while Sortable starts at 1, so we pad the value with 1
     const padding = 1
+
     let data = new FormData
     data.append("position", event.newIndex + padding)
+    data.append("parent_column_id", newParentId)
 
     Rails.ajax({
-      url: this.data.get("url").replace(":id", id).replace(":board_id", board_id),
+      url: this.data
+        .get("url")
+        .replace(":id", id)
+        .replace(":board_id", board_id),
       type: 'PATCH',
       data: data
     })
