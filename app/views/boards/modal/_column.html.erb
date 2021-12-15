@@ -1,0 +1,30 @@
+<div id="column-modal" class="modal column-modal">
+  <div class="modal-background"></div>
+  <div class="columns">
+    <div class="modal-content">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="form-style-panel has-background-white">
+          <%= render "cards/form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close" id="modal-column-close-button"></button>
+</div>
+
+<% content_for :script do %>
+  <script>
+    var toggleColumnModal = () => {
+      $(".modal.column-modal").toggleClass("is-active")
+    }
+    $("#modal-column-close-button").click(() => {
+      toggleColumnModal()
+    })
+    $("#new-column-button").click(() => {
+      toggleColumnModal()
+    })
+    $("#column-back-button").click(() => {
+      toggleColumnModal()
+    })
+  </script>
+<% end %>

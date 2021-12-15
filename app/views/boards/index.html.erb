@@ -1,4 +1,4 @@
-<% content_for(:nav_menu) do %>
+<% content_for :nav_menu do %>
   <div class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
@@ -16,6 +16,7 @@
         <%= "Nothing here..." %>
       </h1>
     <% end %>
+
     <% @boards.each do |board| %>
       <div class="column is-one-third">
         <div class="box">

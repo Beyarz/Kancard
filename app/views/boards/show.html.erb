@@ -8,33 +8,7 @@
   </div>
 <% end %>
 
-<div class="level notification has-text-purple">
-  <div class="level-left">
-    <div class="level-item">
-      <h1 class="title is-size-5 is-unselectable">
-        <%= @board.name %>
-      </h1>
-    </div>
-  </div>
-  <div class="level-item has-text-purple">
-    <button class="button is-small has-text-purple" id="new-column-button">
-      <b>New column</b>
-    </button>
-    <button class="button is-small has-text-purple" id="new-note-button">
-      <b>New note</b>
-    </button>
-  </div>
-  <div class="level-right">
-    <div class="level-item">
-      <div class="container is-size-7 is-unselectable">
-        <p>
-          <span class="has-text-weight-bold">Last update:</span>
-          <%= time_ago_in_words(@board.updated_at) %> ago
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "boards/panel" %>
 
 <div class="columns scrollable is-mobile">
   <div class="column is-1 is-offset-1"></div>
@@ -44,87 +18,9 @@
     </h2>
   <% else %>
     <%= render @board.cards %>
-    <div class="is-hidden" id="all-notes">
-      <%= render @board.notes %>
-    </div>
+    <%= render @board.notes %>
   <% end %>
 </div>
 
-<div id="column-modal" class="modal column-modal">
-  <div class="modal-background"></div>
-  <div class="columns">
-    <div class="modal-content">
-      <div class="column is-three-fifths is-offset-one-fifth">
-        <div class="form-style-panel has-background-white">
-          <%= render "cards/form" %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="modal-close is-large" aria-label="close" id="modal-column-close-button"></button>
-</div>
-
-<div id="note-modal" class="modal note-modal">
-  <div class="modal-background"></div>
-  <div class="columns">
-    <div class="modal-content">
-      <div class="column is-three-fifths is-offset-one-fifth">
-        <div class="form-style-panel has-background-white">
-          <%= render "notes/form" %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="modal-close is-large" aria-label="close" id="modal-note-close-button"></button>
-</div>
-
-<% content_for :script do %>
-  <script>
-    var toggleColumnModal = () => {
-      $(".modal.column-modal").toggleClass("is-active")
-    }
-    $("#modal-column-close-button").click(() => {
-      toggleColumnModal()
-    })
-    $("#new-column-button").click(() => {
-      toggleColumnModal()
-    })
-    $("#column-back-button").click(() => {
-      toggleColumnModal()
-    })
-
-    var toggleNoteModal = () => {
-      $(".modal.note-modal").toggleClass("is-active")
-    }
-    $("#new-note-button").click(() => {
-      toggleNoteModal()
-    })
-    $("#note-back-button").click(() => {
-      toggleNoteModal()
-    })
-    $("#modal-note-close-button").click(() => {
-      toggleNoteModal()
-    })
-
-    var drag = event => {
-      event.dataTransfer.setData("text/plain", event.toElement.id)
-      console.log(`Drag`, event)
-    }
-
-    var drop = event => {
-      const dataHandler = event.dataTransfer.getData("text/plain")
-      const dataHandlerElementId = document.getElementById(dataHandler)
-      event.toElement.appendChild(dataHandlerElementId)
-      console.log(`Drop`, event)
-      console.log("To parent class: ", event.toElement.className.split(" ")[2])
-    }
-
-    if (document.getElementById('all-notes').children.length !== 0) {
-      while (document.getElementById('all-notes').children.length !== 0) {
-        Array.from(document.getElementById('all-notes').children, element => {
-          document.getElementById('notes-starting-point').appendChild(element)
-        })
-      }
-    }
-  </script>
-<% end %>
+<%= render "boards/modal/column" %>
+<%= render "boards/modal/note" %>

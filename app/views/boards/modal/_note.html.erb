@@ -1,0 +1,30 @@
+<div id="note-modal" class="modal note-modal">
+  <div class="modal-background"></div>
+  <div class="columns">
+    <div class="modal-content">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="form-style-panel has-background-white">
+          <%= render "notes/form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close" id="modal-note-close-button"></button>
+</div>
+
+<% content_for :script do %>
+  <script>
+    var toggleNoteModal = () => {
+      $(".modal.note-modal").toggleClass("is-active")
+    }
+    $("#new-note-button").click(() => {
+      toggleNoteModal()
+    })
+    $("#note-back-button").click(() => {
+      toggleNoteModal()
+    })
+    $("#modal-note-close-button").click(() => {
+      toggleNoteModal()
+    })
+  </script>
+<% end %>

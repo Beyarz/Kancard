@@ -1,0 +1,27 @@
+<div class="level notification has-text-purple">
+  <div class="level-left">
+    <div class="level-item">
+      <h1 class="title is-size-5 is-unselectable">
+        <%= @board.name %>
+      </h1>
+    </div>
+  </div>
+  <div class="level-item has-text-purple">
+    <button class="button is-small has-text-purple" id="new-column-button">
+      <b>New column</b>
+    </button>
+    <button class="button is-small has-text-purple" id="new-note-button">
+      <b>New note</b>
+    </button>
+  </div>
+  <div class="level-right">
+    <div class="level-item">
+      <div class="container is-size-7 is-unselectable">
+        <p>
+          <span class="has-text-weight-bold">Last update:</span>
+          <%= time_ago_in_words(@board.updated_at) %> ago
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
