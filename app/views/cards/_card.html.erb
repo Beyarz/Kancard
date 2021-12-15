@@ -1,21 +1,23 @@
-<div class="column is-one-quarter">
-  <div class="level" style="margin-bottom: 0">
-    <div class="level-left">
-      <h2 class="level-item title is-size-4 color-blue has-text-weight-light is-marginless">
-        <%= card.title %>
-      </h2>
-    </div>
-    <div class="level-right">
-      <div class="level-item">
-        <%= link_to "", [card.board, card], method: :delete, :class => "fas fa-trash-alt has-text-weight-light" %>
+<% cards.each do |card| %>
+  <div class="column is-one-quarter">
+    <div class="level" style="margin-bottom: 0">
+      <div class="level-left">
+        <h2 class="level-item title is-size-4 color-blue has-text-weight-light is-marginless">
+          <%= card.title %>
+        </h2>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <%= link_to "", [card.board, card], method: :delete, :class => "fas fa-trash-alt has-text-weight-light" %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-content column-row">
-      <!-- notes injects here -->
+    <div class="card">
+      <div class="card-content column-row">
+        <!-- Notes belong here -->
+      </div>
     </div>
-  </div>
 
-</div>
+  </div>
+<% end %>
