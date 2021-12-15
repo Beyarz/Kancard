@@ -2,7 +2,7 @@
   <div class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
-        <%= link_to "Home", boards_path, {:class => "button"} %>
+        <%= link_to "Home", boards_path, :class => "button" %>
       </div>
     </div>
   </div>
@@ -22,5 +22,5 @@
   <% end %>
 </div>
 
-<%= render "boards/modal/column" %>
-<%= render "boards/modal/note" %>
+<%= render "cards/modal" %>
+<%= render "notes/modal" %>

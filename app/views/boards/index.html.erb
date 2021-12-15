@@ -3,7 +3,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <%= link_to "New", new_board_path, :class => "button" %>
-        <%= link_to "Sign out", destroy_user_session_path, {method: :delete, :class => "button"} %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "button" %>
       </div>
     </div>
   </div>
@@ -15,30 +15,8 @@
       <h1>
         <%= "Nothing here..." %>
       </h1>
-    <% end %>
-
-    <% @boards.each do |board| %>
-      <div class="column is-one-third">
-        <div class="box">
-          <div class="title">
-            <%= board.name %>
-          </div>
-          <div class="subtitle">
-            <%= board.description %>
-          </div>
-          <div class="level">
-            <div class="level-item">
-              <%= link_to "Open", board_path(board), :class => "button is-fullwidth" %>
-            </div>
-            <div class="level-item">
-              <%= link_to "Edit", edit_board_path(board), :class => "button is-fullwidth" %>
-            </div>
-            <div class="level-item">
-              <%= link_to "Delete", board_path(board), method: :delete, :class => "button is-fullwidth" %>
-            </div>
-          </div>
-        </div>
-      </div>
+    <% else %>
+      <%= render "boards/board", boards: @boards %>
     <% end %>
   </div>
 </div>
