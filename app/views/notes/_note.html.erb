@@ -1,5 +1,5 @@
 <% notes.order(position: :asc).each do |note| %>
-  <article class="message is-info is-small box" data-id="<%= note.id %>" data-board-id="<%= @board.id %>">
+  <article class="message is-info is-small box" data-belongs-to="<%= note.parent_column_id %>" data-id="<%= note.id %>" data-board-id="<%= @board.id %>">
     <div class="message-body">
       <div class="level">
         <div class="level-left">

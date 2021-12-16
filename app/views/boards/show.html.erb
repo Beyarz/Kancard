@@ -27,3 +27,17 @@
 
 <%= render "cards/modal" %>
 <%= render "notes/modal" %>
+
+<% content_for :script do %>
+  <script>
+    const notes = document.querySelectorAll('[data-belongs-to]')
+
+    notes.forEach((note) => {
+      const column_id = note.dataset.belongsTo
+      if (column_id != "undefined") {
+        let column = document.querySelectorAll(`[data-id="${column_id}"]`)[0]
+        column.appendChild(note)
+      }
+    })
+  </script>
+<% end %>
