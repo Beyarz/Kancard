@@ -18,7 +18,7 @@
     </h2>
   <% end %>
 
-  <div class="card-content column is-quarter" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
+  <div class="column is-quarter" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
     <%= render "notes/note", notes: @board.notes %>
   </div>
 
