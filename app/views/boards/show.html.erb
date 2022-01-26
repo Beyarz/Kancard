@@ -10,19 +10,27 @@
 
 <%= render "boards/panel" %>
 
-<div class="columns scrollable">
-  <div class="column is-1 is-offset-1"></div>
-  <% if @board.cards.empty? %>
-    <h2 class="is-size-6">
-      <%= "Nothing here..." %>
-    </h2>
-  <% end %>
-
-  <div class="column is-quarter" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
-    <%= render "notes/note", notes: @board.notes %>
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <div class="tile is-child box">
+      <p class="title">Chat</p>
+        <%= render "boards/chat" %>
+    </div>
   </div>
-
-  <%= render "cards/card", cards: @board.cards %>
+  <div class="tile is-8 is-vertical is-parent">
+    <div class="tile is-child box">
+      <p class="title">Notes</p>
+      <div class="columns scrollable" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
+        <%= render "notes/note", notes: @board.notes %>
+      </div>
+    </div>
+    <div class="tile is-child box scrollable">
+      <p class="title">Cards</p>
+      <div class="columns">
+        <%= render "cards/card", cards: @board.cards %>
+      </div>
+    </div>
+  </div>
 </div>
 
 <%= render "cards/modal" %>
@@ -35,8 +43,9 @@
 
       notes.forEach((note) => {
         const column_id = note.dataset.belongsTo
-        if (column_id != "undefined") {
-          let column = document.querySelectorAll(`[data-id="${column_id}"]`)[0]
+
+        if (column_id !== "undefined" && column_id !== "") {
+          const column = document.querySelector(`[data-id="${column_id}"]`)
           column.appendChild(note)
         }
       })

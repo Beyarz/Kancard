@@ -1,0 +1,13 @@
+<div class="columns scrollable" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
+  <%= render "notes/note", notes: @board.notes %>
+</div>
+
+<div class="columns scrollale">
+  <%= render "cards/card", cards: @board.cards %>
+</div>
+
+<% if @board.cards.empty? %>
+  <h2 class="is-size-6">
+    <%= "Nothing here..." %>
+  </h2>
+<% end %>
