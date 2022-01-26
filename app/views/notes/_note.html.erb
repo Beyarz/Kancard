@@ -1,13 +1,13 @@
 <% notes.order(position: :asc).each do |note| %>
-  <article class="message is-info is-small box" data-belongs-to="<%= note.parent_column_id %>" data-id="<%= note.id %>" data-board-id="<%= @board.id %>">
+  <article class="message" data-belongs-to="<%= note.parent_column_id %>" data-id="<%= note.id %>" data-board-id="<%= @board.id %>">
     <div class="message-body">
-      <div class="level">
-        <div class="level-left">
+      <div class="block content">
+        <%= link_to "", [note.board, note], method: :delete, :class => "delete has-text-weight-light" %>
+      </div>
+      <div class="block content">
+        <p>
           <%= note.content %>
-        </div>
-        <div class="level-right">
-          <%= link_to "", [note.board, note], method: :delete, :class => "fas fa-trash-alt has-text-weight-light" %>
-        </div>
+        </p>
       </div>
     </div>
   </article>
