@@ -7,6 +7,10 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find params_id
+
+    @messages = Message.all
+    @notes = Note.all.order(position: :asc)
+    @cards = Card.all
   end
 
   def new

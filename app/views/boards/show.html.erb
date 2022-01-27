@@ -16,7 +16,7 @@
       <p class="title">Chat</p>
       <article class="media">
         <div class="media-content">
-          <%= render "messages/message", messages: @board.messages %>
+          <%= render @messages %>
           <div class="field">
             <label class="label">You:</label>
             <div class="control">
@@ -41,7 +41,7 @@
             Nothing here... Why not create a couple of notes?
           </p>
         <% else %>
-          <%= render "notes/note", notes: @board.notes %>
+          <%= render @notes %>
         <% end %>
       </div>
     </div>
@@ -55,7 +55,7 @@
             You could start with creating columns like: <strong>Todo</strong>, <strong>Doing</strong> & <strong>Done</strong>!
           </p>
         <% else %>
-          <%= render "cards/card", cards: @board.cards %>
+          <%= render @cards %>
         <% end %>
       </div>
     </div>
