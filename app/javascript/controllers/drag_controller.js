@@ -23,11 +23,6 @@ export default class extends Controller {
     data.append("position", event.newIndex + padding)
     data.append("parent_column_id", newParentId)
 
-    // When switching from the notes column to cards column,
-    // you want to remove the fixed size because you want
-    // the note to take up all the available space
-    event.item.classList.toggle("is-one-quarter")
-
     Rails.ajax({
       url: this.data
         .get("url")
