@@ -16,7 +16,7 @@
       <p class="title">Chat</p>
       <article class="media">
         <div class="media-content">
-          <%= render "boards/message", messages: @board.messages %>
+          <%= render "messages/message", messages: @board.messages %>
           <div class="field">
             <label class="label">You:</label>
             <div class="control">
@@ -36,13 +36,27 @@
     <div class="tile is-child box">
       <p class="title">Notes</p>
       <div class="scrollable columns" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
-        <%= render "notes/note", notes: @board.notes %>
+        <% if @board.notes.empty? %>
+          <p class="subtitle ml-3">
+            Nothing here... Why not create a couple of notes?
+          </p>
+        <% else %>
+          <%= render "notes/note", notes: @board.notes %>
+        <% end %>
       </div>
     </div>
     <div class="tile is-child box">
       <p class="title">Cards</p>
       <div class="scrollable columns">
-        <%= render "cards/card", cards: @board.cards %>
+        <% if @board.cards.empty? %>
+          <p class="subtitle ml-3">
+            Nothing here...
+            <br>
+            You could start with creating columns like: <strong>Todo</strong>, <strong>Doing</strong> & <strong>Done</strong>!
+          </p>
+        <% else %>
+          <%= render "cards/card", cards: @board.cards %>
+        <% end %>
       </div>
     </div>
   </div>

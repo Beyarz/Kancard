@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   resources :boards do
     resources :cards
+    resources :messages
     resources :notes do
       patch :move
     end
   end
+
 end

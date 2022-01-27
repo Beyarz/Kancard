@@ -1,0 +1,17 @@
+<% messages.each do |message| %>
+  <div class="content">
+    <span class="subtitle">
+      <strong>Name</strong> says:
+    </span>
+    <p>
+      <%= message.content %>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
+      <br>
+      <small>
+        <%= time_ago_in_words(message.delivered) %>
+      </small>
+      <small>3 hrs ago</small>
+    </p>
+  </div>
+  <br>
+<% end %>
