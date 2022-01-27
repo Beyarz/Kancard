@@ -1,10 +1,10 @@
 # Kancard
 
 - Ruby version
-  - 3.0.0.
+  - 3.0.0
 
 - System dependencies
-  - Bundle
+  - Bundler
   - Npm
 
 ## Requirements
@@ -29,3 +29,4 @@
 ## Screenshot
 
 ![demo](media/demo.png)
+![demo v2](media/demo-v2.png)
