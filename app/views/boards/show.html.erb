@@ -14,7 +14,22 @@
   <div class="tile is-parent">
     <div class="tile is-child box">
       <p class="title">Chat</p>
-      <%= render "boards/chat" %>
+      <article class="media">
+        <div class="media-content">
+          <%= render "boards/message", messages: @board.messages %>
+          <div class="field">
+            <label class="label">You:</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Your message..."></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="button is-link">Send</button>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
   <div class="tile is-8 is-vertical is-parent">
