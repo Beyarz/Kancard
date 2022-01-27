@@ -7,6 +7,16 @@
   - Bundle
   - Npm
 
+## Requirements
+
+- Redis
+
+### Start redis
+
+#### macOS
+
+`brew services start redis`
+
 ## Getting started
 
 - `bundle install`
