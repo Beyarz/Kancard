@@ -1,16 +1,14 @@
 <% notes.order(position: :asc).each do |note| %>
-  <div class="column is-one-quarter" data-belongs-to="<%= note.parent_column_id %>" data-id="<%= note.id %>" data-board-id="<%= @board.id %>">
-    <article class="message">
-      <div class="message-body">
-        <div class="content">
-          <%= link_to nil, [note.board, note], method: :delete, :class => "delete has-text-weight-light" %>
-        </div>
-        <div class="content">
-          <p>
-            <%= note.content %>
-          </p>
-        </div>
+  <article class="column message is-one-quarter" data-belongs-to="<%= note.parent_column_id %>" data-id="<%= note.id %>" data-board-id="<%= @board.id %>">
+    <div class="message-body">
+      <div class="content">
+        <%= link_to nil, [note.board, note], method: :delete, :class => "delete has-text-weight-light" %>
       </div>
-    </article>
-  </div>
+      <div class="content">
+        <p>
+          <%= note.content %>
+        </p>
+      </div>
+    </div>
+  </article>
 <% end %>
