@@ -14,19 +14,19 @@
   <div class="tile is-parent">
     <div class="tile is-child box">
       <p class="title">Chat</p>
-        <%= render "boards/chat" %>
+      <%= render "boards/chat" %>
     </div>
   </div>
   <div class="tile is-8 is-vertical is-parent">
     <div class="tile is-child box">
       <p class="title">Notes</p>
-      <div class="columns scrollable" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
+      <div class="scrollable columns" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
         <%= render "notes/note", notes: @board.notes %>
       </div>
     </div>
-    <div class="tile is-child box scrollable">
+    <div class="tile is-child box">
       <p class="title">Cards</p>
-      <div class="columns">
+      <div class="scrollable columns">
         <%= render "cards/card", cards: @board.cards %>
       </div>
     </div>
