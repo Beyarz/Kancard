@@ -12,28 +12,29 @@
 
 <div class="tile is-ancestor">
   <div class="tile is-parent">
-    <div class="tile is-child box">
+    <div class="tile is-child container is-fluid">
       <p class="title">Chat</p>
       <article class="media">
         <div class="media-content">
-          <%= render @messages %>
+          <span class="container" id="chatLog">
+            <%= render @messages %>
+          </span>
+
           <div class="field">
             <label class="label">You:</label>
             <div class="control">
               <textarea class="textarea" placeholder="Your message..."></textarea>
-            </div>
-          </div>
-          <div class="field">
-            <div class="control">
+              <br>
               <button class="button is-link">Send</button>
             </div>
           </div>
+
         </div>
       </article>
     </div>
   </div>
   <div class="tile is-8 is-vertical is-parent">
-    <div class="tile is-child box">
+    <div class="tile is-child">
       <p class="title">Notes</p>
       <div class="scrollable columns" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
         <% if @board.notes.empty? %>
@@ -45,7 +46,7 @@
         <% end %>
       </div>
     </div>
-    <div class="tile is-child box">
+    <div class="tile is-child">
       <p class="title">Cards</p>
       <div class="scrollable columns">
         <% if @board.cards.empty? %>
