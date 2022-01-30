@@ -1,0 +1,10 @@
+<%= form_with model: [@board, @board.messages.build] do |f| %>
+  <div class="field">
+    <%= f.label "You", :class => "label" %>
+    <div class="control">
+      <%= f.text_area :content, :class => "textarea", :placeholder => "Your message...", :aria_required => true, required: true %>
+      <br>
+      <%= f.submit "Send", :id => "deliver", :class => "button is-custom-blue" %>
+    </div>
+  </div>
+<% end %>
