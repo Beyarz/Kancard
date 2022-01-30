@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :boards do
     resources :cards, only: [:create, :destroy]
-    resources :messages, only: [:create]
+    resources :messages, only: [:create, :destroy]
     resources :notes, only: [:create, :destroy] do
       patch :move
     end
