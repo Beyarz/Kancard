@@ -16,7 +16,7 @@
       <p class="title">Chat</p>
       <article class="media">
         <div class="media-content">
-          <span class="container" id="chatLog">
+          <span class="container" id="chatLog" data-channel="BoardChannel" data-room="<%= @board.id %>">
             <%= render @messages %>
           </span>
 
