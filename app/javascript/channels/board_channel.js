@@ -1,43 +1,70 @@
 import consumer from "./consumer"
 
+/**
+ * We don't want the pub/sub to be executed when going to home page,
+ * because the chatlogs only exists on the board page
+ *
+ * @public
+ * @param { string } id
+ * @return { DOMStringMap | false }
+ */
 function checkIfIdAvailable(id) {
   return document.getElementById(id) !== null
     ? document.getElementById(id).dataset
-    : function() { return false }
+    : function () { return false }
 }
 
+/**
+ * @public
+ * @returns void
+ */
 function cleanPreviousSubscriptions() {
   consumer.subscriptions.subscriptions.forEach(sub => {
     consumer.subscriptions.remove(sub)
   })
 }
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbolinks:load',() => {
   cleanPreviousSubscriptions()
 
-  // We don't want the pub/sub to be executed when going to home page,
-  // because the chatlogs only exists on the board page
   const boardDetails = checkIfIdAvailable('chatLog')
+  /** @type { string } */
   const channelName = boardDetails.channel
+  /** @type { string } */
   const board_id = boardDetails.room
 
   consumer.subscriptions.create({
     channel: channelName,
     room: board_id
   },{
+    /**
+     * @returns void
+     */
     connected() {
       console.log("Connected")
     },
 
+    /**
+     * @returns void
+     */
     disconnected() {
       console.log("Disconnected")
     },
 
+    /**
+     * @param { * } data
+     * @returns void
+     */
     received(data) {
-      console.log("Received: ", { data })
+      console.log("Received: ",{ data })
       this.constructMessage(data)
     },
 
+    /**
+     * @private
+     * @param {{ message: string, created_at: new Date }} data
+     * @returns void
+     */
     constructMessage(data) {
       const template = `
       <div class="message content box">
@@ -46,18 +73,25 @@ document.addEventListener('turbolinks:load', () => {
         </span>
         <p>
           ${data['message']}
-          <br>
-          <small>${data['created_at']}</small>
         </p>
+        <small>
+          ${data['created_at']}
+        </small>
       </div>
       <br>`
 
+      /** @type { HTMLElement } */
       const chatLog = document.getElementById('chatLog')
-      chatLog.insertAdjacentHTML('beforeend', template)
+      chatLog.insertAdjacentHTML('beforeend',template)
     },
 
-    exchange(data) {
-      console.log('Exchange: ', { data })
+    /**
+     * @public
+     * @param {{ message: string, created_at: new Date }} data
+     * @returns void
+     */
+    broadcast(data) {
+      this.send(data)
     }
   })
 })
