@@ -18,7 +18,7 @@ class CardsController < ApplicationController
 
   private
   def params_board_id
-    params[:id]
+    params[:board_id]
   end
 
   def params_id
