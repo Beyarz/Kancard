@@ -20,15 +20,7 @@
             <%= render @messages %>
           </span>
 
-          <div class="field">
-            <label class="label">You:</label>
-            <div class="control">
-              <textarea class="textarea" placeholder="Your message..."></textarea>
-              <br>
-              <button id="deliver" class="button is-link">Send</button>
-            </div>
-          </div>
-
+          <%= render "messages/form" %>
         </div>
       </article>
     </div>
