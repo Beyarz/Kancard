@@ -6,7 +6,7 @@
     <%= message.content %>
     <br>
     <small>
-      <%= time_ago_in_words(message.delivered).capitalize %>
+      <%= time_ago_in_words(message.created_at).capitalize %>
     </small>
   </p>
 </div>
