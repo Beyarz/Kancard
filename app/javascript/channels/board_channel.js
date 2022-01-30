@@ -24,6 +24,7 @@ function cleanPreviousSubscriptions() {
   })
 }
 
+
 document.addEventListener('turbolinks:load', () => {
   cleanPreviousSubscriptions()
 
@@ -33,7 +34,7 @@ document.addEventListener('turbolinks:load', () => {
   /** @type { string } */
   const board_id = boardDetails.room
 
-  const chat = consumer.subscriptions.create({
+  consumer.subscriptions.create({
     channel: channelName,
     room: board_id
   },{
@@ -56,42 +57,19 @@ document.addEventListener('turbolinks:load', () => {
      * @returns void
      */
     received(data) {
-      console.log("Received: ",{ data })
+      console.log("Received: ", { data })
       this.constructMessage(data)
     },
 
     /**
      * @private
-     * @param {{ message: string, created_at: new Date }} data
+     * @param {{ html: HTML }} html
      * @returns void
      */
-    constructMessage(data) {
-      const template = `
-      <div class="message content box">
-        <span class="subtitle">
-          <strong>Name</strong> says:
-        </span>
-        <p>
-          ${data['message']}
-        </p>
-        <small>
-          ${data['created_at']}
-        </small>
-      </div>
-      <br>`
-
+    constructMessage(html) {
       /** @type { HTMLElement } */
       const chatLog = document.getElementById('chatLog')
-      chatLog.insertAdjacentHTML('beforeend',template)
+      chatLog.insertAdjacentHTML('beforeend', html)
     },
   })
-
-  document.getElementById('deliver').onclick = function () {
-    const textareaValue = document.querySelector('.textarea').value
-
-    if (textareaValue !== "") {
-      chat.send({ message: textareaValue, created_at: new Date().toLocaleString() })
-      document.querySelector('.textarea').value = ""
-    }
-  }
 })
