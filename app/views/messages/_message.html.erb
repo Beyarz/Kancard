@@ -1,13 +1,12 @@
-<div class="message content box">
+<div class="message is-light content box ">
   <span class="subtitle">
-    <strong>Name</strong> says:
+    <strong>Username</strong> says:
   </span>
   <p>
     <%= message.content %>
-    <br>
-    <small>
-      <%= time_ago_in_words(message.created_at).capitalize %>
-    </small>
   </p>
+  <small>
+    <%= time_ago_in_words(message.created_at).capitalize %> ago
+  </small>
 </div>
 <br>
