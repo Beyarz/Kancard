@@ -1,10 +1,9 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create('BoardChannel', {
-// const board_chat_room = consumer.subscriptions.create({
-  // channel: 'BoardChannel',
-  // board_id: 43,
-
+consumer.subscriptions.create({
+    channel: 'BoardChannel',
+    board_id: 43
+  },{
   connected() {
     console.log("Connected")
   },
@@ -22,15 +21,12 @@ consumer.subscriptions.create('BoardChannel', {
     const template = `
     <div class="message content box">
       <span class="subtitle">
-        <!-- Name -->
         <strong>Name</strong> says:
       </span>
       <p>
         ${data['message']}
         <br>
-        <small>
-          <!-- Time ago -->
-        </small>
+        <small>${data['created_at']}</small>
       </p>
     </div>
     <br>
