@@ -24,7 +24,7 @@ function cleanPreviousSubscriptions() {
   })
 }
 
-document.addEventListener('turbolinks:load',() => {
+document.addEventListener('turbolinks:load', () => {
   cleanPreviousSubscriptions()
 
   const boardDetails = checkIfIdAvailable('chatLog')
@@ -33,7 +33,7 @@ document.addEventListener('turbolinks:load',() => {
   /** @type { string } */
   const board_id = boardDetails.room
 
-  consumer.subscriptions.create({
+  const chat = consumer.subscriptions.create({
     channel: channelName,
     room: board_id
   },{
@@ -84,14 +84,14 @@ document.addEventListener('turbolinks:load',() => {
       const chatLog = document.getElementById('chatLog')
       chatLog.insertAdjacentHTML('beforeend',template)
     },
-
-    /**
-     * @public
-     * @param {{ message: string, created_at: new Date }} data
-     * @returns void
-     */
-    broadcast(data) {
-      this.send(data)
-    }
   })
+
+  document.getElementById('deliver').onclick = function () {
+    const textareaValue = document.querySelector('.textarea').value
+
+    if (textareaValue !== "") {
+      chat.send({ message: textareaValue, created_at: new Date().toLocaleString() })
+      document.querySelector('.textarea').value = ""
+    }
+  }
 })

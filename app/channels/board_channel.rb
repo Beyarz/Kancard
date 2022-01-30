@@ -10,8 +10,8 @@ class BoardChannel < ApplicationCable::Channel
   def unsubscribed
   end
 
-  def exchange(data)
-    ActionCable.server.broadcast @room_channel, message: data['message']
+  def receive(data)
+    ActionCable.server.broadcast @room_channel, { message: data['message'], created_at: data['created_at'] }
 
     message = Message.create content: data['message'], board_id: @room
     message.save
