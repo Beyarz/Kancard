@@ -8,9 +8,9 @@ class BoardsController < ApplicationController
   def show
     @board = Board.find params_id
 
-    @messages = Message.all
-    @notes = Note.all.order(position: :asc)
-    @cards = Card.all
+    @messages = @board.messages.all
+    @notes = @board.notes.all.order position: :asc
+    @cards = @board.cards.all
   end
 
   def new
@@ -18,7 +18,8 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = Board.create permitted_board_params
+    @board = Board.create permitted_params
+
     if @board.save
       redirect_to @board
     else
@@ -32,7 +33,8 @@ class BoardsController < ApplicationController
 
   def update
     @board = Board.find params_id
-    if @board.update permitted_board_params
+
+    if @board.update permitted_params
       redirect_to boards_path
     else
       render :edit
@@ -42,6 +44,7 @@ class BoardsController < ApplicationController
   def destroy
     @board = Board.find(params_id)
     @board.destroy
+
     redirect_to boards_path
   end
 
@@ -50,7 +53,7 @@ class BoardsController < ApplicationController
     params[:id]
   end
 
-  def permitted_board_params
+  def permitted_params
     params.require(:board).permit(:name, :description)
   end
 end
