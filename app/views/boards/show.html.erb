@@ -17,7 +17,12 @@
       <article class="media">
         <div class="media-content">
           <span class="container" id="chatLog" data-channel="BoardChannel" data-room="<%= @board.id %>">
-            <%= render @messages %>
+            <% if @messages.empty? %>
+              <p class="heading">No messages...</p>
+              <br>
+            <% else %>
+              <%= render @messages %>
+            <% end %>
           </span>
 
           <%= render "messages/form" %>
@@ -30,7 +35,7 @@
       <p class="title">Notes</p>
       <div class="scrollable columns" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
         <% if @board.notes.empty? %>
-          <p class="subtitle ml-3">
+          <p class="heading ml-3">
             Nothing here... Why not create a couple of notes?
           </p>
         <% else %>
@@ -42,9 +47,7 @@
       <p class="title">Cards</p>
       <div class="scrollable columns">
         <% if @board.cards.empty? %>
-          <p class="subtitle ml-3">
-            Nothing here...
-            <br>
+          <p class="heading ml-3">
             You could start with creating columns like: <strong>Todo</strong>, <strong>Doing</strong> & <strong>Done</strong>!
           </p>
         <% else %>
