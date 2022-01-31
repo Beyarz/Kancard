@@ -2,16 +2,16 @@ import consumer from "./consumer"
 
 /**
  * We don't want the pub/sub to be executed when going to home page,
- * because the chatlogs only exists on the board page
+ * because the chatlog only exists each individual board page
  *
  * @public
  * @param { string } id
  * @return { DOMStringMap | false }
  */
-function checkIfIdAvailable(id) {
+function ChannelExist(id) {
   return document.getElementById(id) !== null
     ? document.getElementById(id).dataset
-    : function () { return false }
+    : false
 }
 
 /**
@@ -24,11 +24,15 @@ function cleanPreviousSubscriptions() {
   })
 }
 
-
 document.addEventListener('turbolinks:load', () => {
   cleanPreviousSubscriptions()
 
-  const boardDetails = checkIfIdAvailable('chatLog')
+  /** @type { DOMStringMap | false } */
+  let boardDetails
+  if (!(boardDetails = ChannelExist('chatLog'))) {
+    return false
+  }
+
   /** @type { string } */
   const channelName = boardDetails.channel
   /** @type { string } */
@@ -53,7 +57,7 @@ document.addEventListener('turbolinks:load', () => {
     },
 
     /**
-     * @param { * } data
+     * @param { { html: HTML } } data
      * @returns void
      */
     received(data) {

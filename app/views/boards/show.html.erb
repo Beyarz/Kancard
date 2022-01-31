@@ -36,7 +36,7 @@
       <div class="scrollable columns" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
         <% if @board.notes.empty? %>
           <p class="heading ml-3">
-            Nothing here... Why not create a couple of notes?
+            Nothing here, why not create a couple of notes?
           </p>
         <% else %>
           <%= render @notes %>
