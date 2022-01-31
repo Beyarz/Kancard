@@ -20,7 +20,7 @@
                   <%= f.label :email, :class => "label" %>
                   <br />
                   <div class="control has-icons-left">
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "jonas123", :class => "input" %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "jonas@email.com", :class => "input", required: true %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-user"></i>
                     </span>
@@ -28,10 +28,16 @@
                 </div>
               </div>
               <div class="column">
-                <%= label_tag(:progress, "Progress", :class => "label") %>
-                <br />
-                <progress id="form-progress-status" class="progress is-marginless" value="15" max="100"></progress>
-                <p id="form-progress-message">You have to fill out the form!</p>
+                <div class="field">
+                  <%= f.label :username, :class => "label" %>
+                  <br />
+                  <div class="control has-icons-left">
+                    <%= f.text_field :username, autofocus: true, autocomplete: "name", :placeholder => "jonas123", :class => "input", required: true %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -44,7 +50,12 @@
                       <em>(<%= @minimum_password_length %> characters minimum)</em>
                     <% end %>
                     <br />
-                    <%= f.password_field :password, autocomplete: "new-password", :class => "input" %>
+                    <div class="control has-icons-left">
+                      <%= f.password_field :password, autocomplete: "new-password", :placeholder => "ABC-123-DEF-456", :class => "input", required: true %>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -53,7 +64,7 @@
                   <%= f.label :password_confirmation, :class => "label" %>
                   <br />
                   <div class="control has-icons-left">
-                    <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "input" %>
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "ABC-123-DEF-456", :class => "input", required: true %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
                     </span>

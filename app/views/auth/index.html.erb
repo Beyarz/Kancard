@@ -5,8 +5,8 @@
         <div class="notification has-background-white"></div>
 
         <div>
-          <%= link_to("Register", new_user_registration_path, {:class => "button is-medium bold"}) %>
-          <%= link_to("Login", new_user_session_path, {:class => "button is-medium is-custom-blue bold"}) %>
+          <%= link_to "Register", new_user_registration_path, :class => "button is-medium bold" %>
+          <%= link_to "Login", new_user_session_path, :class => "button is-medium is-custom-blue bold" %>
         </div>
 
         <div class="container">
@@ -22,7 +22,7 @@
 
       <div class="column is-two-fifths">
         <figure class="image is-square">
-            <%= image_tag("board-#{[1,2,3].sample}.svg", :alt => "Kanban board") %>
+            <%= image_tag "board-#{[1,2,3].sample}.svg", :alt => "Kanban board"  %>
         </figure>
       </div>
 

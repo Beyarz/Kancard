@@ -1,6 +1,6 @@
 <% if board.errors.any? %>
   <% board.errors.each do |err| %>
-    <%= errors.full_message %>
+    <%= err %>
   <% end %>
 <% end %>
 
@@ -17,6 +17,9 @@
       </span>
     </div>
   </div>
+
+  <%= f.text_field :owner, :value => @owner.username, :type => "hidden" %>
+  <%= f.text_field :owner_id, :value => @owner.id, :type => "hidden" %>
 
   <div class="field">
     <%= f.label :description, :class => "label", :style => "float: right; padding-top: 1rem;" %>

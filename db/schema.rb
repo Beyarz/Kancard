@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_30_182250) do
+ActiveRecord::Schema.define(version: 2022_01_31_201915) do
 
   create_table "boards", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "description"
+    t.string "owner"
+    t.string "owner_id"
+    t.string "invited"
     t.index ["description"], name: "index_boards_on_description"
     t.index ["name"], name: "index_boards_on_name"
   end
@@ -35,6 +38,7 @@ ActiveRecord::Schema.define(version: 2022_01_30_182250) do
     t.integer "board_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
     t.index ["board_id"], name: "index_messages_on_board_id"
   end
 
@@ -56,8 +60,10 @@ ActiveRecord::Schema.define(version: 2022_01_30_182250) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "messages", "boards"

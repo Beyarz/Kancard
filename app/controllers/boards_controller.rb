@@ -2,11 +2,12 @@ class BoardsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @boards = Board.all
+    @boards = Board.all.where owner_id: current_user.id
   end
 
   def show
     @board = Board.find params_id
+    @current_user = current_user
 
     @messages = @board.messages.all
     @notes = @board.notes.all.order position: :asc
@@ -15,6 +16,7 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
+    @owner = current_user
   end
 
   def create
@@ -42,7 +44,7 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    @board = Board.find(params_id)
+    @board = Board.find params_id
     @board.destroy
 
     redirect_to boards_path
@@ -54,6 +56,6 @@ class BoardsController < ApplicationController
   end
 
   def permitted_params
-    params.require(:board).permit(:name, :description)
+    params.require(:board).permit(:name, :description, :owner, :owner_id)
   end
 end

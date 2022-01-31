@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def create
     @board = Board.find params_board_id
     @message = @board.messages.create permitted_params
+
     @channel = "BoardChannel"
     @room = @board.id
     @room_channel = "#{@channel}_#{@room}"
@@ -30,6 +31,6 @@ class MessagesController < ApplicationController
   end
 
   def permitted_params
-    params.require(:message).permit(:content)
+    params.require(:message).permit(:content, :username)
   end
 end

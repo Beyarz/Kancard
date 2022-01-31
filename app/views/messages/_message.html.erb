@@ -2,7 +2,7 @@
   <%= link_to nil, [message.board, message], method: :delete, :class => "delete has-text-weight-light is-pulled-right" %>
 
   <span class="subtitle">
-    <strong>Username</strong> says:
+    <strong><%= message.username %></strong> says:
   </span>
   <p>
     <%= message.content %>
