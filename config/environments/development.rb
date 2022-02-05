@@ -1,4 +1,6 @@
 Rails.application.configure do
+  config.middleware.use( Oink::Middleware, :logger => Rails.logger )
+
   config.after_initialize do
     Bullet.enable        = true
     Bullet.alert         = true
