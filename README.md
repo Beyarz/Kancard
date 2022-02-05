@@ -36,6 +36,10 @@
 
 `RAILS_ENV=development rails server`
 
+## Oink
+
+`bundle exec oink --threshold=100 log/`
+
 ## Screenshot
 
 ![demo](media/demo.png)
