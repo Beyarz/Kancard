@@ -9,9 +9,6 @@
     <%= f.label :name, :class => "label" %>
     <div class="control has-icons-left">
       <%= f.text_field :name, :class => "input", :required => true, :minlength => 2, :placeholder => "Class project" %>
-      <% board.errors.full_messages_for(:name).each do |msg| %>
-        <%= msg %>
-      <% end %>
       <span class="icon is-small is-left">
         <i class="fas fa-signature"></i>
       </span>
@@ -22,12 +19,19 @@
   <%= f.text_field :owner_id, :value => @owner.id, :type => "hidden" %>
 
   <div class="field">
-    <%= f.label :description, :class => "label", :style => "float: right; padding-top: 1rem;" %>
+    <%= f.label :description, :class => "label", :style => "padding-top: 1rem;" %>
     <div class="control has-icons-left">
       <%= f.text_field :description, :class => "input", :required => true, :minlength => 4, :placeholder => "For our science class" %>
-      <% board.errors.full_messages_for(:description).each do |msg| %>
-        <%= msg %>
-      <% end %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-file-signature"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Invite user id', :class => "label", :style => "padding-top: 1rem;" %>
+    <div class="control has-icons-left">
+      <%= f.text_field :invited, :class => "input", :required => false, :placeholder => "42" %>
       <span class="icon is-small is-left">
         <i class="fas fa-file-signature"></i>
       </span>

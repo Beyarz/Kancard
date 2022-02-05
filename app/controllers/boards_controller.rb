@@ -2,8 +2,8 @@ class BoardsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @boards = Board.all.where owner_id: current_user.id
     @current_user = current_user
+    @boards = Board.all.where(owner_id: current_user.id).or(Board.all.where(invited: @current_user.id))
   end
 
   def show
@@ -32,6 +32,7 @@ class BoardsController < ApplicationController
 
   def edit
     @board = Board.find params_id
+    @owner = current_user
   end
 
   def update
@@ -57,6 +58,6 @@ class BoardsController < ApplicationController
   end
 
   def permitted_params
-    params.require(:board).permit(:name, :description, :owner, :owner_id)
+    params.require(:board).permit(:name, :description, :owner, :owner_id, :invited)
   end
 end

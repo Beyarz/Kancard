@@ -2,7 +2,11 @@
   <%= link_to nil, [message.board, message], method: :delete, :class => "delete has-text-weight-light is-pulled-right" %>
 
   <span class="subtitle">
-    <strong><%= message.username %></strong> says:
+    <% if message.username === @current_user.username %>
+      <strong>You</strong>:
+    <% else %>
+      <strong><%= message.username %></strong> says:
+    <% end %>
   </span>
   <p>
     <%= message.content %>

@@ -2,7 +2,8 @@
   <div class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
-        <%= link_to "Home", boards_path, :class => "button" %>
+        <%= link_to 'Invite', edit_board_path(@board), :class => 'button' %>
+        <%= link_to 'Home', boards_path(@board), :class => 'button' %>
       </div>
     </div>
   </div>
