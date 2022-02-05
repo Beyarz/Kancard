@@ -46,6 +46,8 @@ group :development do
   gem 'bullet'
 
   gem "ruby-growl", "~> 4.1"
+
+  gem 'annotate', git: 'https://github.com/ctran/annotate_models.git'
 end
 
 group :test do
@@ -69,3 +71,5 @@ gem "devise", "~> 4.8"
 gem "acts_as_list", "~> 1.0"
 
 gem "redis", "~> 4.5"
+
+gem "oink", "~> 0.10.1"
