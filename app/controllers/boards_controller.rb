@@ -3,6 +3,7 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.all.where owner_id: current_user.id
+    @current_user = current_user
   end
 
   def show

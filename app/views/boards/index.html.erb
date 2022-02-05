@@ -1,5 +1,10 @@
 <% content_for :nav_menu do %>
   <div class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item">
+        <p class="heading">Welcome <%= @current_user.username %>!</p>
+      </div>
+    </div>
     <div class="navbar-end">
       <div class="navbar-item">
         <%= link_to "New", new_board_path, :class => "button" %>
