@@ -42,5 +42,4 @@
 
 ## Screenshot
 
-![demo](media/demo.png)
 ![demo v2](media/demo-v2.png)
