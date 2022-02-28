@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def create
     @board = Board.find params_board_id
     @message = @board.messages.create permitted_params
+    @current_user = current_user
 
     @channel = "BoardChannel"
     @room = @board.id

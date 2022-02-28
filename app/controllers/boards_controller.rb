@@ -4,9 +4,10 @@ class BoardsController < ApplicationController
   def index
     @current_user = current_user
 
-    @boards = Board.all.where(owner_id: @current_user.id
+    @boards = Board.all.where(owner_id: @current_user.id)
       .or(Board.all.where(invited: @current_user.id))
       .or(Board.all.where(invited: @current_user.username))
+
   end
 
   def show
