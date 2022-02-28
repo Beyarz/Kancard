@@ -4,10 +4,18 @@
 #
 #  id         :integer          not null, primary key
 #  content    :text
-#  board_id   :integer          not null
+#  username   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  username   :string
+#  board_id   :integer          not null
+#
+# Indexes
+#
+#  index_messages_on_board_id  (board_id)
+#
+# Foreign Keys
+#
+#  board_id  (board_id => boards.id)
 #
 class Message < ApplicationRecord
   belongs_to :board

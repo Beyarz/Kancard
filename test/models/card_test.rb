@@ -8,6 +8,11 @@
 #  updated_at :datetime         not null
 #  board_id   :integer
 #
+# Indexes
+#
+#  index_cards_on_board_id  (board_id)
+#  index_cards_on_title     (title)
+#
 require 'test_helper'
 
 class CardTest < ActiveSupport::TestCase

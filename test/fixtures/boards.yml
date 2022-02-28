@@ -3,13 +3,18 @@
 # Table name: boards
 #
 #  id          :integer          not null, primary key
+#  description :string
+#  invited     :string
+#  name        :string
+#  owner       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  name        :string
-#  description :string
-#  owner       :string
 #  owner_id    :string
-#  invited     :string
+#
+# Indexes
+#
+#  index_boards_on_description  (description)
+#  index_boards_on_name         (name)
 #
 
 one:
