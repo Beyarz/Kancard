@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!
 
+  # @route PATCH /boards/:board_id/notes/:note_id/move (board_note_move)
   def move
     @board = Board.find params_board_id
     @note = @board.notes.find params[:note_id]
@@ -15,6 +16,7 @@ class NotesController < ApplicationController
     head :ok
   end
 
+  # @route POST /boards/:board_id/notes (board_notes)
   def create
     @board = Board.find params_board_id
     @note = @board.notes.create note_params
@@ -22,6 +24,7 @@ class NotesController < ApplicationController
     redirect_to board_path @board
   end
 
+  # @route DELETE /boards/:board_id/notes/:id (board_note)
   def destroy
     @board = Board.find params_board_id
     @note = @board.notes.find params[:id]

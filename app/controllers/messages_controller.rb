@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
 
+  # @route POST /boards/:board_id/messages (board_messages)
   def create
     @board = Board.find params_board_id
     @message = @board.messages.create permitted_params
@@ -18,6 +19,7 @@ class MessagesController < ApplicationController
     end
   end
 
+  # @route DELETE /boards/:board_id/messages/:id (board_message)
   def destroy
     @board = Board.find params_board_id
     @note = @board.messages.find params[:id]

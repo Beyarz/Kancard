@@ -40,6 +40,16 @@
 
 `bundle exec oink --threshold=100 log/`
 
+## Annotate
+
+### Annotate controllers
+
+`bundle exec chusaku`
+
+### Annotate routes & models
+
+`bundle exec annotate --with-comment`
+
 ## Screenshot
 
 ![demo v2](media/demo-v2.png)
