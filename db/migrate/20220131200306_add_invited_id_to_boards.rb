@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddInvitedIdToBoards < ActiveRecord::Migration[6.1]
   def change
     add_column :boards, :invited_id, :string

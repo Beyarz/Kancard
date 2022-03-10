@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddNameAndDescriptionToBoards < ActiveRecord::Migration[6.1]
   def change
     change_table :boards do |t|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MessagesController < ApplicationController
   before_action :authenticate_user!
 
@@ -12,7 +14,7 @@ class MessagesController < ApplicationController
     @room_channel = "#{@channel}_#{@room}"
 
     if @message.save
-      rendered_html = render partial: 'messages/message', locals: { message: @message }
+      rendered_html = render partial: "messages/message", locals: { message: @message }
       ActionCable.server.broadcast @room_channel, rendered_html
     else
       head :bad_request
@@ -29,11 +31,11 @@ class MessagesController < ApplicationController
   end
 
   private
-  def params_board_id
-    params[:board_id]
-  end
+    def params_board_id
+      params[:board_id]
+    end
 
-  def permitted_params
-    params.require(:message).permit(:content, :username)
-  end
+    def permitted_params
+      params.require(:message).permit(:content, :username)
+    end
 end

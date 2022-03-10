@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddDigestAndUniq < ActiveRecord::Migration[6.0]
   def change
     change_column :users, :email, :uniq
@@ -9,6 +11,5 @@ class AddDigestAndUniq < ActiveRecord::Migration[6.0]
     change_column :users, :password, :string
   end
 
-  def down
-  end
+  def down; end
 end

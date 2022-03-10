@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BoardChannel < ApplicationCable::Channel
   def subscribed
     @channel = params[:channel]
@@ -7,6 +9,5 @@ class BoardChannel < ApplicationCable::Channel
     stream_from @room_channel
   end
 
-  def unsubscribed
-  end
+  def unsubscribed; end
 end

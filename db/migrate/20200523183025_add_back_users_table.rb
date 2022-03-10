@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddBackUsersTable < ActiveRecord::Migration[6.0]
   def change
     create_table "users", force: :cascade do |t|

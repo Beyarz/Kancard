@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class NotesController < ApplicationController
   before_action :authenticate_user!
 
@@ -34,11 +36,11 @@ class NotesController < ApplicationController
   end
 
   private
-  def params_board_id
-    params[:board_id]
-  end
+    def params_board_id
+      params[:board_id]
+    end
 
-  def note_params
-    params.require(:note).permit(:content)
-  end
+    def note_params
+      params.require(:note).permit(:content)
+    end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BoardsController < ApplicationController
   before_action :authenticate_user!
 
@@ -6,9 +8,8 @@ class BoardsController < ApplicationController
     @current_user = current_user
 
     @boards = Board.all.where(owner_id: @current_user.id)
-      .or(Board.all.where(invited: @current_user.id))
-      .or(Board.all.where(invited: @current_user.username))
-
+                   .or(Board.all.where(invited: @current_user.id))
+                   .or(Board.all.where(invited: @current_user.username))
   end
 
   # @route GET /boards/:id (board)
@@ -65,11 +66,11 @@ class BoardsController < ApplicationController
   end
 
   private
-  def params_id
-    params[:id]
-  end
+    def params_id
+      params[:id]
+    end
 
-  def permitted_params
-    params.require(:board).permit(:name, :description, :owner, :owner_id, :invited)
-  end
+    def permitted_params
+      params.require(:board).permit(:name, :description, :owner, :owner_id, :invited)
+    end
 end

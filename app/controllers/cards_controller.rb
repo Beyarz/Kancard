@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CardsController < ApplicationController
   before_action :authenticate_user!
 
@@ -19,15 +21,15 @@ class CardsController < ApplicationController
   end
 
   private
-  def params_board_id
-    params[:board_id]
-  end
+    def params_board_id
+      params[:board_id]
+    end
 
-  def params_id
-    params[:id]
-  end
+    def params_id
+      params[:id]
+    end
 
-  def permitted_params
-    params.require(:card).permit(:title)
-  end
+    def permitted_params
+      params.require(:card).permit(:title)
+    end
 end

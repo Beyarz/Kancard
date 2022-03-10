@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: cards
@@ -13,7 +15,7 @@
 #  index_cards_on_board_id  (board_id)
 #  index_cards_on_title     (title)
 #
-require 'test_helper'
+require "test_helper"
 
 class CardTest < ActiveSupport::TestCase
   # test "the truth" do
