@@ -50,6 +50,10 @@
 
 `bundle exec annotate --with-comment`
 
+### Lint / Format
+
+`rubocop -A`
+
 ## Screenshot
 
 ![demo v2](media/demo-v2.png)
