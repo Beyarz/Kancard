@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "misogi.ruby-rubocop",
-    "Shopify.rubocop-lsp"
+    "shopify.rubocop-lsp",
+    "castwide.solargraph",
+    "CraigMaslowski.erb"
   ]
 }

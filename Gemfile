@@ -51,6 +51,7 @@ group :development do
   gem "ruby-growl", "~> 4.1"
   gem "spring"
   gem "rubocop-rails_config"
+  gem "solargraph", group: :development
 end
 
 group :test do
