@@ -2,7 +2,7 @@
   <div class="navbar-menu">
     <div class="navbar-start">
       <div class="navbar-item">
-        <p class="heading">Welcome <%= @current_user.username %>!</p>
+        <p class="heading mt-3">Welcome <%= @current_user.username %>!</p>
       </div>
     </div>
     <div class="navbar-end">
@@ -21,7 +21,7 @@
         <%= "Nothing here..." %>
       </h1>
     <% else %>
-      <%= render "boards/board", boards: @boards %>
+      <%= render @boards %>
     <% end %>
   </div>
 </div>
