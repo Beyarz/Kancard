@@ -1,10 +1,4 @@
-<% if board.errors.any? %>
-  <% board.errors.each do |err| %>
-    <%= err %>
-  <% end %>
-<% end %>
-
-<%= form_with model: board do |f| %>
+<%= form_with model: @board do |f| %>
   <div class="field">
     <%= f.label :name, :class => "label" %>
     <div class="control has-icons-left">
@@ -15,8 +9,8 @@
     </div>
   </div>
 
-  <%= f.text_field :owner, :value => @owner.username, :type => "hidden" %>
-  <%= f.text_field :owner_id, :value => @owner.id, :type => "hidden" %>
+  <%= f.text_field :owner, :value => @current_user.username, :type => "hidden" %>
+  <%= f.text_field :owner_id, :value => @current_user.id, :type => "hidden" %>
 
   <div class="field">
     <%= f.label :description, :class => "label", :style => "padding-top: 1rem;" %>
