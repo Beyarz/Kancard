@@ -2,7 +2,11 @@
   <div class="navbar-menu">
     <div class="navbar-start">
       <div class="navbar-item">
-        <p class="heading mt-3">Welcome <%= @current_user.username %>!</p>
+        <p class="heading mt-1">
+          Welcome <strong><%= @current_user.username %></strong>!
+          <br />
+          Invite ID: <strong><%= @current_user.id %></strong>
+        </p>
       </div>
     </div>
     <div class="navbar-end">
