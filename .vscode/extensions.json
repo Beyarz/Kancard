@@ -3,6 +3,7 @@
     "misogi.ruby-rubocop",
     "shopify.rubocop-lsp",
     "castwide.solargraph",
-    "CraigMaslowski.erb"
+    "craigmaslowski.erb",
+    "Hridoy.rails-snippets"
   ]
 }
