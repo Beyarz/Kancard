@@ -2,14 +2,14 @@
   <div class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
+        <%= link_to 'Home', boards_path, :class => 'button' %>
         <%= link_to 'Invite', edit_board_path(@board), :class => 'button' %>
-        <%= link_to 'Home', boards_path(@board), :class => 'button' %>
       </div>
     </div>
   </div>
 <% end %>
 
-<%= render "boards/panel" %>
+<%= render "panel" %>
 
 <div class="tile is-ancestor">
   <div class="tile is-parent">
@@ -25,7 +25,6 @@
               <%= render @messages %>
             <% end %>
           </span>
-
           <%= render "messages/form" %>
         </div>
       </article>
