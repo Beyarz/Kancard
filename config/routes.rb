@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     resources :notes, only: %i[create destroy] do
       patch :move
     end
+    resources :invites
   end
 end
