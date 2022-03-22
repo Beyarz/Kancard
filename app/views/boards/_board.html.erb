@@ -9,13 +9,13 @@
       </div>
       <div class="level">
         <div class="level-item">
-          <%= link_to "Open", board_path(board), class: "button is-fullwidth" %>
+          <%= link_to "Open", board_path(board), class: "button" %>
         </div>
         <div class="level-item">
-          <%= link_to "Edit", edit_board_path(board), class: "button is-fullwidth" %>
+          <%= link_to "Edit", edit_board_path(board), class: "button", disabled: (board.owner_id.to_i.eql?(@current_user.id.to_i) ? false : true) %>
         </div>
         <div class="level-item">
-          <%= link_to "Delete", board_path(board), method: :delete, class: "button is-fullwidth" %>
+          <%= link_to "Delete", board_path(board), method: :delete, class: "button", disabled: (board.owner_id.to_i.eql?(@current_user.id.to_i) ? false : true) %>
         </div>
       </div>
     </div>
