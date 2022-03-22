@@ -1,0 +1,17 @@
+<div class="columns">
+  <div class="column">
+    <h1 class="is-size-3">Invited users:</h1>
+    <br>
+    <% @invited.find_each do |invite| %>
+      <%= button_to "Remove id #{invite.user_id}", [invite.board, invite], method: :delete, class: 'button' %>
+      <br>
+    <% end %>
+  </div>
+  <div class="column is-half">
+    <h1 class="is-size-1" style="text-align: center;">Invite another user</h1>
+    <div class="form-style-panel">
+      <%= render "form" %>
+    </div>
+  </div>
+  <div class="column"></div>
+</div>
