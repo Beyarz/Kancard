@@ -1,5 +1,5 @@
 <div class="message is-light content box">
-  <%= link_to nil, [message.board, message], method: :delete, :class => "delete has-text-weight-light is-pulled-right" %>
+  <%= link_to nil, [message.board, message], method: :delete, class: "delete has-text-weight-light is-pulled-right" %>
 
   <span class="subtitle">
     <% if message.username === @current_user.username %>

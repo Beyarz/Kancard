@@ -1,11 +1,11 @@
-<%= form_with model: [@board, @board.messages.build] do |f| %>
+<%= form_with model: [@board, @board.messages.new] do |f| %>
   <div class="field">
-    <%= f.label "You", :class => "label" %>
+    <%= f.label "You", class: "label" %>
     <div class="control">
-      <%= f.text_area :content, :class => "textarea", :placeholder => "Your message...", :aria_required => true, required: true %>
-      <%= f.text_field :username, :value => @current_user.username, :type => "hidden" %>
+      <%= f.text_area :content, class: "textarea", placeholder: "Your message...", aria_required: true, required: true %>
+      <%= f.text_field :username, value: @current_user.username, type: "hidden" %>
       <br>
-      <%= f.submit "Send", :id => "deliver", :class => "button is-custom-blue", data: { disable_with: "Processing..."  } %>
+      <%= f.submit "Send", id: "deliver", class: "button is-custom-blue", data: { disable_with: "Processing..."  } %>
     </div>
   </div>
 <% end %>

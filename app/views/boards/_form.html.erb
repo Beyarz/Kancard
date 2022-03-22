@@ -1,31 +1,21 @@
 <%= form_with model: @board do |f| %>
   <div class="field">
-    <%= f.label :name, :class => "label" %>
+    <%= f.label :name, class: "label" %>
     <div class="control has-icons-left">
-      <%= f.text_field :name, :class => "input", :required => true, :minlength => 2, :placeholder => "Class project" %>
+      <%= f.text_field :name, class: "input", required: true, minlength: 2, placeholder: "Class project" %>
       <span class="icon is-small is-left">
         <i class="fas fa-signature"></i>
       </span>
     </div>
   </div>
 
-  <%= f.text_field :owner, :value => @current_user.username, :type => "hidden" %>
-  <%= f.text_field :owner_id, :value => @current_user.id, :type => "hidden" %>
+  <%= f.text_field :owner, value: @current_user.username, type: "hidden" %>
+  <%= f.text_field :owner_id, value: @current_user.id, type: "hidden" %>
 
   <div class="field">
-    <%= f.label :description, :class => "label", :style => "padding-top: 1rem;" %>
+    <%= f.label :description, class: "label", style: "padding-top: 1rem;" %>
     <div class="control has-icons-left">
-      <%= f.text_field :description, :class => "input", :required => true, :minlength => 4, :placeholder => "For our science class" %>
-      <span class="icon is-small is-left">
-        <i class="fas fa-file-signature"></i>
-      </span>
-    </div>
-  </div>
-
-  <div class="field">
-    <%= f.label 'Invite user id', :class => "label", :style => "padding-top: 1rem;" %>
-    <div class="control has-icons-left">
-      <%= f.text_field :invited, :class => "input", :required => false, :placeholder => "42" %>
+      <%= f.text_field :description, class: "input", required: true, minlength: 3, placeholder: "For our science class" %>
       <span class="icon is-small is-left">
         <i class="fas fa-file-signature"></i>
       </span>
@@ -34,8 +24,8 @@
 
   <div class="field is-grouped is-grouped-centered">
     <div class="control" style="padding-top: 3rem;">
-      <%= link_to "Cancel", boards_path, :class => "button bold" %>
-      <%= f.submit "Create", :class => "button is-custom-blue" %>
+      <%= link_to "Cancel", boards_path, class: "button bold" %>
+      <%= f.submit "Create", class: "button is-custom-blue" %>
     </div>
   </div>
 <% end %>
