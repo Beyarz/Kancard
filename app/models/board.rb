@@ -6,7 +6,6 @@
 #
 #  id          :integer          not null, primary key
 #  description :string
-#  invited     :string
 #  name        :string
 #  owner       :string
 #  created_at  :datetime         not null
@@ -22,6 +21,7 @@ class Board < ApplicationRecord
   has_many :cards, dependent: :destroy
   has_many :notes, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :invites, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 2 }
   validates :description, presence: true, length: { minimum: 4 }
