@@ -1,4 +1,12 @@
 <%= form_with model: @board do |f| %>
+  <% if @board.errors.any? %>
+    <ul>
+      <% @board.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <div class="field">
     <%= f.label :name, class: "label" %>
     <div class="control has-icons-left">
@@ -25,7 +33,7 @@
   <div class="field is-grouped is-grouped-centered">
     <div class="control" style="padding-top: 3rem;">
       <%= link_to "Cancel", boards_path, class: "button bold" %>
-      <%= f.submit "Create", class: "button is-custom-blue" %>
+      <%= f.submit "Create", class: "button is-custom-blue", data: { disable_with: "Processing..." } %>
     </div>
   </div>
 <% end %>

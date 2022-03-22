@@ -1,0 +1,40 @@
+<% content_for :nav_menu do %>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item">
+        <p class="heading mt-1">
+          Welcome <strong><%= @current_user.username %></strong>!
+          <br />
+          Invite ID: <strong><%= @current_user.id %></strong>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= form_with model: [@board, @board.invites.new] do |f| %>
+  <% if @board.errors.any? %>
+    <ul>
+      <% @board.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Invite user id", class: "label", style: "padding-top: 1rem;" %>
+    <div class="control has-icons-left">
+      <%= f.text_field :user_id, class: "input", minlength: 1, placeholder: @current_user.id %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-file-signature"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field is-grouped is-grouped-centered">
+    <div class="control" style="padding-top: 3rem;">
+      <%= link_to "Cancel", board_path(@board), class: "button bold" %>
+      <%= f.submit "Create", class: "button is-custom-blue", data: { disable_with: "Processing..." } %>
+    </div>
+  </div>
+<% end %>

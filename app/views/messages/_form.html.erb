@@ -1,4 +1,12 @@
 <%= form_with model: [@board, @board.messages.new] do |f| %>
+  <% if @board.errors.any? %>
+    <ul>
+      <% @board.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <div class="field">
     <%= f.label "You", class: "label" %>
     <div class="control">
