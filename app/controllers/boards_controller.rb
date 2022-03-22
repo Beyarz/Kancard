@@ -7,9 +7,9 @@ class BoardsController < ApplicationController
   def index
     @current_user = current_user
 
-    @boards = Board.all.where(owner_id: @current_user.id)
-                   .or(Board.all.where(invited: @current_user.id))
-                   .or(Board.all.where(invited: @current_user.username))
+    @boards = Board.includes(:invites)
+      .where(invites: { user_id: @current_user.id })
+      .or(Board.all.where(owner_id: @current_user.id))
   end
 
   # @route GET /boards/:id (board)
@@ -31,11 +31,12 @@ class BoardsController < ApplicationController
   # @route POST /boards (boards)
   def create
     @board = Board.create permitted_params
+    @current_user = current_user
 
     if @board.save
-      redirect_to @board
+      redirect_to @board, notice: "Created board."
     else
-      render :new
+      render :new, notice: "Error"
     end
   end
 
@@ -49,20 +50,29 @@ class BoardsController < ApplicationController
   # @route PUT /boards/:id (board)
   def update
     @board = Board.find params_id
+    @owner = current_user
 
     if @board.update permitted_params
-      redirect_to boards_path
+      redirect_to boards_path, notice: "Board updated!"
     else
-      render :edit
+      if @owner.id.to_i != @board.owner_id.to_i
+        redirect_to boards_path, notice: "You are not the owner."
+      end
+
+      render :edit, notice: "Unable to update."
     end
   end
 
   # @route DELETE /boards/:id (board)
   def destroy
     @board = Board.find params_id
-    @board.destroy
 
-    redirect_to boards_path
+    if current_user.id.to_i === @board.owner_id.to_i
+      @board.destroy
+      redirect_to boards_path, notice: "Deleted the board!"
+    else
+      redirect_to boards_path, notice: "You are not the owner."
+    end
   end
 
   private
@@ -71,6 +81,6 @@ class BoardsController < ApplicationController
     end
 
     def permitted_params
-      params.require(:board).permit(:name, :description, :owner, :owner_id, :invited)
+      params.require(:board).permit(:name, :description, :owner, :owner_id)
     end
 end
