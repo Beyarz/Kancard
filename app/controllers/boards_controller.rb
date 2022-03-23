@@ -33,10 +33,13 @@ class BoardsController < ApplicationController
     @board = Board.create permitted_params
     @current_user = current_user
 
-    if @board.save
-      redirect_to @board, notice: "Created board."
-    else
-      render :new, notice: "Error"
+    respond_to do |format|
+      if @board.save
+        redirect_to @board, notice: "Created board."
+      else
+        format.html { render :new, status: :not_acceptable, notice: @board.errors }
+        format.json { render json: @board.errors, status: :not_acceptable }
+      end
     end
   end
 
@@ -58,7 +61,6 @@ class BoardsController < ApplicationController
       if @owner.id.to_i != @board.owner_id.to_i
         redirect_to boards_path, notice: "You are not the owner."
       end
-
       render :edit, notice: "Unable to update."
     end
   end
