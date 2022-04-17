@@ -33,11 +33,14 @@ class BoardsController < ApplicationController
     @board = Board.create permitted_params
     @current_user = current_user
 
-    if @board.save
-      redirect_to @board, notice: "Successfully created board!"
-    else
-      render :new, status: :unprocessable_entity
-      render json: @board.errors, status: :unprocessable_entity
+    respond_to do |format|
+      if @board.save
+        format.html { redirect_to @board, notice: "Successfully created board!" }
+        format.json { render json: { status: :success } }
+      else
+        format.html { render :new }
+        format.json { render json: @board.errors, status: :unprocessable_entity }
+      end
     end
   end
 
