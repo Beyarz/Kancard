@@ -21,9 +21,7 @@
 <div class="container" style="padding-top: 2rem;">
   <div class="columns is-multiline is-centered">
     <% if @boards.empty? %>
-      <h1>
-        <%= "Nothing here..." %>
-      </h1>
+      <h1>Nothing here...</h1>
     <% else %>
       <%= render "boards/board" %>
     <% end %>
