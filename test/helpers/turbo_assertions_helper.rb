@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TurboAssertionsHelper
   TURBO_VISIT = /Turbo\.visit\("([^"]+)", {"action":"([^"]+)"}\)/
 
