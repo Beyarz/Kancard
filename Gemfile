@@ -48,6 +48,7 @@ group :development do
   gem "spring"
   gem "rubocop-rails_config"
   gem "solargraph", group: :development
+  gem "brakeman"
 end
 
 group :test do

@@ -60,9 +60,13 @@
 
 `bundle exec annotate --with-comment`
 
-### Lint / Format
+## Lint / Format
 
 `rubocop -A`
+
+## Security scanner
+
+`brakeman`
 
 ## Screenshot
 

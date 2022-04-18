@@ -79,6 +79,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.9.3)
       msgpack (~> 1.0)
+    brakeman (5.2.2)
     builder (3.2.4)
     bullet (7.0.1)
       activesupport (>= 3.0.0)
@@ -284,9 +285,6 @@ GEM
     turbo-rails (1.0.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
@@ -326,6 +324,7 @@ DEPENDENCIES
   acts_as_list (~> 1.0)
   annotate!
   bootsnap (>= 1.4.4)
+  brakeman
   bullet
   bulma-rails (~> 0.9.2)
   byebug
@@ -350,7 +349,6 @@ DEPENDENCIES
   spring
   sqlite3 (~> 1.4)
   turbo-rails (~> 1.0)
-  turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
