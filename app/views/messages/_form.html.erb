@@ -9,12 +9,12 @@
 <%= form_with model: [@board, @board.messages.new] do |f| %>
   <div class="field">
     <%= f.label "You", class: "label" %>
-    <div class="control">
-      <%= f.text_area :content, class: "textarea", placeholder: "Your message...", aria_required: true, required: true %>
+    <div class="control" data-controller="messageInput">
+      <%= f.text_area :content, class: "textarea", placeholder: "Your message...", aria_required: true, required: true, data: { "messageInput-target": "textarea" } %>
       <%= f.text_field :username, value: @current_user.username, type: "hidden" %>
       <br>
 
-      <%= f.submit "Send", id: "deliver", class: "button is-custom-blue", data: { disable_with: "Processing..."  } %>
+      <%= f.submit "Send", id: "deliver", class: "button is-custom-blue", data: { disable_with: "Processing...", action: "click->messageInput#clearInput"  } %>
     </div>
   </div>
 <% end %>
