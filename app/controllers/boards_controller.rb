@@ -35,11 +35,9 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to @board, notice: "Successfully created board!" }
-        format.json { render json: { status: :success } }
+        format.html { redirect_to @board, notice: "Successfully created board!", status: :see_other }
       else
-        format.html { render :new }
-        format.json { render json: @board.errors, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
@@ -63,8 +61,7 @@ class BoardsController < ApplicationController
         redirect_to boards_path, notice: "You are not the owner."
       end
 
-      render :edit, notice: "Unable to update."
-      render json: @board.errors, status: :unprocessable_entity
+      render :edit, notice: "Unable to update.", status: :unprocessable_entity
     end
   end
 
@@ -72,11 +69,10 @@ class BoardsController < ApplicationController
   def destroy
     @board = Board.find params_id
 
-    if current_user.id.to_i === @board.owner_id.to_i
-      @board.destroy
-      redirect_to boards_path, notice: "Deleted the board!"
+    if current_user.id.to_i === @board.owner_id.to_i && @board.destroy
+      redirect_to boards_path, notice: "Deleted the board!", status: :see_other
     else
-      redirect_to boards_path, notice: "You are not the owner."
+      redirect_to boards_path, notice: "You are not the owner.", status: :unprocessable_entity
     end
   end
 

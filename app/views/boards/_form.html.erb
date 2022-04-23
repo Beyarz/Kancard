@@ -33,7 +33,7 @@
   <div class="field is-grouped is-grouped-centered">
     <div class="control" style="padding-top: 3rem;">
       <%= link_to "Cancel", boards_path, class: "button bold" %>
-      <%= f.submit "Create", class: "button is-custom-blue", data: { disable_with: "Processing..." } %>
+      <%= f.submit "Create", class: "button is-custom-blue", data: { disable_with: "Processing..." }, method: :post %>
     </div>
   </div>
 <% end %>
