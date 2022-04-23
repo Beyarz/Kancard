@@ -13,9 +13,7 @@
 
 - Notes does not resize very well when switching between the Notes column & Cards column.
 
-- `./db/schema.rb` lacks stronger types, some columns should not be nullable & other columns should have a default value. Other columns would be much better if it was typed as Array instead of String.
-
-- The chat text field doesn't get cleared when sending a message.
+- `db/schema.rb` lacks stronger types, some columns should not be nullable & other columns should have a default value. Other columns would be much better if it was typed as Array instead of String.
 
 ## Requirements in production
 
