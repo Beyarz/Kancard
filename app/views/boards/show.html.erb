@@ -42,15 +42,14 @@
   <div class="tile is-8 is-vertical is-parent">
     <div class="tile is-child">
       <p class="title">Notes</p>
-      <div class="scrollable columns" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
-        <% if @board.notes.empty? %>
-          <p class="heading ml-3">
-            Nothing here, why not create a couple of notes?
-          </p>
-        <% else %>
-          <%= render @notes %>
-        <% end %>
-      </div>
+      <% if !@board.notes.empty? %>
+        <p class="heading ml-3">Hover your notes over here to place them back</p>
+        <div class="scrollable columns" data-controller="drag" data-drag-url="/boards/:board_id/notes/:id/move">
+            <%= render @notes %>
+        </div>
+      <% else %>
+          <p class="heading ml-3">Nothing here, why not create a couple of notes?</p>
+      <% end %>
     </div>
     <div class="tile is-child">
       <p class="title">Cards</p>
