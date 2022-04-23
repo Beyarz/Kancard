@@ -12,7 +12,6 @@ Rails.application.configure do
     Bullet.add_footer    = true
     Bullet.sentry = true
     Bullet.bullet_logger = true
-    Bullet.growl = false
     Bullet.honeybadger = true
     Bullet.bugsnag = true
     Bullet.appsignal = true
