@@ -1,5 +1,7 @@
 <div class="message is-light content box">
-  <%= link_to nil, [message.board, message], data: { turbo_method: :delete }, class: "delete has-text-weight-light is-pulled-right" %>
+  <% if message.username === @current_user.username %>
+    <%= link_to nil, [message.board, message], data: { turbo_method: :delete }, class: "delete has-text-weight-light is-pulled-right" %>
+  <% end %>
 
   <span class="subtitle">
     <% if message.username === @current_user.username %>
