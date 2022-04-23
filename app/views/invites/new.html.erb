@@ -1,10 +1,12 @@
 <div class="columns">
   <div class="column">
+    <% if !@invited.empty? %>
     <h1 class="is-size-3">Invited users:</h1>
     <br>
-    <% @invited.find_each do |invite| %>
-      <%= button_to "Remove id #{invite.user_id}", [invite.board, invite], method: :delete, class: 'button' %>
-      <br>
+      <% @invited.find_each do |invite| %>
+        <%= button_to "Remove id #{invite.user_id}", [invite.board, invite], data: { turbo_method: :delete }, class: 'button' %>
+        <br>
+      <% end %>
     <% end %>
   </div>
   <div class="column is-half">
