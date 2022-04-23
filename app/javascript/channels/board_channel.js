@@ -2,7 +2,7 @@ import consumer from "./consumer"
 
 /**
  * We don't want the pub/sub to be executed when going to home page,
- * because the chatlog only exists each individual board page
+ * because the chatlog only exists on each individual board page
  *
  * @public
  * @param { string } id
@@ -24,7 +24,7 @@ function cleanPreviousSubscriptions() {
   })
 }
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbo:load', () => {
   cleanPreviousSubscriptions()
 
   /** @type { DOMStringMap | false } */
@@ -46,6 +46,7 @@ document.addEventListener('turbolinks:load', () => {
      * @returns void
      */
     connected() {
+      this.constructMessage("<p><strong>You connected</strong></p>")
       console.log("Connected")
     },
 
@@ -53,6 +54,7 @@ document.addEventListener('turbolinks:load', () => {
      * @returns void
      */
     disconnected() {
+      this.constructMessage("<p><strong>You disconnected</strong></p>")
       console.log("Disconnected")
     },
 
