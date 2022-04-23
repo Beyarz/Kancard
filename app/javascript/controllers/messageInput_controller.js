@@ -4,6 +4,8 @@ export default class extends Controller {
   static targets = [ "textarea" ]
 
   clearInput() {
-    this.textareaTarget.value = null
+    setTimeout(() => {
+      this.textareaTarget.value = null
+    }, 1500)
   }
 }

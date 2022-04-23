@@ -10,7 +10,7 @@
   <div class="field">
     <%= f.label "You", class: "label" %>
     <div class="control" data-controller="messageInput">
-      <%= f.text_area :content, class: "textarea", placeholder: "Your message...", aria_required: true, required: true, data: { "messageInput-target": "textarea" } %>
+      <%= f.text_area :content, class: "textarea", placeholder: "Your message...", data: { "messageInput-target": "textarea" } %>
       <%= f.text_field :username, value: @current_user.username, type: "hidden" %>
       <br>
 
