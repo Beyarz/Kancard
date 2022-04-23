@@ -8,7 +8,7 @@ class CardsController < ApplicationController
     @board = Board.find params_board_id
     @card = @board.cards.create permitted_params
 
-    redirect_to board_path @board
+    redirect_to board_path(@board), status: :see_other
   end
 
   # @route DELETE /boards/:board_id/cards/:id (board_card)
@@ -17,7 +17,7 @@ class CardsController < ApplicationController
     @card = @board.cards.find params_id
     @card.destroy
 
-    redirect_to board_path @board
+    redirect_to board_path(@board), status: :see_other
   end
 
   private
