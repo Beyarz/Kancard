@@ -1,12 +1,12 @@
-<%= form_with model: [@board, @board.notes.build] do |f| %>
-  <% if @board.errors.any? %>
-    <ul>
-      <% @board.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
+<% if @board.errors.any? %>
+  <ul>
+    <% @board.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
+<%= form_with model: [@board, @board.notes.new] do |f| %>
   <div id="new-note">
     <div class="field">
       <%= f.label :content, class: "label" %>

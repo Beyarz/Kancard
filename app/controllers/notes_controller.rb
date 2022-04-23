@@ -32,7 +32,7 @@ class NotesController < ApplicationController
     @note = @board.notes.find params[:id]
     @note.destroy
 
-    redirect_to board_path @board
+    redirect_to board_path(@board), status: :see_other
   end
 
   private
