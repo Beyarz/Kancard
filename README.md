@@ -11,9 +11,9 @@
 
 - The owner value & owner id is being passed from the client to the server as parameter, this can easily be forged by the client in order to fool the server. Instead, the two values should be handled in the controller and injected to the BoardsController#create action.
 
-- Notes does not resize very well when switching between the Notes column & Cards column.
-
 - `db/schema.rb` lacks stronger types, some columns should not be nullable & other columns should have a default value. Other columns would be much better if it was typed as Array instead of String.
+
+- The delete button on every message bubble is only visible for the owner, BUT other users can still send a DELETE request to rails backend since it is not validated on the server side. In other words, everyone in the board can remove anyones messages.
 
 ## Requirements in production
 
