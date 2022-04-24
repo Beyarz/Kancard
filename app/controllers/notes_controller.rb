@@ -6,14 +6,17 @@ class NotesController < ApplicationController
   # @route PATCH /boards/:board_id/notes/:note_id/move (board_note_move)
   def move
     @board = Board.find params_board_id
+
+    # Update the date of latest change
+    @board.update! updated_at: Time.new
+
     @note = @board.notes.find params[:note_id]
 
     # Updates position
     @note.insert_at params[:position].to_i
 
     # Updates the new parent column id as owner of the note
-    @note.update parent_column_id: params[:parent_column_id]
-    @note.save
+    @note.update! parent_column_id: params[:parent_column_id]
 
     head :ok
   end
