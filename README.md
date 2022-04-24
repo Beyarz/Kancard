@@ -1,71 +1,32 @@
 # Kancard
 
-- Ruby version
+An efficient way to backlog
+
+With a little help from the classical kanban board
+
+## Ruby version
   - 3.0.0
 
-- System dependencies
+## System dependencies
   - Bundler
-  - Npm
-
-## Issues / room for improvment
-
-- The owner value & owner id is being passed from the client to the server as parameter, this can easily be forged by the client in order to fool the server. Instead, the two values should be handled in the controller and injected to the BoardsController#create action.
-
-- `db/schema.rb` lacks stronger types, some columns should not be nullable & other columns should have a default value. Other columns would be much better if it was typed as Array instead of String.
-
-- The delete button on every message bubble is only visible for the owner, BUT other users can still send a DELETE request to rails backend since it is not validated on the server side. In other words, everyone in the board can remove anyones messages.
-
-## Requirements in production
-
-- Redis
-
-### Start redis
-
-#### macOS
-
-`brew services start redis`
+  - Npm / Yarn
+  - Redis
 
 ## Getting started
 
-- `bundle install`
+- `bundle`
 - `yarn`
+- Start redis, `brew services start redis` (on a mac)
+- run `rails server` & visit `http://127.0.0.1:3000/`
 
-### Development server
+## Development
 
-`RAILS_ENV=development rails server`
-
-## Development in container
-
-### Windows users
-
-`docker run -v %cd%:/app -w /app --name ruby-dev -p 3000:3000 --rm -it ruby:3.0.0 sh ./entrypoint.sh`
-
-### UNIX users
-
-`docker run -v $(pwd):/app -w /app --name ruby-dev -p 3000:3000 --rm -it ruby:3.0.0 sh ./entrypoint.sh`
-
-## Oink
-
-`bundle exec oink --threshold=100 log/`
-
-## Annotate
-
-### Annotate controllers
-
-`bundle exec chusaku`
-
-### Annotate routes & models
-
-`bundle exec annotate --with-comment`
-
-## Lint / Format
-
-`rubocop -A`
-
-## Security scanner
-
-`brakeman`
+See [dev.md](dev.md)
 
 ## Screenshot
 
 ![demo v2](media/demo-v2.png)
+
+## Issues / room for improvment
+
+See [Issues.md](Issues.md)
