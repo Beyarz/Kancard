@@ -77,7 +77,8 @@ document.addEventListener('turbo:load', () => {
       chatLog.insertAdjacentHTML('beforeend', html)
 
       // Scroll to the bottom on every new message
-      document.querySelector('article.media').scrollTop = document.querySelector('article.media').scrollHeight
+      const articleMediaSelector = document.querySelector('article.media')
+      articleMediaSelector.scrollTop = articleMediaSelector.scrollHeight
     },
   })
 })
