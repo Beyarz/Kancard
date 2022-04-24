@@ -4,6 +4,13 @@ An efficient way to backlog
 
 With a little help from the classical kanban board
 
+## Tech
+ - Bulma.css for styling
+ - Rails (obviously)
+ - Redis for pub/sub using ActioCable
+ - Devise gem for handling the authentication
+ - Rubocop for linting / formatting
+
 ## Ruby version
   - 3.0.0
 
