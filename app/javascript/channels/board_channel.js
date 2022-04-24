@@ -46,16 +46,16 @@ document.addEventListener('turbo:load', () => {
      * @returns void
      */
     connected() {
-      this.constructMessage("<p><strong>You connected</strong></p>")
-      console.log("Connected")
+      this.constructMessage("<p><strong>You connected</strong></p><br/>")
+      console.log("Connected to the chat")
     },
 
     /**
      * @returns void
      */
     disconnected() {
-      this.constructMessage("<p><strong>You disconnected</strong></p>")
-      console.log("Disconnected")
+      this.constructMessage("<p><strong>You disconnected</strong></p><br/>")
+      console.log("Disconnected from the chat")
     },
 
     /**
@@ -63,7 +63,6 @@ document.addEventListener('turbo:load', () => {
      * @returns void
      */
     received(data) {
-      console.log("Received: ", { data })
       this.constructMessage(data)
     },
 
@@ -76,6 +75,9 @@ document.addEventListener('turbo:load', () => {
       /** @type { HTMLElement } */
       const chatLog = document.getElementById('chatLog')
       chatLog.insertAdjacentHTML('beforeend', html)
+
+      // Scroll to the bottom on every new message
+      document.querySelector('article.media').scrollTop = document.querySelector('article.media').scrollHeight
     },
   })
 })
